@@ -58,11 +58,6 @@ zle -N zle-keymap-select
 # Python environment variables
 export PYTHONSTARTUP=~/.pyrc
 
-# This fixes using SSH in urxvt
-if [[ $TERM == "rxvt-unicode" ]] ; then
-    	export TERM="xterm"
-fi
-
 #
 # Functions
 #
