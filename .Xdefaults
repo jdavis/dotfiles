@@ -1,0 +1,109 @@
+! File: ~/.Xdefaults
+!
+!fonts
+#URxvt.font: xft:cure:pixelsize=10
+#URxvt.boldFont: xft:cure:pixelsize=10
+#URxvt.boldFont: xft:Terminus:pixelsize=14
+#URxvt.font: xft:Bitstream Vera Sans Mono-8.5:pixelsize=12
+#URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+#URxvt.font: xft:Dina:pixelsize=12
+URxvt.font: xft:Terminus:pixelsize=14
+
+
+!urxvt
+URxvt.title: terminal
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: opera
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.urgentOnBell: true
+
+!general
+*utf8: 1
+*faceSize: 12
+*jumpScroll: true
+*multiScroll: true
+*boldMode: true
+*borderless: true
+*scrollBar: false
+*cutNewline: false
+*scrollTtyOutput: false
+*scrollKey: true
+*cursorBlink: true
+*dynamicColors: false
+*saveLines: 3000
+*geometry: 80x24
+
+!xft hinting
+Xft.antialias:true
+Xft.dpi:96
+Xft.hinting:true
+! hintslight | hintsmedium | hintsfull
+Xft.hintstyle:hintsfull
+! rgba subpixel hinting (for LCDs)
+Xft.rgba:subpixel
+
+!transparency
+*inheritPixmap: true
+*shading: 40
+!*shading: 20
+!*shading: 1
+
+*foreground: white
+*background: black
+! Black + DarkGrey
+*color0: #000000
+*color8: #555753
+! DarkRed + Red
+*color1: #ff6565
+*color9: #ff8d8d
+! DarkGreen + Green
+*color2: #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3: #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4: #204a87
+*color12: #0b8bff
+! DarkMagenta + Magenta 
+*color5: #ce5c00
+*color13: #f57900
+! DarkCyan + Cyan
+*color6: #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7: #cccccc
+*color15: #ffffff
+
+ 
+!cursor
+Xcursor.theme:          neutral
+
+! xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #ffffff
+xscreensaver.Dialog.background:         #111111
+xscreensaver.Dialog.topShadowColor:     #111111
+xscreensaver.Dialog.bottomShadowColor:  #111111
+xscreensaver.Dialog.Button.foreground:  #666666
+xscreensaver.Dialog.Button.background:  #ffffff
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #ffffff
+xscreensaver.Dialog.text.background:    #666666
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        10
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.width:       0
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
