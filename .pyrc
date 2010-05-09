@@ -1,0 +1,27 @@
+import os, sys
+import readline
+
+histfile = os.path.join(os.environ["HOME"], ".pyhist")
+try:
+	readline.read_history_file(histfile)
+except IOError:
+	pass
+import atexit
+import rlcompleter
+
+try:
+	import readline
+except ImportError:
+	try:
+		import pyreadline as readline
+	except ImportError:
+		pass
+else:
+	import rlcompleter
+	if(sys.platform == 'darwin'):
+			readline.parse_and_bind ("bind ^I rl_complete")
+	else:
+			readline.parse_and_bind("tab: complete")
+
+atexit.register(readline.write_history_file, histfile)
+del os, sys, readline, histfile, rlcompleter
