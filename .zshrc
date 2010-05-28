@@ -41,7 +41,7 @@ bindkey  end-of-line
 bindkey  kill-line
 bindkey  forward-char
 bindkey  backward-char
-
+bindkey  history-incremental-search-backword
 
 
 # VI Command Prompt

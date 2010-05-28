@@ -1,5 +1,4 @@
 # Alias
-alias ls='ls --color=auto'
 alias rm='rm -i'
 
 # OS X Aliases
@@ -52,6 +51,8 @@ fi
 
 # Arch Aliases
 if [[ $HOME == '/home/davis' ]]; then
+	alias ls='ls --color=auto'
+
 	# Monitors
 	alias vga='xrandr --output CRT1 --same-as LCD --auto'
 	alias dual-monitors='xrandr --output CRT1 --right-of LCD --mode 1660x1050'

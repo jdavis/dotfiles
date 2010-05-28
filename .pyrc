@@ -1,9 +1,6 @@
-import os, sys
+import os, sys, atexit, rlcompleter
 
 histfile = os.path.join(os.environ["HOME"], ".pyhist")
-
-import atexit
-import rlcompleter
 
 try:
 	import readline
