@@ -16,8 +16,8 @@ promptinit
 
 # Globals
 export HISTFILE=~/.zsh/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
+export HISTSIZE=2000
+export SAVEHIST=2000
 export BROWSER=opera
 export EDITOR=vim
 
@@ -41,6 +41,7 @@ bindkey  end-of-line
 bindkey  kill-line
 bindkey  forward-char
 bindkey  backward-char
+bindkey  history-incremental-search-backward
 
 
 

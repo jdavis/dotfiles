@@ -45,7 +45,7 @@ Xft.rgba:subpixel
 
 !transparency
 *inheritPixmap: true
-*shading: 40
+*shading: 42
 !*shading: 20
 !*shading: 1
 

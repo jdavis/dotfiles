@@ -29,6 +29,7 @@ manageHook' :: ManageHook
 manageHook' = composeAll
 	[ className =? "MPlayer"        --> doFloat
 	, className =? "Gimp"           --> doFloat
+	, className =? "Skype"           --> doFloat
 	, className =? "Tk"		--> doFloat
 	, className =? "Eclipse"	--> doShift "5:java"
 	]
@@ -112,6 +113,8 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	, ((modMask .|. mod1Mask, xK_Delete), spawn "python ~/Programming/Python/powerPanel.py")
 	-- Lock the Screen
 	, ((modMask .|. mod1Mask, xK_l), spawn "xscreensaver-command -lock")
+	-- Screenshot
+	, ((modMask .|. mod1Mask, xK_t), spawn "scrot -e 'mv $f ~/Pictures/Screenshots'")
 	-- Volume control
 	, ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
 	, ((0, 0x1008ff11), spawn "amixer -q set Master 2- unmute")
