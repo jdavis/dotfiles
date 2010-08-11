@@ -1,7 +1,9 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Config.Xfce
 import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Cursor
 import System.IO
 import System.Exit
 import qualified Data.Map as M
@@ -10,9 +12,10 @@ import qualified XMonad.StackSet as W
 -- The Main Man of the Hood --
 main = do
 	h <- spawnPipe "xmobar"
-	xmonad $ defaultConfig
+	xmonad $ xfceConfig
 		{ manageHook = manageHook'
 		, layoutHook = layoutHook'
+		, startupHook = startupHook'
 		, logHook = logHook' h
 		, terminal = terminal'
 		, focusedBorderColor = focusedBorderColor'
@@ -24,19 +27,28 @@ main = do
 		, keys = keys'
 		}
 
+-- Paul Graham would be so proud
+startupHook' :: X ()
+startupHook' = do
+	setDefaultCursor xC_left_ptr
+	spawn "sleep 1 && killall xfdesktop || xfdesktop &"
+
 -- Gotta manage the pirates, Peter Pan
-manageHook' :: ManageHook
-manageHook' = composeAll
+customManageHook :: ManageHook
+customManageHook = composeAll
 	[ className =? "MPlayer"        --> doFloat
 	, className =? "Gimp"           --> doFloat
 	, className =? "Skype"           --> doFloat
 	, className =? "Tk"		--> doFloat
 	, className =? "Eclipse"	--> doShift "5:java"
 	]
+manageHook' = customManageHook <+> manageHook xfceConfig
 
 logHook' :: Handle -> X ()
 logHook' h = dynamicLogWithPP $ customPP { ppOutput = hPutStrLn h }
 
+-- My layouts, default for now
+customLayout = avoidStruts $ layoutHook xfceConfig
 layoutHook' = customLayout
 
 -- Let's pretty everything up
@@ -63,10 +75,11 @@ workspaces' = ["1:web", "2:code", "3:chat", "4:docs", "5:java", "6:notes"] ++ ma
 terminal' :: String
 terminal' = "urxvt"
 
--- My layouts, default for now
-customLayout = avoidStruts $ layoutHook defaultConfig
-
 -- Set up my keybindings
+
+modMask' :: KeyMask
+modMask' = mod4Mask
+
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	[ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 	, ((modMask,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
@@ -110,7 +123,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	-- Toggle my SOCKS proxy
 	, ((modMask .|. mod1Mask, xK_s), spawn "sh ~/Scripts/socks.sh -c")
 	-- Show the Power Panel
-	, ((modMask .|. mod1Mask, xK_Delete), spawn "python ~/Programming/Python/powerPanel.py")
+	, ((modMask .|. mod1Mask, xK_Delete), spawn "xfce4-session-logout")
 	-- Lock the Screen
 	, ((modMask .|. mod1Mask, xK_l), spawn "xscreensaver-command -lock")
 	-- Screenshot
@@ -126,5 +139,3 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	[ ((m .|. modMask, k), windows $ f i) | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
 	, (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
 	]
-modMask' :: KeyMask
-modMask' = mod4Mask

@@ -1,6 +1,5 @@
 Config { font = "xft:monaco-8" , bgColor = "#000000" , fgColor = "#ececec"
 	, position = Top
-	, lowerOnStart = True 
 	, commands =
 		[ Run Cpu ["-L","3","-H","50","--normal","#429942","--high","#A36666"] 20
 		, Run CoreTemp ["-t","Core0: <core0> Core1: <core1>C","-L","40","-H","60","-l","lightblue","-n","gray90","-h","red"] 50

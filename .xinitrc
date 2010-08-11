@@ -10,13 +10,13 @@
 # ...or the Window Manager of your choice
 
 # Set my Wallpaper
-feh --bg-scale ~/Pictures/Wallpapers/Snow.jpg &
+#feh --bg-scale ~/Pictures/Wallpapers/Snow.jpg &
 
 # Make the cursor pretty
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name left_ptr &
 
 # Start up the Screensaver
-xscreensaver -no-splash &
+#xscreensaver -no-splash &
 
 # Disable the trackpad when my clumsy hands are typing
 syndaemon -K -i 1 -d
