@@ -43,11 +43,6 @@ bindkey  forward-char
 bindkey  backward-char
 bindkey  history-incremental-search-backward
 
-=======
-bindkey  history-incremental-search-backword
->>>>>>> 3c1a003cafd01def3bc9eecab99f162838e054ab
-
-
 # VI Command Prompt
 VIMODE="ins"
 function zle-line-init zle-keymap-select {
