@@ -1,5 +1,4 @@
 # Alias
-alias ls='ls --color=auto'
 alias rm='rm -i'
 
 # OS X Aliases
@@ -46,10 +45,14 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	export PATH=$PATH:~/bin/jsl
 	#  Django
 	export PATH=$PATH:/Library/Python/2.5/site-packages/django/bin
+	#  MacPorts
+	export PATH=$PATH:/opt/local/bin
 fi
 
 # Arch Aliases
 if [[ $HOME == '/home/davis' ]]; then
+	alias ls='ls --color=auto'
+
 	# Monitors
 	alias vga='xrandr --output CRT1 --same-as LCD --auto'
 	alias dual-monitors='xrandr --output CRT1 --right-of LCD --mode 1660x1050'
