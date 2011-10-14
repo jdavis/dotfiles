@@ -132,6 +132,10 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 	, ((0, 0x1008ff12), spawn "amixer -q set Master toggle")
 	, ((0, 0x1008ff11), spawn "amixer -q set Master 2- unmute")
 	, ((0, 0x1008ff13), spawn "amixer -q set Master 2+ unmute")
+	-- MPD Controls
+	, ((0, 0x1008ff14), spawn "mpc -q toggle || mpc -q play")
+	, ((0, 0x1008ff16), spawn "mpc -q prev")
+	, ((0, 0x1008ff17), spawn "mpc -q next")
 	]
 	++
 	-- mod-[1..9] %! Switch to workspace N
