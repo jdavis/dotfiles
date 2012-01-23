@@ -1,7 +1,8 @@
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
-	startx
-	logout
+	if hash startx 2>& /dev/null; then
+		startx && logout
+	fi
 fi
 
 # This fixes using SSH in urxvt
