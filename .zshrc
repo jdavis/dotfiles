@@ -62,6 +62,35 @@ export PYTHONSTARTUP=~/.pyrc
 # Functions
 #
 
+# Check for updates to the GitHub dotfiles repo
+function update-dotfiles() {
+	builtin cd ~/
+	echo Checking for existing Git repository...
+	if [[ -d "./.git" ]] ; then
+		echo Git repository found, pulling...
+		git pull
+	else
+		echo No repository found. Cloning from Github...
+		# Clone with the PID as a sort of unique identifier.
+		# Not completely safe proof but the odds are small
+		git clone git@github.com:jdavis/dotfiles.git dotfiles$$
+		echo Copying files...
+		cp -a dotfiles$$/ .
+		echo Deleting files...
+		rm -rf dotfiles$$/
+
+		# What can I say, I'm a tricky one.
+		echo -n "Enter username: "
+		read username
+		echo "Enter IP: "
+		read ip
+		echo "Enter port: "
+		read port
+		# Everything must remain a secret...
+		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+	fi
+}
+
 # Display Content of cd folder
 function cd() { builtin cd $* && ls; }
 
