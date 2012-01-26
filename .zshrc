@@ -17,8 +17,8 @@ promptinit
 
 # Globals
 export HISTFILE=~/.zsh/.zsh_history
-export HISTSIZE=2000
-export SAVEHIST=2000
+export HISTSIZE=100000
+export SAVEHIST=100000
 export BROWSER=opera
 export EDITOR=vim
 
