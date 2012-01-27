@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # My zsh files are all linked here. I put my general functions
 # and various info all here. It links in a .aliases file that
@@ -9,8 +8,6 @@
 
 # Updated Zsh secret: ...
 
-=======
->>>>>>> c2e96e0346390e06bc19b29e933a5d6717960892
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
 	if hash startx 2>& /dev/null; then
@@ -93,8 +90,8 @@ function update-dotfiles() {
 		git pull
 
 		while true; do
-			echo "Do you wish to update .zsh_secret"
-			read -p "Do you wish to install this program?" yn
+			echo -n "Do you wish to update .zsh_secret"
+			read yn
 			case $yn in
 				[Yy]* )
 					# What can I say, I'm a tricky one.
@@ -130,11 +127,7 @@ function update-dotfiles() {
 		echo -n "Enter port: "
 		read port
 		# Everything must remain a secret...
-<<<<<<< HEAD
 		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
-=======
-		scp -P $port $username@$ip:./.zsh/.zsh_secret ~/.zsh/
->>>>>>> c2e96e0346390e06bc19b29e933a5d6717960892
 	fi
 }
 
