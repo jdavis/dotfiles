@@ -1,3 +1,13 @@
+#
+# My zsh files are all linked here. I put my general functions
+# and various info all here. It links in a .aliases file that
+# contains all of the aliases across different computers. It
+# also links in a secret file that contains private information
+# that I would not like on GitHub
+#
+
+# Updated Zsh secret: .
+
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
 	if hash startx 2>& /dev/null; then
