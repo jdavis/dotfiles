@@ -6,7 +6,7 @@
 # that I would not like on GitHub
 #
 
-# Updated Zsh secret: ...
+# Updated Zsh secret: ....
 
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
