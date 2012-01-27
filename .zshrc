@@ -6,7 +6,7 @@
 # that I would not like on GitHub
 #
 
-# Updated Zsh secret: ..
+# Updated Zsh secret: ...
 
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
@@ -72,6 +72,15 @@ export PYTHONSTARTUP=~/.pyrc
 # Functions
 #
 
+		# What can I say, I'm a tricky one.
+		echo -n "Enter username: "
+		read username
+		echo -n "Enter IP: "
+		read ip
+		echo -n "Enter port: "
+		read port
+		# Everything must remain a secret...
+		echo scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
 # Check for updates to the GitHub dotfiles repo
 function update-dotfiles() {
 	builtin cd ~/
@@ -117,7 +126,7 @@ function update-dotfiles() {
 		echo -n "Enter port: "
 		read port
 		# Everything must remain a secret...
-		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+		echo scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
 	fi
 }
 
