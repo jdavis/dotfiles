@@ -62,6 +62,24 @@ export PYTHONSTARTUP=~/.pyrc
 # Functions
 #
 
+		while true; do
+			echo -n "Do you wish to update .zsh_secret?: "
+			read yn
+			case $yn in
+				[Yy]* )
+					echo -n "Enter username: "
+					read username
+					echo -n "Enter IP: "
+					read ip
+					echo -n "Enter port: "
+					read port
+					# Everything must remain a secret...
+					scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+					break;;
+				[Nn]* ) break;;
+				* ) echo -n "Please answer yes or no.";;
+			esac
+		done
 # Check for updates to the GitHub dotfiles repo
 function update-dotfiles() {
 	builtin cd ~/
@@ -69,6 +87,26 @@ function update-dotfiles() {
 	if [[ -d "./.git" ]] ; then
 		echo Git repository found, pulling...
 		git pull
+
+		while true; do
+			echo "Do you wish to update .zsh_secret"
+			read -p "Do you wish to install this program?" yn
+			case $yn in
+				[Yy]* )
+					echo -n "Enter username: "
+					read username
+					echo -n "Enter IP: "
+					read ip
+					echo -n "Enter port: "
+					read port
+					# Everything must remain a secret...
+					scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+					break;;
+				[Nn]* ) exit;;
+				* ) echo -n "Please answer yes or no.";;
+			esac
+		done
+
 	else
 		echo No repository found. Cloning from Github...
 		# Clone with the PID as a sort of unique identifier.
@@ -82,9 +120,9 @@ function update-dotfiles() {
 		# What can I say, I'm a tricky one.
 		echo -n "Enter username: "
 		read username
-		echo "Enter IP: "
+		echo -n "Enter IP: "
 		read ip
-		echo "Enter port: "
+		echo -n "Enter port: "
 		read port
 		# Everything must remain a secret...
 		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
