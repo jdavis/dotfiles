@@ -1,13 +1,3 @@
-#
-# My zsh files are all linked here. I put my general functions
-# and various info all here. It links in a .aliases file that
-# contains all of the aliases across different computers. It
-# also links in a secret file that contains private information
-# that I would not like on GitHub
-#
-
-# Updated Zsh secret: ..
-
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
 	if hash startx 2>& /dev/null; then
@@ -81,10 +71,11 @@ function update-dotfiles() {
 		git pull
 
 		while true; do
-			echo -n "Do you wish to update .zsh_secret?: "
-			read yn
+			echo "Do you wish to update .zsh_secret"
+			read -p "Do you wish to install this program?" yn
 			case $yn in
 				[Yy]* )
+					# What can I say, I'm a tricky one.
 					echo -n "Enter username: "
 					read username
 					echo -n "Enter IP: "
@@ -92,10 +83,10 @@ function update-dotfiles() {
 					echo -n "Enter port: "
 					read port
 					# Everything must remain a secret...
-					scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+					scp -P $port $username@$ip:./.zsh/.zsh_secret ~/.zsh/
 					break;;
-				[Nn]* ) break;;
-				* ) echo -n "Please answer yes or no.";;
+				[Nn]* ) exit;;
+				* ) echo "Please answer yes or no.";;
 			esac
 		done
 
@@ -117,7 +108,7 @@ function update-dotfiles() {
 		echo -n "Enter port: "
 		read port
 		# Everything must remain a secret...
-		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+		scp -P $port $username@$ip:./.zsh/.zsh_secret ~/.zsh/
 	fi
 }
 
