@@ -85,7 +85,7 @@ function update-dotfiles() {
 			read yn
 			case $yn in
 				[Yy]* )
-					update-secret()
+					update-secret
 					break;;
 				[Nn]* ) exit;;
 				* ) echo "Please answer yes or no.";;
@@ -102,12 +102,11 @@ function update-dotfiles() {
 		echo Deleting files...
 		rm -rf dotfiles$$/
 
-		update-secret()
+		update-secret
 	fi
 }
 
 function update-secret() {
-
 	# What can I say, I'm a tricky one.
 	echo -n "Enter username: "
 	read username
