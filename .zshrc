@@ -72,15 +72,6 @@ export PYTHONSTARTUP=~/.pyrc
 # Functions
 #
 
-		# What can I say, I'm a tricky one.
-		echo -n "Enter username: "
-		read username
-		echo -n "Enter IP: "
-		read ip
-		echo -n "Enter port: "
-		read port
-		# Everything must remain a secret...
-		echo scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
 # Check for updates to the GitHub dotfiles repo
 function update-dotfiles() {
 	builtin cd ~/
@@ -90,7 +81,7 @@ function update-dotfiles() {
 		git pull
 
 		while true; do
-			echo -n "Do you wish to update .zsh_secret"
+			echo -n "Do you wish to update .zsh_secret?: "
 			read yn
 			case $yn in
 				[Yy]* )
