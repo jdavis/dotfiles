@@ -85,15 +85,7 @@ function update-dotfiles() {
 			read yn
 			case $yn in
 				[Yy]* )
-					# What can I say, I'm a tricky one.
-					echo -n "Enter username: "
-					read username
-					echo -n "Enter IP: "
-					read ip
-					echo -n "Enter port: "
-					read port
-					# Everything must remain a secret...
-					scp -P $port $username@$ip:./.zsh/.zsh_secret ~/.zsh/
+					update-secret()
 					break;;
 				[Nn]* ) exit;;
 				* ) echo "Please answer yes or no.";;
@@ -110,16 +102,21 @@ function update-dotfiles() {
 		echo Deleting files...
 		rm -rf dotfiles$$/
 
-		# What can I say, I'm a tricky one.
-		echo -n "Enter username: "
-		read username
-		echo -n "Enter IP: "
-		read ip
-		echo -n "Enter port: "
-		read port
-		# Everything must remain a secret...
-		scp -P $port $username:$ip:./.zsh/.zsh_secret ~/.zsh/
+		update-secret()
 	fi
+}
+
+function update-secret() {
+
+	# What can I say, I'm a tricky one.
+	echo -n "Enter username: "
+	read username
+	echo -n "Enter IP: "
+	read ip
+	echo -n "Enter port: "
+	read port
+	# Everything must remain a secret...
+	scp -P $port $username@$ip:./.zsh/.zsh_secret ~/.zsh/
 }
 
 # Display Content of cd folder
