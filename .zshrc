@@ -87,7 +87,7 @@ function update-dotfiles() {
 				[Yy]* )
 					update-secret
 					break;;
-				[Nn]* ) exit;;
+				[Nn]* ) break;;
 				* ) echo "Please answer yes or no.";;
 			esac
 		done
