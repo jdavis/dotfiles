@@ -35,4 +35,4 @@
 #exec urxvt
 #exec xterm
 
-pytyle &
+exec pytyle &
