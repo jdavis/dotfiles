@@ -19,7 +19,7 @@
 #xscreensaver -no-splash &
 
 # Disable the trackpad when my clumsy hands are typing
-syndaemon -K -i 1 -d
+#syndaemon -K -i 1 -d
 
 # Get me keys right
 #setxkbmap -option terminate:ctrl_alt_bksp
@@ -29,8 +29,10 @@ syndaemon -K -i 1 -d
 #exec xmonad
 
 # I CHOOSE YOU XFCE!!
-exec ck-launch-session startxfce4
+#exec ck-launch-session startxfce4
 
 # Testing purposes
 #exec urxvt
 #exec xterm
+
+pytyle &
