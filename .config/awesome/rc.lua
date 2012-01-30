@@ -15,6 +15,9 @@ require("vicious")
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/blind-alien/theme.lua")
 
+-- Env variables
+home = os.getenv("HOME")
+
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
@@ -109,23 +112,37 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
+awe_menu = {
   { "manual", terminal .. " -e man awesome" },
   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
   { "restart", awesome.restart },
   { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({
+open_menu = {
+	{ "terminal", terminal},
+	{ "browser", "chromium"},
+	{ "files", "thunar"},
+}
+
+monitors_menu = {
+	{ "mirror", home .. "/Scripts/Arch/monitors.sh mirror"},
+	{ "dual (left)", home .. "/Scripts/Arch/monitors.sh dual-left"},
+	{ "dual (right)", home .. "/Scripts/Arch/monitors.sh dual-right"},
+	{ "off", home .. "/Scripts/Arch/monitors.sh off"},
+}
+
+awe_main_menu = awful.menu({
   items = {
-    { "awesome", myawesomemenu, beautiful.awesome_icon },
-    { "open terminal", terminal }
+    { "awesome", awe_menu, beautiful.awesome_icon },
+    { "open", open_menu },
+    { "monitors", monitors_menu },
   }
 })
 
 mylauncher = awful.widget.launcher({
   image = image(beautiful.awesome_icon),
-  menu = mymainmenu
+  menu = awe_main_menu
 })
 -- }}}
 
@@ -783,7 +800,7 @@ end
 
 
 -- {{{ Mouse bindings
-root.buttons(awful.util.table.join(awful.button({}, 3, function() mymainmenu:toggle() end),
+root.buttons(awful.util.table.join(awful.button({}, 3, function() awe_main_menu:toggle() end),
   awful.button({}, 4, awful.tag.viewnext),
   awful.button({}, 5, awful.tag.viewprev)))
 -- }}}
@@ -803,7 +820,7 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "Left", awful.tag.view
       awful.client.focus.byidx(-1)
       if client.focus then client.focus:raise() end
     end),
-  awful.key({ modkey, }, "w", function() mymainmenu:show({ keygrabber = true }) end),
+  awful.key({ modkey, }, "w", function() awe_main_menu:show({ keygrabber = true }) end),
 
   --Volume manipulation
   awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5+") end),

@@ -18,6 +18,9 @@ alias grr='git remote rm'
 alias gpu='git pull'
 alias gcl='git clone'
 
+#  Add the Scripts directory for all users
+export PATH=$PATH:~/Scripts
+
 # OS X Aliases
 if [[ $HOME == '/Users/Davis' ]]; then
 	# Hidden files
@@ -64,6 +67,9 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	export PATH=$PATH:/Library/Python/2.5/site-packages/django/bin
 	#  MacPorts
 	export PATH=$PATH:/opt/local/bin
+
+	#  Add the Scripts/Mac directory
+	export PATH=$PATH:~/Scripts/Mac
 fi
 
 # Arch Aliases
@@ -71,8 +77,9 @@ if [[ $HOME == '/home/davis' ]]; then
 	alias ls='ls --color=auto'
 
 	# Monitors
-	alias vga='xrandr --output CRT1 --same-as LCD --auto'
-	alias dual-monitors='xrandr --output CRT1 --right-of LCD --mode 1660x1050'
+	# Moved to a separate script in ~/Scripts
+	# alias vga='xrandr --output CRT1 --same-as LCD --auto'
+	# alias dual-monitors='xrandr --output CRT1 --right-of LCD --mode 1660x1050'
 
 	# Various Eclim
 	alias eclim='$ECLIM_ECLIPSE_HOME/eclipse'
@@ -100,4 +107,7 @@ if [[ $HOME == '/home/davis' ]]; then
 	# Source Extensions
 	alias -s hs=$EDITOR
 	alias -s c=$EDITOR
+
+	#  Add the Scripts/Arch directory
+	export PATH=$PATH:~/Scripts/Arch
 fi
