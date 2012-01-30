@@ -125,6 +125,14 @@ open_menu = {
 	{ "files", "thunar"},
 }
 
+system_menu = {
+	{ "log out", awesome.quit },
+	{ "suspend", "sudo pm-suspend"},
+	{ "hibernate", "sudo pm-hibernate"},
+	{ "reboot", "sudo reboot"},
+	{ "shut down", "sudo halt"},
+}
+
 monitors_menu = {
 	{ "mirror", home .. "/Scripts/Arch/monitors.sh mirror"},
 	{ "dual (left)", home .. "/Scripts/Arch/monitors.sh dual-left"},
@@ -137,6 +145,7 @@ awe_main_menu = awful.menu({
     { "awesome", awe_menu, beautiful.awesome_icon },
     { "open", open_menu },
     { "monitors", monitors_menu },
+    { "system", system_menu },
   }
 })
 
@@ -561,7 +570,7 @@ end
 
 
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" }, "%H:%M")
+mytextclock = awful.widget.textclock({ align = "right" }, "%A %b %d at %I:%m%P")
 awful.widget.layout.margins[mytextclock] = { top = -1 }
 
 -- Create a systray
