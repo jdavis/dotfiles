@@ -37,6 +37,7 @@ case $1 in
 		xrandr --output VGA-0 --below LVDS --auto
 		echo Dualing below setup;;
 	"off")
+		xrandr --output LVDS --auto
 		echo ;;
 	*)
 		echo Option not supported;;

@@ -1,0 +1,13 @@
+bind d remove
+bind D clear
+bind a add
+bind A add-album
+bind N create
+bind S save
+bind tab next-window
+bind 3 change-window windowlist
+bind L change-window windowlist
+bind i info
+bind p activate-list
+bind z play-album
+bind x play-artist

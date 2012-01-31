@@ -2,6 +2,8 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
+-- For the Volume widget
+require("volume")
 -- Theme handling library
 require("beautiful")
 -- Notification library
@@ -52,7 +54,7 @@ widthMpd = 420 --Width of MPD widget
 -- Widget update intervals in seconds
 updateCpu = 5
 updatePac = 1801
-updateMpd = 7
+updateMpd = 1
 updateWifi = 7
 updateNet = 1
 updateBat = 31
@@ -673,6 +675,8 @@ for s = 1, screencount do
       spacer,
       mytextclock,
       space,
+	  volume_widget,
+	  spacer,
       mylayoutbox[s],
       spacer,
       s == 1 and mysystray or nil,
@@ -831,9 +835,15 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "Left", awful.tag.view
     end),
   awful.key({ modkey, }, "w", function() awe_main_menu:show({ keygrabber = true }) end),
 
-  --Volume manipulation
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer set Master 5+") end),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer set Master 5-") end),
+  -- Volume manipulation
+  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q set Master 5+") end),
+  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q set Master 5-") end),
+  awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -q set Master toggle") end),
+
+  -- MPD manipulation
+  awful.key({}, "XF86AudioPlay", function() awful.util.spawn("mpc -q toggle") end),
+  awful.key({}, "XF86AudioNext", function() awful.util.spawn("mpc -q next") end),
+  awful.key({}, "XF86AudioPrev", function() awful.util.spawn("mpc -q prev") end),
 
   -- Layout manipulation
   awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end),
