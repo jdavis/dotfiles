@@ -102,7 +102,7 @@ set makeprg=jsl\ -nologo\ -nofilelisting\ -nosummary\ -nocontext\ -process\ %
 
 "Completion
 ino <BS> <C-R>=DeleteEmpty()<CR><BS>
-ino  <C-R>=IndentCurly()<CR><RETURN>
+"ino  <C-R>=IndentCurly()<CR><RETURN>
 
 function! DeleteEmpty()
 	let str = strpart(getline("."), col(".") - 2, 2)

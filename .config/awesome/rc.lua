@@ -125,6 +125,7 @@ open_menu = {
 	{ "terminal", terminal},
 	{ "browser", "chromium"},
 	{ "files", "thunar"},
+	{ "skype", "skype"},
 }
 
 system_menu = {

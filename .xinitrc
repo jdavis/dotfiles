@@ -37,7 +37,7 @@ dropboxd &
 # Go go gadget, XMonad!
 #exec urxvt
 #exec ck-launch-session xmonad
-exec ck-launch-session awesome
+exec ck-launch-session dbus-launch awesome
 
 # I CHOOSE YOU XFCE!!
 #exec ck-launch-session startxfce4

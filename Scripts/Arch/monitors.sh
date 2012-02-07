@@ -42,3 +42,6 @@ case $1 in
 	*)
 		echo Option not supported;;
 esac
+
+# Set the beep off again, just in case
+xset b off
