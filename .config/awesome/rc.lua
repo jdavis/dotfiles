@@ -573,7 +573,7 @@ end
 
 
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" }, "%A %b %d at %I:%m%P")
+mytextclock = awful.widget.textclock({ align = "right" }, "%A %b %d at %I:%M%P")
 awful.widget.layout.margins[mytextclock] = { top = -1 }
 
 -- Create a systray
