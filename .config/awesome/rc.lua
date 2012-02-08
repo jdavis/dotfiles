@@ -837,8 +837,8 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "Left", awful.tag.view
   awful.key({ modkey, }, "w", function() awe_main_menu:show({ keygrabber = true }) end),
 
   -- Volume manipulation
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q set Master 5+") end),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q set Master 5-") end),
+  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q set Master 2+") end),
+  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q set Master 2-") end),
   awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -q set Master toggle") end),
 
   -- MPD manipulation
