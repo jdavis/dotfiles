@@ -159,3 +159,8 @@ function! QuoteDelim(char)
 		return a:char.a:char."\<Esc>i"
 	endif
 endf
+
+" This needs to be updated...
+" TODO: Update my freaking vimrc
+"
+let mapleader = ","
