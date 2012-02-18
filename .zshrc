@@ -110,7 +110,7 @@ function update-dotfiles() {
 function cd() { builtin cd $* && ls; }
 
 #Get IP
-function ip() { curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'; }
+function ip-addr() { curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g'; }
 
 # Display a random Slashdot, HTTP header, Futurama quote
 function futurama() {curl -Is slashdot.org | egrep ^X-(F|B) | cut -d - -f 2}
