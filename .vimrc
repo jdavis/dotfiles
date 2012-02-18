@@ -102,7 +102,7 @@ set makeprg=jsl\ -nologo\ -nofilelisting\ -nosummary\ -nocontext\ -process\ %
 
 "Completion
 ino <BS> <C-R>=DeleteEmpty()<CR><BS>
-ino  <C-R>=IndentCurly()<CR><RETURN>
+"ino  <C-R>=IndentCurly()<CR><RETURN>
 
 function! DeleteEmpty()
 	let str = strpart(getline("."), col(".") - 2, 2)
@@ -159,3 +159,8 @@ function! QuoteDelim(char)
 		return a:char.a:char."\<Esc>i"
 	endif
 endf
+
+" This needs to be updated...
+" TODO: Update my freaking vimrc
+"
+let mapleader = ","

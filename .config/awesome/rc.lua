@@ -42,7 +42,7 @@ useTemp = true
 cpuCores = 2 --Number of CPU Cores
 thermalZone = "coretemp.0" --Thermal Zone to read cpu temperature from (check vicious docu)
 thermalData = "core" --Data Source: "proc", "core" or "sys"
-netAdapter = "eth0" --Network adapter to monitor
+netAdapter = "wlan0" --Network adapter to monitor
 wifiAdapter = "wlan0" --Wifi adapter for wifi widget
 pacUpdate = "yaourt -Sy" --Command to update pacman cache
 pacUpgrade = "yaourt -Su" --Command to upgrade system
@@ -125,6 +125,7 @@ open_menu = {
 	{ "terminal", terminal},
 	{ "browser", "chromium"},
 	{ "files", "thunar"},
+	{ "skype", "skype"},
 }
 
 system_menu = {
@@ -572,7 +573,7 @@ end
 
 
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" }, "%A %b %d at %I:%m%P")
+mytextclock = awful.widget.textclock({ align = "right" }, "%A %b %d at %I:%M%P")
 awful.widget.layout.margins[mytextclock] = { top = -1 }
 
 -- Create a systray
@@ -836,8 +837,8 @@ globalkeys = awful.util.table.join(awful.key({ modkey, }, "Left", awful.tag.view
   awful.key({ modkey, }, "w", function() awe_main_menu:show({ keygrabber = true }) end),
 
   -- Volume manipulation
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q set Master 5+") end),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q set Master 5-") end),
+  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("amixer -q set Master 2+") end),
+  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("amixer -q set Master 2-") end),
   awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -q set Master toggle") end),
 
   -- MPD manipulation
