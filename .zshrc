@@ -142,7 +142,7 @@ extract() {
 #
 
 # OS X Configs
-if [[ $HOME == '/Users/Davis' ]]; then
+if [[ $HOME == '/Users/Davis' ]] || [[ $HOME == '/Users/davis' ]]; then
 	export PS1="%{$fg[cyan]%}[%{$fg[white]%} %n %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$fg[white]%} "
 	export RPROMPT="%{$fg[cyan]%}[%{$fg[white]%}${VIMODE}%{$fg[cyan]%}]%{$fg[white]%}"
 fi
