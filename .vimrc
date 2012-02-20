@@ -17,8 +17,8 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 " Theme
-"set background=dark
-colorscheme desert 
+set background=dark
+colorscheme moria 
 "set cul
 
 " Window Size
