@@ -42,7 +42,7 @@ set shiftwidth=4
 let mapleader = ","
 
 " Leader shortcuts
-nm ,b :NERDTree<cr>
+nm ,b :NERDTreeTabsToggle<cr>
 nm ,k k
 nm ,h h
 nm ,j j
