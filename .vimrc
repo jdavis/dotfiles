@@ -7,11 +7,14 @@ filetype plugin indent on
 "set guifont=Monaco:h11
 set showmatch
 set backspace=indent,eol,start
-"set vb
 set spl=en_us
 set ic scs
 set hlsearch
 set shm=I
+
+" Disable beeping and flashing.
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 " Theme
 "set background=dark
