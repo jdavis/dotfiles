@@ -54,12 +54,10 @@ nm ,n :split<cr>
 " Pathogen is a god.
 call pathogen#infect()
 
-" DelimitMate options
-let delimitMate_autoclose = 1
-let delimitMate_expand_cr = 1
-let delimitMate_balance_matchpairs = 1
-let delimitMate_matchpairs = "(:),{:},[:],<:>"
-au FileType html,php,xhtml,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
+" Autoclose options
+let g:AutoClosePairs = "() {} [] <> \" ' `"
+
+au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
 au FileType c set omnifunc=ccomplete#Complete
 au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
