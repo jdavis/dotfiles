@@ -3,6 +3,7 @@ set nocp
 set history=100
 set number
 syntax on
+filetype on
 filetype plugin indent on
 "set guifont=Monaco:h11
 set showmatch
