@@ -5,9 +5,9 @@
 #URxvt.boldFont: xft:cure:pixelsize=10
 #URxvt.boldFont: xft:Terminus:pixelsize=14
 #URxvt.font: xft:Bitstream Vera Sans Mono-8.5:pixelsize=12
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+#URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
 #URxvt.font: xft:Dina:pixelsize=12
-#URxvt.font: xft:Terminus:pixelsize=14
+URxvt.font: xft:Terminus:pixelsize=14
 
 !dzen2
 dzen2.font: xft:Monaco:pixelsize=8

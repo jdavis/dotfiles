@@ -22,19 +22,19 @@ xrandr --output VGA-0 --off
 
 case $1 in
 	"mirror")
-		xrandr --output VGA-0 --auto
+		xrandr --output VGA-0 --auto --output LVDS --auto
 		echo Mirroring setup;;
 	"dual-left")
-		xrandr --output VGA-0 --left-of LVDS --auto
+		xrandr --output VGA-0 --left-of LVDS --auto --output LVDS --auto
 		echo Dualing left setup;;
 	"dual-right")
-		xrandr --output VGA-0 --right-of LVDS --auto
+		xrandr --output VGA-0 --right-of LVDS --auto --output LVDS --auto
 		echo Dualing right setup;;
 	"dual-above")
-		xrandr --output VGA-0 --above LVDS --auto
+		xrandr --output VGA-0 --above LVDS --auto --output LVDS --auto
 		echo Dualing above setup;;
 	"dual-below")
-		xrandr --output VGA-0 --below LVDS --auto
+		xrandr --output VGA-0 --below LVDS --auto --output LVDS --auto
 		echo Dualing below setup;;
 	"off")
 		xrandr --output LVDS --auto
