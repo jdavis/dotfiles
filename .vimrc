@@ -68,6 +68,9 @@ let g:AutoClosePairs = "() {} [] \" ' `"
 
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
+" JSLint Plugin
+let g:JSLintHighlightErrorLine = 0
+
 au FileType c set omnifunc=ccomplete#Complete
 au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
 
