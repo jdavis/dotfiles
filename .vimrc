@@ -40,6 +40,8 @@ set autoindent
 set ts=4
 set shiftwidth=4
 
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
 
