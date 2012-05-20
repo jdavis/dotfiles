@@ -29,9 +29,10 @@ colorscheme moria
 " Better controls while in insert mode
 imap <C-F> <RIGHT>
 imap <C-B> <LEFT>
+imap <M-BS> <Esc>vBc
+" Only with Supertab installed
 imap <C-P> <UP>
 imap <C-N> <DOWN>
-imap <M-BS> <Esc>vBc
 
 " Indentation
 set smartindent
@@ -39,11 +40,12 @@ set autoindent
 set ts=4
 set shiftwidth=4
 
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
 
 " Leader shortcuts
-nm ,b :NERDTreeTabsToggle<cr>
 nm ,k k
 nm ,h h
 nm ,j j
@@ -51,14 +53,25 @@ nm ,l l
 nm ,T :tabnew<cr>
 nm ,N :vsplit<cr>
 nm ,n :split<cr>
+" Plugin mapping
+nm ,b :NERDTreeTabsToggle<cr>
+nm ,v :TagbarToggle<cr>
+
+" Taken from here: http://stackoverflow.com/questions/597687/changing-variable-names-in-vim
+" For global & local replace
+nnoremap ,r gd[{V%:s/<C-R>///gc<left><left><left>
+nnoremap ,R gD:%s/<C-R>///gc<left><left><left>
 
 " Pathogen is a god.
 call pathogen#infect()
 
 " Autoclose options
-let g:AutoClosePairs = "() {} [] <> \" ' `"
+let g:AutoClosePairs = "() {} [] \" ' `"
 
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
+
+" JSLint Plugin
+let g:JSLintHighlightErrorLine = 0
 
 au FileType c set omnifunc=ccomplete#Complete
 au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
