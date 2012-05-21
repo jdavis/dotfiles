@@ -148,7 +148,7 @@ if [[ $HOME == '/Users/Davis' ]] || [[ $HOME == '/Users/davis' ]]; then
 fi
 
 # Arch Configs
-if [[ $HOME == '/home/davis' ]]; then
+if [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
 	export PS1="%B%F{cyan}[%F{white} %n %F{cyan}] [%F{white}%~%F{cyan}] > %F{white}"
 	export RPROMPT="%B%F{cyan}[%F{white}${VIMODE}%F{cyan}]%F{white}"
 fi
