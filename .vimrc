@@ -1,17 +1,38 @@
 set nocp
-" General Settings
-set history=100
+" ^ As the help says 'Make vim behave in a more useful way"
+
+" The default 20 isn't nearly enough
+set history=1000
+
+" Show the numbers on the left of the screen
 set number
+
+" Pretty colors are fun, yayyy
 syntax on
+
+" Automatically detect the file based on the extension
 filetype on
+
+" Load the indent.vim file for the given filetype
 filetype plugin indent on
-"set guifont=Monaco:h11
+
+" Show the matching when doing a search
 set showmatch
+
+" Allows the backspace to delete indenting, end of lines, and over the start
+" of insert
 set backspace=indent,eol,start
+
+" Enabled spell checking for English
 set spl=en_us
+
+" Ignore case when doing a search
 set ic scs
 set hlsearch
 set shm=I
+
+" Show the current command at the bottom
+set showcmd
 
 " Disable beeping and flashing.
 set noerrorbells visualbell t_vb=
@@ -20,57 +41,54 @@ autocmd GUIEnter * set visualbell t_vb=
 " Theme
 set background=dark
 colorscheme moria 
-"set cul
 
-" Window Size
-"set lines=58
-"set columns=150
-
-" Better controls while in insert mode
+" Better controls while in insert mode by better I mean more like emacs,
+" hahaha
 imap <C-F> <RIGHT>
 imap <C-B> <LEFT>
 imap <M-BS> <Esc>vBc
-" Only with Supertab installed
 imap <C-P> <UP>
 imap <C-N> <DOWN>
 
-" Indentation
-set smartindent
-set autoindent
-set ts=4
+" Use smart indenting
+set si
+
+" Use autoindenting
+set ai
+
+" The tabstop look best at 4 spacing
+set tabstop=4
 set shiftwidth=4
 
+" Spacing is the chosen one when it comes to Python indentation
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
 
-" Leader shortcuts
-nm ,k k
-nm ,h h
-nm ,j j
-nm ,l l
+" Create a new tab with nicer shortcut
 nm ,T :tabnew<cr>
+
+" Split the window using some nice shortcuts
 nm ,N :vsplit<cr>
 nm ,n :split<cr>
-" Plugin mapping
+
+" Toggle a NERDTree
 nm ,b :NERDTreeTabsToggle<cr>
-nm ,v :TagbarToggle<cr>
 
 " Taken from here: http://stackoverflow.com/questions/597687/changing-variable-names-in-vim
 " For global & local replace
 nnoremap ,r gd[{V%:s/<C-R>///gc<left><left><left>
 nnoremap ,R gD:%s/<C-R>///gc<left><left><left>
 
-" Pathogen is a god.
+" Pathogen is a god among plugins
 call pathogen#infect()
 
-" Autoclose options
+" Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
-
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
-" JSLint Plugin
+" JSLint Plugin options
 let g:JSLintHighlightErrorLine = 0
 
 au FileType c set omnifunc=ccomplete#Complete
@@ -79,17 +97,9 @@ au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/Sh
 " flake8 Plugin
 autocmd BufWritePost *.py call Flake8()
 
-" Scheme
-"autocmd FileType scheme inoremap ( ()<LEFT>
-
 " Arduino
 au BufNewFile,BufRead *.pde setf arduino
 
-" Python
-autocmd FileType python nmap <F4> i#!/usr/bin/env python 
-au FileType python map <D-r> :!python %:p<CR>
-
-" Java
+" Java and Eclim options
 autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
 nn ,I :JavaImport<cr>
-
