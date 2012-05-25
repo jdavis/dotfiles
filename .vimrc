@@ -26,9 +26,11 @@ set backspace=indent,eol,start
 " Enabled spell checking for English
 set spl=en_us
 
-" Ignore case when doing a search
+" Ignore case when doing a search as well as highlight it
 set ic scs
 set hlsearch
+
+" Don't show any startup message
 set shm=I
 
 " Show the current command at the bottom
@@ -73,13 +75,11 @@ nm ,T :tabnew<cr>
 nm ,N :vsplit<cr>
 nm ,n :split<cr>
 
+" Smarter completion in C
+au FileType c set omnifunc=ccomplete#Complete
+
 " Toggle a NERDTree
 nm ,b :NERDTreeTabsToggle<cr>
-
-" Taken from here: http://stackoverflow.com/questions/597687/changing-variable-names-in-vim
-" For global & local replace
-nnoremap ,r gd[{V%:s/<C-R>///gc<left><left><left>
-nnoremap ,R gD:%s/<C-R>///gc<left><left><left>
 
 " Pathogen is a god among plugins
 call pathogen#infect()
@@ -91,9 +91,6 @@ au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 " JSLint Plugin options
 let g:JSLintHighlightErrorLine = 0
 
-au FileType c set omnifunc=ccomplete#Complete
-au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
-
 " flake8 Plugin
 autocmd BufWritePost *.py call Flake8()
 
@@ -103,3 +100,15 @@ au BufNewFile,BufRead *.pde setf arduino
 " Java and Eclim options
 autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
 nn ,I :JavaImport<cr>
+
+" Fugitive mapping
+nm ,gc :Gcommit<cr>
+nm ,gd :Gdiff<cr>
+nm ,gs :Gstatus<cr>
+nm ,gb :Gbrowse<cr>
+nm ,gg :Ggrep 
+nm ,gl :Glog<cr>
+nm ,gp :Git pull<cr>
+nm ,gP :Git push<cr>
+
+"au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
