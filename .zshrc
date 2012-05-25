@@ -29,7 +29,7 @@ promptinit
 export HISTFILE=~/.zsh/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
-export BROWSER=opera
+export BROWSER=chromium
 export EDITOR=vim
 
 # Completion
