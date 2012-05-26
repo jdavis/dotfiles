@@ -1,3 +1,9 @@
+# Some General Aliases
+
+alias ll='ls -l'
+alias la='ls -a'
+
+
 # I like to be safe...
 alias rm='rm -i'
 
