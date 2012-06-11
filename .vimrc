@@ -89,9 +89,6 @@ let g:AutoClosePairs = "() {} [] \" ' `"
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
 " JSLint Plugin options
-if exists('JSLintToggle')
-	call JSLintToggle()
-endif
 nm ,J :JSLintToggle<cr>
 let g:JSLintHighlightErrorLine = 0
 
