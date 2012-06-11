@@ -112,4 +112,5 @@ nm ,gl :Glog<cr>
 nm ,gp :Git pull<cr>
 nm ,gP :Git push<cr>
 
-"au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Programming/ShellScripts/deepThought.sh '%:p'<CR>
+" My own special flavoring to running programs
+au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Scripts/deepThought.sh '%:p'<CR>

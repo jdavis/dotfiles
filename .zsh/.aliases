@@ -56,7 +56,7 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	# Normal Bin
 	export PATH=$PATH:~/bin
 	# MIT-Scheme
-	export MITSCHEME_LIBRARY_PATH=~/bin/scheme/lib/mit-scheme
+	export MITSCHEME_LIBRARY_PATH=/usr/local/lib/mit-scheme-c/
 	# For Scheme
 	export PATH=$PATH:~/bin/scheme/bin
 	# Nmap
