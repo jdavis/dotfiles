@@ -8,20 +8,18 @@ alias la='ls -a'
 alias rm='rm -i'
 
 # Some Git alias
-# Thank you, Peteris: http://www.catonmat.net/blog/git-aliases/
+# Based off of Peteris: http://www.catonmat.net/blog/git-aliases/
+# But customized for ME!
+alias gc='git commit'
 alias ga='git add'
-alias gp='git push'
+alias gP='git push'
+alias gp='git pull'
 alias gl='git log'
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gm='git commit -m'
-alias gma='git commit -am'
 alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
+alias gch='git checkout'
 alias gcl='git clone'
 
 #  Add the Scripts directory for all users
@@ -116,4 +114,9 @@ if [[ $HOME == '/home/davis' ]]; then
 
 	#  Add the Scripts/Arch directory
 	export PATH=$PATH:~/Scripts/Arch
+fi
+
+# Digi Work Aliases
+if [[ $HOME == '/home/jdavis' ]]; then
+	alias digi='digicli'
 fi
