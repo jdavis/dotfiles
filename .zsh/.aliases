@@ -10,18 +10,19 @@ alias rm='rm -i'
 # Some Git alias
 # Based off of Peteris: http://www.catonmat.net/blog/git-aliases/
 # But customized for ME!
-alias gc='git commit'
-alias ga='git add'
+alias g='git'
 alias gP='git push'
-alias gp='git pull'
-alias gl='git log'
-alias gh='git help'
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
+alias ga='git add'
 alias gb='git branch'
+alias gc='git commit'
 alias gch='git checkout'
 alias gcl='git clone'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gh='git help'
+alias gl='git log'
+alias gp='git pull'
+alias gs='git status'
 
 #  Add the Scripts directory for all users
 export PATH=$PATH:~/Scripts
