@@ -60,10 +60,15 @@ set ai
 
 " The tabstop look best at 4 spacing
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
+" I have been converted to the dark side, I will use spaces to indent code
+" from here on out
+set expandtab
+
 " Spacing is the chosen one when it comes to Python indentation
-autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+"autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
