@@ -119,3 +119,15 @@ nm ,gP :Git push<cr>
 
 " My own special flavoring to running programs
 au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Scripts/deepThought.sh '%:p'<CR>
+
+" Custom Functions and mapping
+
+fu! PasteToggle()
+    if &paste
+        set nopaste
+    else
+        set paste
+    endif
+endfu
+
+nm ,P :cal PasteToggle()<cr>
