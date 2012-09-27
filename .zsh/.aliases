@@ -52,6 +52,9 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	# Path Additions
 	# It makes adding and removing a lot easier
 	#
+    
+    # Prefix /usr/local/bin
+    export PATH=/usr/local/git/bin:$PATH
 	
 	# Normal Bin
 	export PATH=$PATH:~/bin
