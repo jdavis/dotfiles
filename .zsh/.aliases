@@ -57,7 +57,7 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	# It makes adding and removing a lot easier
 	#
     
-    # Prefix /usr/local/bin
+    # Prefix /usr/local/git/bin for git
     export PATH=/usr/local/git/bin:$PATH
 	
 	# Normal Bin
@@ -80,9 +80,10 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	export PATH=$PATH:/Library/Python/2.5/site-packages/django/bin
 	#  MacPorts
 	export PATH=$PATH:/opt/local/bin
-
 	#  Add the Scripts/Mac directory
 	export PATH=$PATH:~/Scripts/Mac
+    # Add all npm packages
+    export PATH=$PATH:/usr/local/share/npm/bin
 fi
 
 # Arch Aliases
