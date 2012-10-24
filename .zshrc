@@ -67,6 +67,7 @@ zle -N zle-keymap-select
 
 # Python environment variables
 export PYTHONSTARTUP=~/.pyrc
+export PYTHONDONTWRITEBYTECODE=x
 
 #
 # Functions
