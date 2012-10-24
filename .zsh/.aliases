@@ -2,7 +2,7 @@
 
 alias ll='ls -l'
 alias la='ls -a'
-
+alias back='cd -'
 
 # I like to be safe...
 alias rm='rm -i'
