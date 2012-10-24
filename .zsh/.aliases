@@ -29,6 +29,11 @@ alias grf='git reflog'
 alias gs='git status'
 alias gst='git stash'
 
+# Global Aliases
+alias -g L=' | less'
+alias -g T=' | tail -20'
+alias -g NULL=' > /dev/null 2>&1'
+
 #  Add the Scripts directory for all users
 export PATH=$PATH:~/Scripts
 
