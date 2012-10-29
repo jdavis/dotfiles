@@ -6,20 +6,19 @@
 # that I would not like on GitHub
 #
 
-# Updated Zsh secret: ....
-
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
-	if hash startx 2>& /dev/null; then
-		startx && logout
-	fi
+    if hash startx 2>& /dev/null; then
+        startx && logout
+    fi
 fi
 
 # This fixes using SSH in urxvt
 if [[ $TERM == "rxvt-unicode" ]] ; then
-    	export TERM="xterm"
+    export TERM="xterm"
 fi
 
+# Improve the prompt
 autoload -U compinit colors promptinit
 compinit
 colors
@@ -32,7 +31,7 @@ export SAVEHIST=100000
 export BROWSER=chromium
 export EDITOR=vim
 
-# Completion
+# Improve the default completion
 setopt autocd
 setopt correctall
 setopt APPEND_HISTORY
@@ -57,10 +56,10 @@ bindkey  history-incremental-search-backward
 # VI Command Prompt
 VIMODE="ins"
 function zle-line-init zle-keymap-select {
-	VIMODE="${${KEYMAP/vicmd/cmd}/(main|viins)/ins}"
-	# Cyan
-	RPROMPT="%B%F{cyan}[%F{white}${VIMODE}%F{cyan}]%F{white}"
-	zle reset-prompt
+    VIMODE="${${KEYMAP/vicmd/cmd}/(main|viins)/ins}"
+    # Cyan
+    RPROMPT="%B%F{cyan}[%F{white}${VIMODE}%F{cyan}]%F{white}"
+    zle reset-prompt
 }
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -74,36 +73,36 @@ export PYTHONSTARTUP=~/.pyrc
 
 # Check for updates to the GitHub dotfiles repo
 function update-dotfiles() {
-	builtin cd ~/
-	echo Checking for existing Git repository...
-	if [[ -d "./.git" ]] ; then
-		echo Git repository found, pulling...
-		git pull
+    builtin cd ~/
+    echo Checking for existing Git repository...
+    if [[ -d "./.git" ]] ; then
+        echo Git repository found, pulling...
+        git pull
 
-		while true; do
-			echo -n "Do you wish to update .zsh_secret?: "
-			read yn
-			case $yn in
-				[Yy]* )
-					update-secret
-					break;;
-				[Nn]* ) break;;
-				* ) echo "Please answer yes or no.";;
-			esac
-		done
+        while true; do
+            echo -n "Do you wish to update .zsh_secret?: "
+            read yn
+            case $yn in
+                [Yy]* )
+                    update-secret
+                    break;;
+                [Nn]* ) break;;
+                * ) echo "Please answer yes or no.";;
+            esac
+        done
 
-	else
-		echo No repository found. Cloning from Github...
-		# Clone with the PID as a sort of unique identifier.
-		# Not completely safe proof but the odds are small
-		git clone git@github.com:jdavis/dotfiles.git dotfiles$$
-		echo Copying files...
-		cp -a dotfiles$$/ .
-		echo Deleting files...
-		rm -rf dotfiles$$/
+    else
+        echo No repository found. Cloning from Github...
+        # Clone with the PID as a sort of unique identifier.
+        # Not completely safe proof but the odds are small
+        git clone git@github.com:jdavis/dotfiles.git dotfiles$$
+        echo Copying files...
+        cp -a dotfiles$$/ .
+        echo Deleting files...
+        rm -rf dotfiles$$/
 
-		update-secret
-	fi
+        update-secret
+    fi
 }
 
 # Display Content of cd folder
@@ -116,25 +115,25 @@ function ip-addr() { curl -s http://checkip.dyndns.org | sed 's/[a-zA-Z<>/ :]//g
 function futurama() {curl -Is slashdot.org | egrep ^X-(F|B) | cut -d - -f 2}
 
 # uncompress depending on extension...
-extract() {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)   tar xvjf $1        ;;
-			*.tar.gz)    tar xvzf $1     ;;
-			*.bz2)       bunzip2 $1       ;;
-			*.rar)       unrar x $1     ;;
-			*.gz)        gunzip $1     ;;
-			*.tar)       tar xvf $1        ;;
-			*.tbz2)      tar xvjf $1      ;;
-			*.tgz)       tar xvzf $1       ;;
-			*.zip)       unzip $1     ;;
-			*.Z)         uncompress $1  ;;
-			*.7z)        7z x $1    ;;
-			*)           echo "'$1' cannot be extracted via >extract<" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
+function extract() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xvjf $1        ;;
+            *.tar.gz)    tar xvzf $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       unrar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xvf $1        ;;
+            *.tbz2)      tar xvjf $1      ;;
+            *.tgz)       tar xvzf $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via >extract<" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 #
@@ -143,22 +142,22 @@ extract() {
 
 # OS X Configs
 if [[ $HOME == '/Users/Davis' ]] || [[ $HOME == '/Users/davis' ]]; then
-	export PS1="%{$fg[cyan]%}[%{$fg[white]%} %n %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$fg[white]%} "
-	export RPROMPT="%{$fg[cyan]%}[%{$fg[white]%}${VIMODE}%{$fg[cyan]%}]%{$fg[white]%}"
+    export PS1="%{$fg[cyan]%}[%{$fg[white]%} %n %{$fg[cyan]%}] [%{$fg[white]%}%~%{$fg[cyan]%}] >%{$fg[white]%} "
+    export RPROMPT="%{$fg[cyan]%}[%{$fg[white]%}${VIMODE}%{$fg[cyan]%}]%{$fg[white]%}"
 fi
 
 # Arch Configs
 if [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
-	export PS1="%B%F{cyan}[%F{white} %n %F{cyan}] [%F{white}%~%F{cyan}] > %F{white}"
-	export RPROMPT="%B%F{cyan}[%F{white}${VIMODE}%F{cyan}]%F{white}"
+    export PS1="%B%F{cyan}[%F{white} %n %F{cyan}] [%F{white}%~%F{cyan}] > %F{white}"
+    export RPROMPT="%B%F{cyan}[%F{white}${VIMODE}%F{cyan}]%F{white}"
 fi
 
 # Load aliases
 if [[ -f $HOME/.zsh/.aliases ]]; then
-	source $HOME/.zsh/.aliases
+    source $HOME/.zsh/.aliases
 fi
 
 # Load private things
 if [[ -f $HOME/.zsh/.zsh_secret ]]; then
-	source $HOME/.zsh/.zsh_secret
+    source $HOME/.zsh/.zsh_secret
 fi
