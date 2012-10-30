@@ -36,8 +36,15 @@ ZSH=$HOME/.oh-my-zsh
 # Select a theme, see, $ZSH/themes for more
 ZSH_THEME='jdavis'
 
-# List of plugins
+# Plugins for all environments
 plugins=(git)
+
+# OS specific plugins
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    plugins+=(brew)
+elif [[ $CURRENT_OS == 'Linux' ]]; then
+    plugins+=()
+fi
 
 # Launch oh-my-zsh
 source $ZSH/oh-my-zsh.sh
