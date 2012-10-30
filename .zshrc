@@ -2,6 +2,10 @@
 # Global fixes
 #
 
+# For sudo-ing aliases
+# https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
+alias sudo='sudo '
+
 # Start X at login for Arch boxes
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
     if hash startx 2>& /dev/null; then
