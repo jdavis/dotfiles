@@ -63,6 +63,11 @@ set shiftwidth=4
 " from here on out
 set expandtab
 
+" Turn on persistent undo
+" Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
+set undodir=~/.vim/undo
+set undofile
+
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
 
