@@ -37,11 +37,11 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='jdavis'
 
 # Plugins for all environments
-plugins=(git)
+plugins=(git node npm python pip)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    plugins+=(brew)
+    plugins+=(brew gem)
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
 fi
