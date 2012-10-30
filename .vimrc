@@ -74,7 +74,7 @@ set expandtab
 let mapleader = ","
 
 " Create a new tab with nicer shortcut
-nm ,T :tabnew<cr>
+nm ,t :tabnew<cr>
 
 " Split the window using some nice shortcuts
 nm ,N :vsplit<cr>
@@ -85,6 +85,9 @@ au FileType c set omnifunc=ccomplete#Complete
 
 " Toggle a NERDTree
 nm ,b :NERDTreeTabsToggle<cr>
+
+" Show CommandT
+nn ,T :CommandT<cr>
 
 " Pathogen is a god among plugins
 call pathogen#infect()
