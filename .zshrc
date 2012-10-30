@@ -10,8 +10,8 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
 fi
 
 # This fixes using SSH in urxvt
-if [[ $TERM == "rxvt-unicode" ]] ; then
-    export TERM="xterm"
+if [[ $TERM == 'rxvt-unicode' ]] ; then
+    export TERM='xterm'
 fi
 
 #
@@ -34,7 +34,7 @@ fi
 ZSH=$HOME/.oh-my-zsh
 
 # Select a theme, see, $ZSH/themes for more
-ZSH_THEME="robbyrussell"
+ZSH_THEME='jdavis'
 
 # List of plugins
 plugins=(git)
