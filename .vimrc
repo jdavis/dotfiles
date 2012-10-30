@@ -71,11 +71,11 @@ let mapleader = ","
 "
 
 " Create a new tab with nicer shortcut
-nm ,t :tabnew<cr>
+nm <leader>t :tabnew<cr>
 
 " Split the window using some nice shortcuts
-nm ,N :vsplit<cr>
-nm ,n :split<cr>
+nm <leader>N :vsplit<cr>
+nm <leader>n :split<cr>
 
 " Better controls while in insert mode by better I mean more like emacs,
 " hahaha
@@ -121,7 +121,7 @@ endfu
 "
 
 " Bind PasteToggle to something quick and easy
-nm ,P :cal PasteToggle()<cr>
+nm <leader>P :cal PasteToggle()<cr>
 
 "
 " Bundle Settings/Bindings
@@ -132,10 +132,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Toggle a NERDTree
-nm ,b :NERDTreeTabsToggle<cr>
+nm <leader>b :NERDTreeTabsToggle<cr>
 
 " Show CommandT
-nn ,T :CommandT<cr>
+nn <leader>T :CommandT<cr>
 
 " Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
@@ -152,21 +152,21 @@ autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
 nn ,I :JavaImport<cr>
 
 " Fugitive mapping
-nm ,gc :Gcommit<cr>
-nm ,gd :Gdiff<cr>
-nm ,gs :Gstatus<cr>
-nm ,gb :Gbrowse<cr>
-nm ,gg :Ggrep
-nm ,gl :Glog<cr>
-nm ,gp :Git pull<cr>
-nm ,gP :Git push<cr>
+nm <leader>gc :Gcommit<cr>
+nm <leader>gd :Gdiff<cr>
+nm <leader>gs :Gstatus<cr>
+nm <leader>gb :Gbrowse<cr>
+nm <leader>gg :Ggrep
+nm <leader>gl :Glog<cr>
+nm <leader>gp :Git pull<cr>
+nm <leader>gP :Git push<cr>
 
 " Vundle mapping
-nm ,vl :BundleList<cr>
-nm ,vi :BundleInstall<cr>
-nm ,vI :BundleInstall!<cr>
-nm ,vc :BundleClean<cr>
-nm ,vC :BundleClean!<cr>
+nm <leader>vl :BundleList<cr>
+nm <leader>vi :BundleInstall<cr>
+nm <leader>vI :BundleInstall!<cr>
+nm <leader>vc :BundleClean<cr>
+nm <leader>vC :BundleClean!<cr>
 
 "
 " Vundle Bundles
