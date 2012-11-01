@@ -139,8 +139,8 @@ call vundle#rc()
 " Toggle a NERDTree
 nm <leader>b :NERDTreeTabsToggle<cr>
 
-" Show CommandT
-nn <leader>T :CommandT<cr>
+" Show CtrlP
+nn <leader>p :CtrlP<cr>
 
 " Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
@@ -205,16 +205,16 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'scrooloose/syntastic'
 
 " For fuzzyfinding
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 
 " Better JavaScript support
 Bundle 'pangloss/vim-javascript'
 
-" For JavaScript checking
-Bundle 'hallettj/jslint.vim'
-
 " Vim and Git, sayyyy whatttt
 Bundle 'tpope/vim-fugitive'
+
+" Easily surround things
+Bundle 'tpope/vim-surround'
 
 " Pyflake as well as PEP8 within VIM
 Bundle 'nvie/vim-flake8'
