@@ -1,5 +1,5 @@
 set nocp
-" ^ As the help says 'Make vim behave in a more useful way"
+" ^ As the help says: Make vim behave in a more useful way
 
 "
 " Global Settings
