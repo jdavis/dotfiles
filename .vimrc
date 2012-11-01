@@ -203,7 +203,12 @@ Bundle 'Townk/vim-autoclose'
 
 " For checking the syntax of any file
 Bundle 'scrooloose/syntastic'
+
+" For fuzzyfinding
 Bundle 'wincent/Command-T'
+
+" Better JavaScript support
+Bundle 'pangloss/vim-javascript'
 
 " For JavaScript checking
 Bundle 'hallettj/jslint.vim'
@@ -219,9 +224,6 @@ Bundle 'kchmck/vim-coffee-script'
 
 " For LESS
 Bundle 'groenewege/vim-less'
-
-" Conque allows a shell within Vim
-Bundle 'lrvick/Conque-Shell'
 
 " Ack Plugin
 Bundle 'mileszs/ack.vim'
