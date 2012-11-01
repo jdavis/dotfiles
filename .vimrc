@@ -76,7 +76,7 @@ let mapleader = ","
 "
 
 " Create a new tab with nicer shortcut
-nm <leader>t :tabnew<cr>
+nm <leader>T :tabnew<cr>
 
 " Split the window using some nice shortcuts
 nm <leader>N :vsplit<cr>
