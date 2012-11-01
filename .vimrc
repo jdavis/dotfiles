@@ -5,7 +5,7 @@ set nocp
 " Global Settings
 "
 
-" The default 20 isn't nearly enough
+" The default 20 isnt nearly enough
 set history=1000
 
 " Show the numbers on the left of the screen
@@ -34,7 +34,7 @@ set spl=en_us
 set ic scs
 set hlsearch
 
-" Don't show any startup message
+" Dont show any startup message
 set shm=I
 
 " Show the current command at the bottom
