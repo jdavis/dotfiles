@@ -128,6 +128,10 @@ endfu
 " Bind PasteToggle to something quick and easy
 nm <leader>P :cal PasteToggle()<cr>
 
+" Bind :sort to something easy, don't press enter, allow for options (eg -u,
+" n, sorting in reverse [sort!])
+nm <leader>s :sort
+
 "
 " Bundle Settings/Bindings
 "
