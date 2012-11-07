@@ -48,8 +48,8 @@ if [[ -f $1 ]] ; then
 			perl $1 $flags;
 			;;
 		*.js)
-			printf "Validating JavaScript...\n\n";
-			jsl -nologo -nofilelisting -nocontext -nosummary -process $1
+			printf "Running JavaScript with Node...\n\n";
+			node $1
 			;;
 		*)
 			echo $1 cannot be interpreted ;;
