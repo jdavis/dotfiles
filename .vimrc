@@ -163,6 +163,9 @@ au BufNewFile,BufRead *.pde setf arduino
 autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
 nn ,I :JavaImport<cr>
 
+" Powerline options
+let g:Powerline_symbols = 'fancy'
+
 " Fugitive mapping
 nm <leader>gc :Gcommit<cr>
 nm <leader>gd :Gdiff<cr>
@@ -234,3 +237,6 @@ Bundle 'groenewege/vim-less'
 
 " Ack Plugin
 Bundle 'mileszs/ack.vim'
+
+" For better status lines
+Bundle 'Lokaltog/vim-powerline'
