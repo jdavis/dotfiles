@@ -74,7 +74,6 @@ set laststatus=2
 " UTF-8 THIS SHITTTTTT
 set encoding=utf-8
 
-
 "
 " Global Bindings
 "
@@ -97,6 +96,9 @@ imap <C-N> <DOWN>
 "
 " Custom Settings
 "
+
+" Set on textwidth when in markdown files
+au FileType markdown set textwidth=80
 
 " Smarter completion in C
 au FileType c set omnifunc=ccomplete#Complete
