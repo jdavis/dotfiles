@@ -17,9 +17,6 @@ syntax on
 " Required by Vundle
 filetype off
 
-" Load plugins and indent for the filtype
-filetype plugin indent on
-
 " Show the matching when doing a search
 set showmatch
 
@@ -70,6 +67,13 @@ set undofile
 
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
+
+" Show two lines for the status line
+set laststatus=2
+
+" UTF-8 THIS SHITTTTTT
+set encoding=utf-8
+
 
 "
 " Global Bindings
@@ -136,10 +140,6 @@ nm <leader>s :sort
 " Bundle Settings/Bindings
 "
 
-" Vundle is the new god among plugins, load it
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " Toggle a NERDTree
 nm <leader>b :NERDTreeTabsToggle<cr>
 
@@ -159,6 +159,9 @@ au BufNewFile,BufRead *.pde setf arduino
 " Java and Eclim options
 autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
 nn ,I :JavaImport<cr>
+
+" Powerline options
+let g:Powerline_symbols = 'fancy'
 
 " Fugitive mapping
 nm <leader>gc :Gcommit<cr>
@@ -181,8 +184,15 @@ nm <leader>vC :BundleClean!<cr>
 " Vundle Bundles
 "
 
+" Vundle is the new god among plugins, load it
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 " Required for Vundle
 Bundle 'gmarik/vundle'
+
+" Updated Vim-Git runtime files
+Bundle 'tpope/vim-git'
 
 " For file browsing
 Bundle 'scrooloose/nerdtree'
@@ -231,3 +241,10 @@ Bundle 'groenewege/vim-less'
 
 " Ack Plugin
 Bundle 'mileszs/ack.vim'
+
+" For better status lines
+Bundle 'Lokaltog/vim-powerline'
+
+" Load plugins and indent for the filtype
+" Do this last
+filetype plugin indent on
