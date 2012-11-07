@@ -6,7 +6,7 @@
     user = jdavis
 [core]
     editor = /usr/bin/vim
-    excludesfile = /Users/Davis/.gitignore_global
+    excludesfile = ~/.gitignore
 [help]
     autocorrect = 1
 [color]
