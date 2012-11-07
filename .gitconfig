@@ -1,0 +1,15 @@
+[advice]
+    statusHints = false
+[user]
+	name = Josh Davis
+[github]
+    user = jdavis
+[core]
+	editor = /usr/bin/vim
+    excludes = ~/.gitignore_global
+[help]
+    autocorrect = 1
+[color]
+    ui = true
+[alias]
+    # Maybe I should use these instead of my current zsh aliases... Hmmm...
