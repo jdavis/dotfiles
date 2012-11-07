@@ -1,9 +1,9 @@
-set nocp
-" ^ As the help says: Make vim behave in a more useful way
-
 "
 " Global Settings
 "
+
+" As the help says: Make vim behave in a more useful way
+set nocp
 
 " The default 20 isnt nearly enough
 set history=1000
@@ -247,6 +247,9 @@ Bundle 'mileszs/ack.vim'
 " For better status lines
 Bundle 'Lokaltog/vim-powerline'
 
-" Load plugins and indent for the filtype
-" Do this last
+"
+" Misc
+"
+
+" Load plugins and indent for the filtype:
 filetype plugin indent on
