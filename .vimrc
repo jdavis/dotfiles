@@ -17,9 +17,6 @@ syntax on
 " Required by Vundle
 filetype off
 
-" Load plugins and indent for the filtype
-filetype plugin indent on
-
 " Show the matching when doing a search
 set showmatch
 
@@ -139,10 +136,6 @@ nm <leader>P :cal PasteToggle()<cr>
 " Bundle Settings/Bindings
 "
 
-" Vundle is the new god among plugins, load it
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " Toggle a NERDTree
 nm <leader>b :NERDTreeTabsToggle<cr>
 
@@ -186,6 +179,10 @@ nm <leader>vC :BundleClean!<cr>
 "
 " Vundle Bundles
 "
+
+" Vundle is the new god among plugins, load it
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 " Required for Vundle
 Bundle 'gmarik/vundle'
@@ -243,3 +240,7 @@ Bundle 'mileszs/ack.vim'
 
 " For better status lines
 Bundle 'Lokaltog/vim-powerline'
+
+" Load plugins and indent for the filtype
+" Do this last
+filetype plugin indent on
