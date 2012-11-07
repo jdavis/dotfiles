@@ -190,6 +190,9 @@ nm <leader>vC :BundleClean!<cr>
 " Required for Vundle
 Bundle 'gmarik/vundle'
 
+" Updated Vim-Git runtime files
+Bundle 'tpope/vim-git'
+
 " For file browsing
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
