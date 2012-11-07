@@ -71,6 +71,13 @@ set undofile
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
 
+" Show two lines for the status line
+set laststatus=2
+
+" UTF-8 THIS SHITTTTTT
+set encoding=utf-8
+
+
 "
 " Global Bindings
 "
