@@ -24,9 +24,6 @@ set showmatch
 " of insert
 set backspace=indent,eol,start
 
-" Enabled spell checking for English
-set spl=en_us
-
 " Ignore case when doing a search as well as highlight it
 set ic scs
 set hlsearch
