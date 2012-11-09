@@ -2,6 +2,7 @@
     statusHints = false
 [user]
     name = Josh Davis
+    email = joshua.davis@digi.com
 [github]
     user = jdavis
 [core]
@@ -13,7 +14,6 @@
     ui = true
 [alias]
     # Replaced .oh-my-zsh/custom/aliases.zsh
-    P = push
     a = add
     b = branch
     c = commit
@@ -24,7 +24,6 @@
     f = fetch
     h = help
     l = log
-    p = pull
     r = remote
     rb = rebase
     rf = reflog
