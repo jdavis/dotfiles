@@ -265,6 +265,9 @@ Bundle 'mileszs/ack.vim'
 " For better status lines
 Bundle 'Lokaltog/vim-powerline'
 
+" Let's add some colors
+Bundle 'flazz/vim-colorschemes'
+
 "
 " Misc
 "
