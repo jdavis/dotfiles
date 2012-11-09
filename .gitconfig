@@ -13,10 +13,10 @@
 [color]
     ui = true
 [alias]
-    # Replaced .oh-my-zsh/custom/aliases.zsh
+    # Shortcuts
     a = add
     b = branch
-    c = commit
+    c = commit -v
     ch = checkout
     cl = clone
     d = diff
@@ -35,3 +35,6 @@
     st = stash
     un = reset HEAD
     unstage = reset HEAD
+
+    # New Commands
+    count = shortlog -sn
