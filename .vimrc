@@ -1,6 +1,12 @@
+" Author:        Josh Davis
+" Description:   This is the personal .vimrc file of Josh Davis. I've tried to document
+"                every option and item. Feel free to use it to learn more about configuring Vim.
 "
-" Global Settings
+"                Also, I encourage you to pick out the parts that you use and understand rather
+"                than blindly using it.
 "
+"                You can find me on Github: http://github.com/jdavis
+"                Or my personal site: http://joshldavis.com
 
 " As the help says 'Make vim behave in a more useful way'
 set nocp
