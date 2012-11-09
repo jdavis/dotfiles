@@ -28,8 +28,8 @@ endfunction
 " Check if a colorscheme exists
 " http://stackoverflow.com/a/5703164
 function! HasColorScheme(scheme)
-    let pat = 'colors/' . a:scheme . '.vim'
-    return filereadable('~/.vim/' . pat)
+    let path = '~/.vim/bundle/vim-colorschemes/colors/' . a:scheme . '.vim'
+    return filereadable(expand(path))
 endfunction
 
 "
@@ -44,9 +44,6 @@ set number
 
 " Pretty colors are fun, yayyy
 syntax on
-
-" Required by Vundle
-filetype off
 
 " Show the matching when doing a search
 set showmatch
@@ -68,13 +65,6 @@ set showcmd
 " Disable beeping and flashing.
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-
-" Let's make it pretty
-set background=dark
-
-if HasColorScheme('moria')
-    colorscheme moria
-endif
 
 " Use smart indenting
 set smartindent
@@ -201,15 +191,23 @@ nm <leader>vc :BundleClean<cr>
 nm <leader>vC :BundleClean!<cr>
 
 "
-" Vundle Bundles
+" Start Vundle
 "
 
-" Vundle is the new god among plugins, load it
+" Required by Vundle
+filetype off
+
+" Vundle is the new god among plugins
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Required for Vundle
+"
+" Vundle Bundles
+"
+
+" Vundle bundle
 Bundle 'gmarik/vundle'
+
 
 " Updated Vim-Git runtime files
 Bundle 'tpope/vim-git'
@@ -251,7 +249,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 
 " Pyflake as well as PEP8 within VIM
-Bundle 'nvie/vim-flake8'
+Bundle 'klen/python-mode'
 
 " For CoffeeScript, YAY!
 Bundle 'kchmck/vim-coffee-script'
@@ -269,8 +267,16 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'flazz/vim-colorschemes'
 
 "
-" Misc
+" Misc Settings
 "
+
+" Let's make it pretty
+set background=dark
+
+" Must be loaded after the vim-colorschemes bundle
+if HasColorScheme('moria')
+    colorscheme moria
+endif
 
 " Load plugins and indent for the filtype
 " **Must be last for Vundle**
