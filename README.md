@@ -9,8 +9,10 @@ environment. This is where all of it lives. And it lives on gloriously.
 
 Installation
 ------------
+In order to use these dotfiles, you probably should install them. Below are two
+methods of doing so.
 
-## Automatic Installation
+### Automatic Installation
 The dotfiles can be installed just by running the automatic installer located in
 this repository.
 
@@ -30,7 +32,7 @@ Using `wget`:
 
         wget https://raw.github.com/jdavis/dotfiles/master/Scripts/install_dotfiles.sh -O | sh
 
-## Manual Installation
+### Manual Installation
 1. Clone the repository.
 
         git clone https://github.com/jdavis/dotfiles.git
