@@ -9,7 +9,32 @@
 "                Or my personal site: http://joshldavis.com
 
 " As the help says 'Make vim behave in a more useful way'
-set nocp
+" **Must be first uncommented line**
+set nocompatible
+
+"
+" Custom Functions
+"
+
+" Switch between paste/nopaste
+function! PasteToggle()
+    if &paste
+        set nopaste
+    else
+        set paste
+    endif
+endfunction
+
+" Check if a colorscheme exists
+" http://stackoverflow.com/a/5703164
+function! HasColorScheme(scheme)
+    let pat = 'colors/' . a:scheme . '.vim'
+    return filereadable('~/.vim/' . pat)
+endfunction
+
+"
+" Global Settings
+"
 
 " The default 20 isn't nearly enough
 set history=1000
@@ -31,11 +56,11 @@ set showmatch
 set backspace=indent,eol,start
 
 " Ignore case when doing a search as well as highlight it
-set ic scs
+set ignorecase smartcase
 set hlsearch
 
-" Don't show any startup message
-set shm=I
+" Don't show the startup message
+set shortmess=I
 
 " Show the current command at the bottom
 set showcmd
@@ -44,15 +69,18 @@ set showcmd
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Theme
+" Let's make it pretty
 set background=dark
-colorscheme moria
+
+if HasColorScheme('moria')
+    colorscheme moria
+endif
 
 " Use smart indenting
-set si
+set smartindent
 
 " Use autoindenting
-set ai
+set autoindent
 
 " The tabstop look best at 4 spacing
 set tabstop=4
@@ -118,19 +146,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 "
-" Custom Functions
-"
-
-" Switch between paste/nopaste
-fu! PasteToggle()
-    if &paste
-        set nopaste
-    else
-        set paste
-    endif
-endfu
-
-"
 " Custom Bindings
 "
 
@@ -162,8 +177,8 @@ autocmd BufWritePost *.py call Flake8()
 au BufNewFile,BufRead *.pde setf arduino
 
 " Java and Eclim options
-autocmd FileType java nn ,R :cal BuildJavaFile()<cr>
-nn ,I :JavaImport<cr>
+autocmd FileType java nn <leader>R :cal BuildJavaFile()<cr>
+nn <leader>I :JavaImport<cr>
 
 " Powerline options
 let g:Powerline_symbols = 'fancy'
@@ -254,5 +269,6 @@ Bundle 'Lokaltog/vim-powerline'
 " Misc
 "
 
-" Load plugins and indent for the filtype:
+" Load plugins and indent for the filtype
+" **Must be last for Vundle**
 filetype plugin indent on
