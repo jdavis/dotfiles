@@ -12,4 +12,27 @@
 [color]
     ui = true
 [alias]
-    # Maybe I should use these instead of my current zsh aliases... Hmmm...
+    # Replaced .oh-my-zsh/custom/aliases.zsh
+    P = push
+    a = add
+    b = branch
+    c = commit
+    ch = checkout
+    cl = clone
+    d = diff
+    dc = diff --cached
+    f = fetch
+    h = help
+    l = log
+    p = pull
+    r = remote
+    rb = rebase
+    rf = reflog
+    re = reset
+    rs = reset
+    rv = revert
+    s = status
+    sl = shortlog
+    st = stash
+    un = reset HEAD
+    unstage = reset HEAD
