@@ -208,7 +208,6 @@ call vundle#rc()
 " Vundle bundle
 Bundle 'gmarik/vundle'
 
-
 " Updated Vim-Git runtime files
 Bundle 'tpope/vim-git'
 
