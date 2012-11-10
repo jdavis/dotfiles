@@ -16,6 +16,13 @@ git remote add origin https://github.com/jdavis/dotfiles.git
 echo "Pulling all the code..."
 git pull origin master
 
-echo "Dotfiles are now installed. Proceed to conquer the universe."
+echo "Let submodule this shit..."
+git submodule init
+git submodule update
 
+builtin cd ~/.vim
+git submodule init
+git submodule update
+
+echo "Dotfiles are now installed. Proceed to conquer the universe."
 source ~/.zshrc
