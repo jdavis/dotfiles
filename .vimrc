@@ -160,8 +160,9 @@ nn <leader>p :CtrlP<cr>
 let g:AutoClosePairs = "() {} [] \" ' `"
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
-" flake8 Plugin
-autocmd BufWritePost *.py call Flake8()
+" Python-mode settings
+let g:pymode_run_key = '<leader>R'
+let g:pymode_lint_ignore = 'E501'
 
 " Arduino
 au BufNewFile,BufRead *.pde setf arduino
@@ -247,7 +248,7 @@ Bundle 'tpope/vim-fugitive'
 " Easily surround things
 Bundle 'tpope/vim-surround'
 
-" Pyflake as well as PEP8 within VIM
+" Awesome Python utilities
 Bundle 'klen/python-mode'
 
 " For CoffeeScript, YAY!
