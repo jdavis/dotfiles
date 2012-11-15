@@ -166,6 +166,7 @@ au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 " Python-mode settings
 let g:pymode_run_key = '<leader>R'
 let g:pymode_lint_ignore = 'E501'
+let g:pymode_folding = 0
 
 " Arduino
 au BufNewFile,BufRead *.pde setf arduino
