@@ -195,6 +195,12 @@ nm <leader>vI :BundleInstall!<cr>
 nm <leader>vc :BundleClean<cr>
 nm <leader>vC :BundleClean!<cr>
 
+" Python-mode options
+if !has('python')
+    " Only load Python-mode when Python is enabled
+    let g:pymode = 0
+endif
+
 "
 " Start Vundle
 "
