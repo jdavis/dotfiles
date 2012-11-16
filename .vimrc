@@ -270,6 +270,9 @@ Bundle 'Lokaltog/vim-powerline'
 " Let's add some colors
 Bundle 'flazz/vim-colorschemes'
 
+" Awesome little plugin, thanks Mikey: github.com/mikewadsten
+Bundle 'nathanaelkane/vim-indent-guides'
+
 "
 " Misc Settings
 "
