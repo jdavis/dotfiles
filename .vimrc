@@ -201,6 +201,9 @@ if !has('python')
     let g:pymode = 0
 endif
 
+" Number settings
+nm <leader>n :NumbersToggle<CR>
+
 "
 " Start Vundle
 "
@@ -278,6 +281,9 @@ Bundle 'flazz/vim-colorschemes'
 
 " Awesome little plugin, thanks Mikey: github.com/mikewadsten
 Bundle 'nathanaelkane/vim-indent-guides'
+
+" Better line numbering
+Bundle 'myusuf3/numbers.vim'
 
 "
 " Misc Settings
