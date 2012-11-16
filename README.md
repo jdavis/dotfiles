@@ -26,22 +26,30 @@ To install, use one of the commands listed below:
 
 Using `curl`:
 
+```bash
         curl -L https://raw.github.com/jdavis/dotfiles/master/Scripts/install_dotfiles.sh | sh
+```
 
 Using `wget`:
 
+```bash
         wget https://raw.github.com/jdavis/dotfiles/master/Scripts/install_dotfiles.sh -O | sh
+```
 
 ### Manual Installation
 1. Clone the repository.
 
+```bash
         git clone https://github.com/jdavis/dotfiles.git
+```
 
 2. Copy every single file (including dotfiles) to your home directory. Good luck
    with this. Some useful resources [here][resources].
 
 3. Either restart zsh or run this command:
 
+```bash
         source ~/.zshrc
+```
 
 [resources]: http://superuser.com/q/61611
