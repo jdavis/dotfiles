@@ -143,7 +143,7 @@ autocmd BufWinLeave * call clearmatches()
 "
 
 " Bind PasteToggle to something quick and easy
-nm <leader>P :cal PasteToggle()<cr>
+nm <leader>tP :cal PasteToggle()<cr>
 
 " Bind :sort to something easy, don't press enter, allow for options (eg -u,
 " n, sorting in reverse [sort!])
@@ -154,7 +154,7 @@ vnoremap <leader>s :sort
 "
 
 " Toggle a NERDTree
-nm <leader>b :NERDTreeTabsToggle<cr>
+nm <leader>tb :NERDTreeTabsToggle<cr>
 
 " Show CtrlP
 nn <leader>p :CtrlP<cr>
@@ -208,7 +208,7 @@ let g:indent_guides_color_change_percent = 40
 let g:indent_guides_guide_size = 1
 
 " Number settings
-nm <leader>n :NumbersToggle<CR>
+nm <leader>tn :NumbersToggle<CR>
 
 "
 " Start Vundle
