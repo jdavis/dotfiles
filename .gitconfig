@@ -17,24 +17,27 @@
     a = add
     b = branch
     c = commit -v
-    ch = checkout
-    cl = clone
+    co = checkout
     d = diff
     dc = diff --cached
     f = fetch
     h = help
     l = log
+    ls = ls-files
     r = remote
     rb = rebase
-    rf = reflog
     re = reset
+    rf = reflog
     rs = reset
     rv = revert
     s = status
     sl = shortlog
     st = stash
     un = reset HEAD
-    unstage = reset HEAD
 
     # New Commands
+    amend = commit --amend
     count = shortlog -sn
+    graph = log --all --graph --decorate --oneline -n100
+    unstage = reset HEAD
+    zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
