@@ -128,7 +128,7 @@ au FileType markdown set textwidth=80
 au FileType c set omnifunc=ccomplete#Complete
 
 " My own special flavoring to running programs
-au FileType asm,c,objc,scheme,sh,python,perl,javascript nn ,R :!~/Scripts/deepThought.sh '%:p'<CR>
+au FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
 
 " Highlight trailing whitespace obnoxiously
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -147,7 +147,7 @@ nm <leader>P :cal PasteToggle()<cr>
 
 " Bind :sort to something easy, don't press enter, allow for options (eg -u,
 " n, sorting in reverse [sort!])
-nm <leader>s :sort
+vnoremap <leader>s :sort
 
 "
 " Bundle Settings/Bindings
@@ -164,9 +164,10 @@ let g:AutoClosePairs = "() {} [] \" ' `"
 au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 
 " Python-mode settings
-let g:pymode_run_key = '<leader>R'
+let g:pymode_run_key = '<leader>r'
 let g:pymode_lint_ignore = 'E501'
 let g:pymode_folding = 0
+let g:pymode_run = 0
 
 " Arduino
 au BufNewFile,BufRead *.pde setf arduino
@@ -200,6 +201,11 @@ if !has('python')
     " Only load Python-mode when Python is enabled
     let g:pymode = 0
 endif
+
+" Vim indent guides options
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 40
+let g:indent_guides_guide_size = 1
 
 " Number settings
 nm <leader>n :NumbersToggle<CR>
