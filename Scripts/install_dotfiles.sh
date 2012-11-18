@@ -39,4 +39,5 @@ echo "To install Vundle Bundles, run the command below:"
 echo "\tvim +BundleInstall +qall"
 
 echo "Dotfiles are now installed. Proceed to conquer the universe."
+/usr/bin/env zsh
 source ~/.zshrc
