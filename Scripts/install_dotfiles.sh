@@ -12,13 +12,13 @@ hash git 2> /dev/null || {
     echo "Oh dear. I require Git, but it's not installed."
 }
 
-echo; echo "Initializing a blank repo..."
+echo "\nInitializing a blank repo..."
 git init
 
-echo; echo "Adding dotfiles remote origin...."
+echo "\nAdding dotfiles remote origin...."
 git remote add origin https://github.com/jdavis/dotfiles.git
 
-echo; echo "Fetching code..."
+echo "\nFetching code..."
 git fetch
 
 # Create a place to store all the existing files so we dont' have a clash
@@ -27,7 +27,7 @@ git ls-tree --name-only origin/master | xargs mv -t dotfiles.old/ > /dev/null 2>
 
 git checkout -b master remotes/origin/master
 
-echo; echo "Let submodule this shit..."
+echo "\nSetting up submodules..."
 git submodule init
 git submodule update
 
@@ -35,11 +35,11 @@ builtin cd ~/.vim
 git submodule init
 git submodule update
 
-echo; echo
-echo "To install Vundle Bundles, run the command below:"
+echo "\n\nAll old dotfiles were moved to dotfiles.old."
+
+echo "\n\nTo install Vundle Bundles, run the command below:"
 echo "    vim +BundleInstall +qall"
 
-echo; echo
-echo "Dotfiles are now installed. Proceed to conquer the universe."
+echo "\n\nDotfiles are now installed. Proceed to conquer the universe."
 /usr/bin/env zsh
 source ~/.zshrc
