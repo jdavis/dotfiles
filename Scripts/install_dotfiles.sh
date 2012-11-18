@@ -25,7 +25,7 @@ git fetch
 mkdir dotfiles.old
 git ls-tree --name-only origin/master | xargs mv -t dotfiles.old/ > /dev/null 2>&1
 
-git merge origin master
+git checkout -b master remotes/origin/master
 
 echo "Let submodule this shit..."
 git submodule init
