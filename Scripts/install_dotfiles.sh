@@ -11,7 +11,7 @@ echo "Initializing a blank repo..."
 git init
 
 echo "Adding dotfiles remote origin...."
-git remote add origin https://github.com/jdavis/dotfiles.git
+git remote add origin git@github.com:jdavis/dotfiles.git
 
 echo "Pulling all the code..."
 git pull origin master
