@@ -1,0 +1,44 @@
+[advice]
+    statusHints = false
+[user]
+    name = Josh Davis
+    email = joshuadavis42@gmail.com
+[github]
+    user = jdavis
+[core]
+    editor = /usr/bin/vim
+    excludesfile = ~/.gitignore
+[help]
+    autocorrect = 1
+[color]
+    ui = true
+[alias]
+    # Shortcuts
+    a = add
+    b = branch
+    c = commit -v
+    co = checkout
+    d = diff
+    dc = diff --cached
+    f = fetch
+    h = help
+    l = log
+    ls = ls-files
+    r = remote
+    rb = rebase
+    re = reset
+    rf = reflog
+    rs = reset
+    rv = revert
+    s = status
+    sl = shortlog
+    sm = submodule
+    st = stash
+    un = reset HEAD
+
+    # New Commands
+    amend = commit --amend
+    count = shortlog -sn
+    graph = log --all --graph --decorate --oneline -n100
+    unstage = reset HEAD
+    zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`

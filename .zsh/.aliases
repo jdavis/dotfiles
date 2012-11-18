@@ -2,27 +2,37 @@
 
 alias ll='ls -l'
 alias la='ls -a'
-
+alias back='cd -'
 
 # I like to be safe...
 alias rm='rm -i'
 
 # Some Git alias
-# Thank you, Peteris: http://www.catonmat.net/blog/git-aliases/
+# Based off of Peteris: http://www.catonmat.net/blog/git-aliases/
+# But customized for ME!
+alias g='git'
 alias ga='git add'
-alias gp='git push'
-alias gl='git log'
-alias gs='git status'
+alias gb='git branch'
+alias gc='git commit'
+alias gch='git checkout'
+alias gcl='git clone'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gm='git commit -m'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
+alias gf='git fetch'
+alias gh='git help'
+alias gl='git log'
+alias gp='git pull'
+alias gP='git push'
+alias gr='git rebase'
+alias grv='git revert'
+alias grf='git reflog'
+alias gs='git status'
+alias gst='git stash'
+
+# Global Aliases
+alias -g L=' | less'
+alias -g T=' | tail -20'
+alias -g NULL=' > /dev/null 2>&1'
 
 #  Add the Scripts directory for all users
 export PATH=$PATH:~/Scripts
@@ -52,6 +62,9 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	# Path Additions
 	# It makes adding and removing a lot easier
 	#
+    
+    # Prefix /usr/local/git/bin for git
+    export PATH=/usr/local/git/bin:$PATH
 	
 	# Normal Bin
 	export PATH=$PATH:~/bin
@@ -73,9 +86,10 @@ if [[ $HOME == '/Users/Davis' ]]; then
 	export PATH=$PATH:/Library/Python/2.5/site-packages/django/bin
 	#  MacPorts
 	export PATH=$PATH:/opt/local/bin
-
 	#  Add the Scripts/Mac directory
 	export PATH=$PATH:~/Scripts/Mac
+    # Add all npm packages
+    export PATH=$PATH:/usr/local/share/npm/bin
 fi
 
 # Arch Aliases
@@ -116,4 +130,9 @@ if [[ $HOME == '/home/davis' ]]; then
 
 	#  Add the Scripts/Arch directory
 	export PATH=$PATH:~/Scripts/Arch
+fi
+
+# Digi Work Aliases
+if [[ $HOME == '/home/jdavis' ]]; then
+	alias digi='digicli'
 fi
