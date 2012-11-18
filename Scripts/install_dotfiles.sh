@@ -24,5 +24,8 @@ builtin cd ~/.vim
 git submodule init
 git submodule update
 
+echo "To install Vundle Bundles, run the command below:"
+echo "\tvim +BundleInstall +qall"
+
 echo "Dotfiles are now installed. Proceed to conquer the universe."
 source ~/.zshrc
