@@ -23,7 +23,7 @@ git fetch
 
 # Create a place to store all the existing files so we dont' have a clash
 mkdir dotfiles.old
-git ls-tree origin/master | xargs mv -t dotfiles.old/
+git ls-tree --name-only origin/master | xargs mv -t dotfiles.old/ > /dev/null 2>&1
 
 git merge origin master
 
