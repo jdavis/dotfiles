@@ -51,5 +51,6 @@ echo "    vim +BundleInstall +qall"
 echo
 echo
 echo "Dotfiles are now installed. Proceed to conquer the universe."
+
 /usr/bin/env zsh
 source ~/.zshrc
