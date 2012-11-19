@@ -291,9 +291,6 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " Better Markdown
 Bundle 'tpope/vim-markdown'
 
-" Better line numbering
-Bundle 'myusuf3/numbers.vim'
-
 "
 " Misc Settings
 "
