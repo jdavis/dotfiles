@@ -41,7 +41,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='jdavis'
 
 # Plugins for all environments
-plugins=(git node npm python pip)
+plugins=(git node npm python pip coffee)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
