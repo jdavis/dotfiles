@@ -153,7 +153,8 @@ vnoremap <leader>s :sort
 " Bundle Settings/Bindings
 "
 
-" Toggle a NERDTree
+" NERDTree Options
+let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
 
 " Show CtrlP
