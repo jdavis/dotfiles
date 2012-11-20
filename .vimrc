@@ -167,6 +167,7 @@ au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
 let g:pymode_run_key = '<leader>r'
 let g:pymode_lint_ignore = 'E501'
 let g:pymode_folding = 0
+let g:pymode_lint_config = "$HOME/.pylintrc"
 let g:pymode_run = 0
 
 " Arduino
