@@ -1,0 +1,3 @@
+[MESSAGES CONTROL]
+# C0301 - Line too long
+disable-msg=C0301
