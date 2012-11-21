@@ -153,6 +153,14 @@ vnoremap <leader>s :sort
 " Bundle Settings/Bindings
 "
 
+" Vundle mapping
+nm <leader>vl :BundleList<cr>
+nm <leader>vi :BundleInstall<cr>
+nm <leader>vI :BundleInstall!<cr>
+nm <leader>vc :BundleClean<cr>
+nm <leader>vC :BundleClean!<cr>
+
+
 " NERDTree Options
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
@@ -182,21 +190,15 @@ nn <leader>I :JavaImport<cr>
 let g:Powerline_symbols = 'fancy'
 
 " Fugitive mapping
+nm <leader>gb :Gblame<cr>
 nm <leader>gc :Gcommit<cr>
 nm <leader>gd :Gdiff<cr>
-nm <leader>gs :Gstatus<cr>
-nm <leader>gb :Gbrowse<cr>
 nm <leader>gg :Ggrep
 nm <leader>gl :Glog<cr>
 nm <leader>gp :Git pull<cr>
 nm <leader>gP :Git push<cr>
-
-" Vundle mapping
-nm <leader>vl :BundleList<cr>
-nm <leader>vi :BundleInstall<cr>
-nm <leader>vI :BundleInstall!<cr>
-nm <leader>vc :BundleClean<cr>
-nm <leader>vC :BundleClean!<cr>
+nm <leader>gs :Gstatus<cr>
+nm <leader>gw :Gbrowse<cr>
 
 " Python-mode options
 if !has('python')
