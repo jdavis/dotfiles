@@ -42,6 +42,6 @@
     back = checkout HEAD~
     forward = checkout HEAD^
     graph = log --all --graph --decorate --oneline -n100
-    last = "log --pretty=format:'%an, %ar : %s' -10"
+    last = "log --pretty=format:'%an, %ar : %s' HEAD~10..HEAD~"
     unstage = reset HEAD
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
