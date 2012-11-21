@@ -52,6 +52,8 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     plugins+=(brew gem)
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
+elif [[ $CURRENT_OS == 'Cygwin' ]]; then
+    plugins+=(cygwin)
 fi
 
 # Launch oh-my-zsh
