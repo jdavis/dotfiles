@@ -39,8 +39,9 @@
     # New Commands
     amend = commit --amend
     count = shortlog -sn
-    back = checkout HEAD~1
-    forward = checkout HEAD^1
+    back = checkout HEAD~
+    forward = checkout HEAD^
     graph = log --all --graph --decorate --oneline -n100
+    last = "log --pretty=format:'%an, %ar : %s' -10"
     unstage = reset HEAD
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
