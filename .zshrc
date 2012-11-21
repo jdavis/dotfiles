@@ -25,7 +25,11 @@ fi
 if [[ $HOME == '/Users/Davis' ]] || [[ $HOME == '/Users/davis' ]]; then
     CURRENT_OS='OS X'
 elif [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
-    CURRENT_OS='Linux'
+    if [[ $TERM == 'cygwin' ]]; then
+        CURRENT_OS='Cygwin'
+    else
+        CURRENt_OS='Linux'
+    fi
 else
     CURRENT_OS='WAT'
 fi
