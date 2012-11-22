@@ -28,7 +28,7 @@ git fetch
 echo
 echo "Moving old dotfiles so we don't have a clash..."
 mkdir dotfiles.old
-git ls-tree --name-only origin/master | xargs mv -t dotfiles.old/ > /dev/null 2>&1
+git ls-tree --name-only origin/master | xargs mv '{}' dotfiles.old/ > /dev/null 2>&1
 
 echo
 echo "Checking out remote branch..."
