@@ -2,7 +2,7 @@
     statusHints = false
 [user]
     name = Josh Davis
-    email = joshuadavis42@gmail.com
+    email = josh@joshldavis.com
 [github]
     user = jdavis
 [core]
@@ -45,3 +45,5 @@
     last = "log --pretty=format:'%h - %an, %ar : %s' HEAD~10..HEAD~"
     unstage = reset HEAD
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
+[push]
+	default = simple
