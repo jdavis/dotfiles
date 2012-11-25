@@ -300,6 +300,9 @@ Bundle 'nathanaelkane/vim-indent-guides'
 " Better Markdown
 Bundle 'tpope/vim-markdown'
 
+" Zencoding
+Bundle 'mattn/zencoding-vim'
+
 "
 " Misc Settings
 "
