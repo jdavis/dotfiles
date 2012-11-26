@@ -53,7 +53,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
-    plugins+=(cygwin)
+    plugins+=(cygwin virtualenv)
 fi
 
 # Launch oh-my-zsh
