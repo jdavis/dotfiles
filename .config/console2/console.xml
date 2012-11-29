@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <settings>
-	<console change_refresh="10" refresh="100" rows="74" columns="210" buffer_rows="9999" buffer_columns="0" shell="C:\cygwin\bin\zsh -l -i" init_dir="C:\cygwin\home\jdavis" start_hidden="0" save_size="1">
+	<console change_refresh="10" refresh="100" rows="70" columns="114" buffer_rows="9999" buffer_columns="200" shell="C:\cygwin\bin\zsh -l -i" init_dir="C:\cygwin\home\jdavis" start_hidden="0" save_size="1">
 		<colors>
 			<color id="0" r="0" g="0" b="0"/>
-			<color id="1" r="255" g="101" b="101"/>
+			<color id="1" r="176" g="0" b="0"/>
 			<color id="2" r="147" g="212" b="79"/>
-			<color id="3" r="137" g="182" b="226"/>
-			<color id="4" r="32" g="74" b="135"/>
-			<color id="5" r="206" g="92" b="0"/>
+			<color id="3" r="46" g="115" b="184"/>
+			<color id="4" r="63" g="121" b="209"/>
+			<color id="5" r="168" g="75" b="0"/>
 			<color id="6" r="234" g="185" b="61"/>
 			<color id="7" r="204" g="204" b="204"/>
 			<color id="8" r="85" g="87" b="83"/>
-			<color id="9" r="255" g="141" b="141"/>
+			<color id="9" r="255" g="138" b="138"/>
 			<color id="10" r="200" g="231" b="168"/>
 			<color id="11" r="255" g="193" b="35"/>
 			<color id="12" r="11" g="139" b="255"/>
-			<color id="13" r="245" g="121" b="0"/>
+			<color id="13" r="249" g="124" b="0"/>
 			<color id="14" r="70" g="164" b="255"/>
 			<color id="15" r="255" g="255" b="255"/>
 		</colors>
