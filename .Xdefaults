@@ -5,7 +5,7 @@
 #URxvt.boldFont: xft:cure:pixelsize=10
 #URxvt.boldFont: xft:Terminus:pixelsize=14
 #URxvt.font: xft:Bitstream Vera Sans Mono-8.5:pixelsize=12
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=12
 #URxvt.font: xft:Dina:pixelsize=12
 #URxvt.font: xft:Terminus:pixelsize=14
 
@@ -21,6 +21,7 @@ URxvt.urlLauncher: opera
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt.urgentOnBell: true
+URxvt.perl-ext-common:  default,tabbed
 
 !general
 *utf8: 1
