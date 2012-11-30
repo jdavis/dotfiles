@@ -312,6 +312,9 @@ Bundle 'mattn/zencoding-vim'
 
 " Let's make it pretty
 set background=dark
+set t_Co=256
+set t_AB=[48;5;%dm
+set t_AF=[38;5;%dm
 
 " Must be loaded after the vim-colorschemes bundle
 if HasColorScheme('moria')
