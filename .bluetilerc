@@ -1,0 +1,24 @@
+# This is your Bluetile configuration file.
+# Use this file to make changes to the default configuration.
+# You can see all the defaults in the file
+# /usr/share/bluetile/etc/bluetilerc
+#
+# Below are a few examples - note: Mod1 is usually the Alt key.
+# Run 'bluetile --list-identifiers' to see a complete list of all
+# possibile modifier and key names.
+
+start_dock: false
+terminal: urxvt
+#default_modifier: Mod1
+#key_launch_terminal: DefaultMod+Shift+Return
+
+# blue-ish theme where the focused window stands out more
+#decoration_focused_color = #7ca3d3
+#decoration_focused_text_color = white
+#decoration_focused_border_color = white
+#decoration_normal_color = #e3e2e1
+#decoration_normal_text_color = black
+#decoration_normal_border_color = black
+#decoration_font = xft: Sans Bold:size=9
+#window_border_focused_color = black
+#window_border_normal_color = gray
