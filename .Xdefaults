@@ -17,7 +17,7 @@ dzen2.foreground: #ececec
 !urxvt
 URxvt.title: terminal
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: opera
+URxvt.urlLauncher: chromium-browser
 URxvt.matcher.button: 1
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt.urgentOnBell: true
@@ -50,8 +50,8 @@ Xft.rgba:subpixel
 
 !transparency
 *inheritPixmap: true
-*shading: 42
-!*shading: 20
+!*shading: 42
+*shading: 15
 !*shading: 1
 
 *foreground: white
