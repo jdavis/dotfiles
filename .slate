@@ -1,0 +1,31 @@
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Aliases
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY        
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY          
+alias leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY         
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias rightthird move screenOriginX+screenSizeX/3+screenSizeX/3;screenOriginY screenSizeX/3; screenSizeY
+alias middlethird move screenOriginX+screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2               
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2           
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2         
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Resize Bindings
+bind f:ctrl;shift ${full}
+bind k:ctrl;shift ${tophalf}
+bind j:ctrl;shift ${bottomhalf}
+bind h:ctrl;shift ${lefthalf}
+bind l:ctrl;shift ${righthalf}
+bind right:ctrl;shift       resize +10% +0
+bind left:ctrl;shift        resize -10% +0
+bind up:ctrl;shift          resize +0   -10%
+bind down:ctrl;shift        resize +0   +10%
