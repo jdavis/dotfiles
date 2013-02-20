@@ -1,5 +1,4 @@
-# This is the default .slate file.
-# If no ~/.slate file exists this is the file that will be used.
+# Slate.app is an amazing little window manager for OS X
 
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
