@@ -44,6 +44,9 @@ ZSH=$HOME/.oh-my-zsh
 # Select a theme, see, $ZSH/themes for more
 ZSH_THEME='jdavis'
 
+# Auto-update is too ungodly slow
+export DISABLE_AUTO_UPDATE="true"
+
 # Plugins for all environments
 plugins=(git node npm python pip coffee)
 
