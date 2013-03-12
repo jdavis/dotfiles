@@ -303,6 +303,9 @@ Bundle 'Valloric/YouCompleteMe'
 " Git Gutter
 Bundle 'airblade/vim-gitgutter'
 
+" Stylus Plugin
+Bundle 'wavded/vim-stylus'
+
 "
 " Misc Settings
 "
