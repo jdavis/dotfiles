@@ -297,9 +297,6 @@ Bundle 'tpope/vim-markdown'
 " Zencoding
 Bundle 'mattn/zencoding-vim'
 
-" You Complete Me <3
-Bundle 'Valloric/YouCompleteMe'
-
 " Git Gutter
 Bundle 'airblade/vim-gitgutter'
 
