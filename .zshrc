@@ -28,7 +28,7 @@ elif [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
     if [[ $TERM == 'cygwin' ]]; then
         CURRENT_OS='Cygwin'
     else
-        CURRENt_OS='Linux'
+        CURRENT_OS='Linux'
     fi
 else
     CURRENT_OS='WAT'
