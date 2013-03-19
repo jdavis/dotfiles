@@ -1,1 +1,1 @@
-.irssi/scripts/notifier.pl
+../notifier.pl
