@@ -303,6 +303,9 @@ Bundle 'airblade/vim-gitgutter'
 " Stylus Plugin
 Bundle 'wavded/vim-stylus'
 
+" Vim-bad-whitespace, highlights bad whitespace
+Bundle 'bitc/vim-bad-whitespace'
+
 "
 " Misc Settings
 "

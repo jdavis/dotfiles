@@ -102,7 +102,8 @@ chatnets = {
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "#/r/seattle"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#/r/seattle"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#node.js"; chatnet = "fn"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -274,5 +275,11 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { autolog = "yes"; };
-  "perl/core/scripts" = { notifier_on_nick = "napalmbrain"; };
+  "perl/core/scripts" = {
+    notifier_on_nick = "napalmbrain";
+    notifier_on_regex = "napalmbrain";
+    notifier_on_privmsg = "1";
+    notifier_channel_regex = ".*";
+  };
 };
+logs = { };
