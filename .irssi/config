@@ -101,11 +101,9 @@ chatnets = {
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#/r/seattle"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#node.js"; chatnet = "fn"; autojoin = "yes"; },
   { name = "##cs"; chatnet = "fn"; autojoin = "yes"; },
-  { name = "##programming"; chatnet = "fn"; autojoin = "yes"; },
   { name = "##security"; chatnet = "fn"; autojoin = "yes"; },
   { name = "python"; chatnet = "fn"; autojoin = "yes"; },
   { name = "javascript"; chatnet = "fn"; autojoin = "yes"; },
