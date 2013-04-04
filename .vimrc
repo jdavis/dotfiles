@@ -214,7 +214,10 @@ endif
 nm <leader>tn :NumbersToggle<CR>
 
 " Ack settings
-nm <leader>A :Ack 
+nm <leader>A :Ack
+
+" Cpplint Settings
+autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<CR>
 
 "
 " Start Vundle
@@ -305,6 +308,9 @@ Bundle 'wavded/vim-stylus'
 
 " Vim-bad-whitespace, highlights bad whitespace
 Bundle 'bitc/vim-bad-whitespace'
+
+" Follow Google's C++ Style Guide
+Bundle 'funorpain/vim-cpplint'
 
 "
 " Misc Settings
