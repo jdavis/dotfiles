@@ -110,6 +110,7 @@ channels = (
   { name = "vim"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#math"; chatnet = "fn"; autojoin = "yes"; },
   { name = "startups"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#grunt"; chatnet = "fn"; autojoin = "yes"; }
 );
 
 aliases = {
