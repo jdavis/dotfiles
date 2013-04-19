@@ -312,6 +312,10 @@ Bundle 'bitc/vim-bad-whitespace'
 " Follow Google's C++ Style Guide
 Bundle 'funorpain/vim-cpplint'
 
+" Add Gist-vim
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
 "
 " Misc Settings
 "
