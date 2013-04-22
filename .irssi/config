@@ -288,7 +288,7 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Josh";
+    real_name = "Scatter Brain";
     user_name = "napalmbrain";
     nick = "napalmbrain";
   };
