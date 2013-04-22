@@ -109,8 +109,13 @@ channels = (
   { name = "javascript"; chatnet = "fn"; autojoin = "yes"; },
   { name = "vim"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#math"; chatnet = "fn"; autojoin = "yes"; },
-  { name = "startups"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "startups"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#grunt"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#ai"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#machinelearning"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#opencog"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#proggit"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#archlinux"; chatnet = "fn"; autojoin = "yes"; }
 );
 
 aliases = {
