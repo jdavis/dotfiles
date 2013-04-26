@@ -285,9 +285,6 @@ Bundle 'kchmck/vim-coffee-script'
 " For LESS
 Bundle 'groenewege/vim-less'
 
-" Ack Plugin
-Bundle 'mileszs/ack.vim'
-
 " For better status lines
 Bundle 'Lokaltog/vim-powerline'
 
@@ -296,9 +293,6 @@ Bundle 'flazz/vim-colorschemes'
 
 " Better Markdown
 Bundle 'tpope/vim-markdown'
-
-" Zencoding
-Bundle 'mattn/zencoding-vim'
 
 " Git Gutter
 Bundle 'airblade/vim-gitgutter'
