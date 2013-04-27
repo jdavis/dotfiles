@@ -107,8 +107,8 @@ set encoding=utf-8
 nm <leader>T :tabnew<cr>
 
 " Split the window using some nice shortcuts
-nm <leader>sv :vsplit<cr>
-nm <leader>sh :split<cr>
+nm <leader>s\| :vsplit<cr>
+nm <leader>s- :split<cr>
 
 " Unhighlight (:nohlsearch) the last search pattern on Enter
 nn <CR> :noh<CR><CR>
