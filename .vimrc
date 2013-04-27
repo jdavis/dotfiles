@@ -164,7 +164,6 @@ nm <leader>vI :BundleInstall!<cr>
 nm <leader>vc :BundleClean<cr>
 nm <leader>vC :BundleClean!<cr>
 
-
 " NERDTree Options
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
@@ -182,13 +181,6 @@ let g:pymode_lint_ignore = 'E501'
 let g:pymode_folding = 0
 let g:pymode_lint_config = "$HOME/.pylintrc"
 let g:pymode_run = 0
-
-" Arduino
-au BufNewFile,BufRead *.pde setf arduino
-
-" Java and Eclim options
-autocmd FileType java nn <leader>R :cal BuildJavaFile()<cr>
-nn <leader>I :JavaImport<cr>
 
 " Powerline options
 let g:Powerline_symbols = 'fancy'
@@ -209,12 +201,6 @@ if !has('python')
     " Only load Python-mode when Python is enabled
     let g:pymode = 0
 endif
-
-" Number settings
-nm <leader>tn :NumbersToggle<CR>
-
-" Ack settings
-nm <leader>A :Ack
 
 " Cpplint Settings
 autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<CR>
