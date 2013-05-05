@@ -110,10 +110,10 @@ channels = (
   { name = "vim"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#math"; chatnet = "fn"; autojoin = "yes"; },
   { name = "startups"; chatnet = "fn"; autojoin = "yes"; },
-  { name = "#grunt"; chatnet = "fn"; autojoin = "yes"; }
-  { name = "#ai"; chatnet = "fn"; autojoin = "yes"; }
-  { name = "#machinelearning"; chatnet = "fn"; autojoin = "yes"; }
-  { name = "#proggit"; chatnet = "fn"; autojoin = "yes"; }
+  { name = "#grunt"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#ai"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#machinelearning"; chatnet = "fn"; autojoin = "yes"; },
+  { name = "#proggit"; chatnet = "fn"; autojoin = "yes"; },
   { name = "#archlinux"; chatnet = "fn"; autojoin = "yes"; }
 );
 
@@ -280,6 +280,13 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
