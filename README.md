@@ -1,7 +1,7 @@
 Dotfiles
 ========
 
-Sometimes the standard configuration just isn't enough.
+> Sometimes the standard configuration just isn't enough.
 
 Over the course of my many (not really) years of developing and using UNIX based
 systems. I have amassed various settings, configurations, and what not for my
