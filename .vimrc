@@ -296,6 +296,9 @@ Bundle 'funorpain/vim-cpplint'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" CoVim
+Bundle 'FredKSchott/CoVim'
+
 "
 " Misc Settings
 "
