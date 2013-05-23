@@ -31,7 +31,8 @@ elif [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
         CURRENT_OS='Linux'
     fi
 else
-    CURRENT_OS='WAT'
+    # Use Linux fallback
+    CURRENT_OS='Linux'
 fi
 
 #
