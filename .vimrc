@@ -235,7 +235,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 " For the best snippet functionality
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 
 " Required for snipMate
 Bundle 'MarcWeber/vim-addon-mw-utils'
