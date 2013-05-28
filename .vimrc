@@ -266,7 +266,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 
 " Awesome Python utilities
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 
 " For CoffeeScript, YAY!
 Bundle 'kchmck/vim-coffee-script'
@@ -300,7 +300,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " CoVim
-Bundle 'FredKSchott/CoVim'
+"Bundle 'FredKSchott/CoVim'
 
 "
 " Misc Settings
