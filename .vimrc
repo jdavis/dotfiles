@@ -210,6 +210,9 @@ autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
 
 " Eclim Settings
 set rtp+=~/.vim/bundle/eclim/
+autocmd FileType java nm <buffer> <leader>ei :JavaImport<cr>
+autocmd FileType java nm <buffer> <leader>ed :JavaDocSearch -x declarations<cr>
+autocmd FileType java nm <buffer> <leader>es :JavaSearchContext<cr>
 
 "
 " Start Vundle
