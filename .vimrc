@@ -206,7 +206,7 @@ if !has('python')
 endif
 
 " Cpplint Settings
-autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<CR>
+autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
 
 " Eclim Settings
 set rtp+=~/.vim/bundle/eclim/
