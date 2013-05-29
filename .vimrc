@@ -208,6 +208,9 @@ endif
 " Cpplint Settings
 autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<CR>
 
+" Eclim Settings
+set rtp+=~/.vim/bundle/eclim/
+
 "
 " Start Vundle
 "
