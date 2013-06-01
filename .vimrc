@@ -206,7 +206,13 @@ if !has('python')
 endif
 
 " Cpplint Settings
-autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<CR>
+autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
+
+" Eclim Settings
+set rtp+=~/.vim/bundle/eclim/
+autocmd FileType java nm <buffer> <leader>ei :JavaImport<cr>
+autocmd FileType java nm <buffer> <leader>ed :JavaDocSearch -x declarations<cr>
+autocmd FileType java nm <buffer> <leader>es :JavaSearchContext<cr>
 
 "
 " Start Vundle
@@ -235,7 +241,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 " For the best snippet functionality
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 
 " Required for snipMate
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -266,7 +272,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 
 " Awesome Python utilities
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 
 " For CoffeeScript, YAY!
 Bundle 'kchmck/vim-coffee-script'
@@ -300,7 +306,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " CoVim
-Bundle 'FredKSchott/CoVim'
+"Bundle 'FredKSchott/CoVim'
 
 "
 " Misc Settings
