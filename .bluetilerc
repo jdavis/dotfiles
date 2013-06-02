@@ -8,7 +8,7 @@
 # possibile modifier and key names.
 
 start_dock: false
-terminal: gnome-terminal
+terminal: urxvt
 #default_modifier: Mod1
 #key_launch_terminal: DefaultMod+Shift+Return
 
