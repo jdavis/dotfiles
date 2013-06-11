@@ -25,6 +25,7 @@
     h = help
     l = log
     ls = ls-files
+    m = merge
     r = remote
     rb = rebase
     re = reset
