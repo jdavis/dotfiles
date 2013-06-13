@@ -289,6 +289,9 @@ Bundle 'flazz/vim-colorschemes'
 " Better Markdown
 Bundle 'tpope/vim-markdown'
 
+" Rust-Lang Features
+Bundle 'wting/rust.vim'
+
 " Git Gutter
 Bundle 'airblade/vim-gitgutter'
 
