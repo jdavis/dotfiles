@@ -6,6 +6,10 @@
 # https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
 alias sudo='sudo '
 
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Start X at login for Arch boxes
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
     if hash startx 2>& /dev/null; then
