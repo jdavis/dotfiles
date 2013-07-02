@@ -50,6 +50,9 @@
     unstage = reset HEAD
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # Found here: http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
+    # Thanks to http://github.com/zdwolfe for tweeting it.
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
 
