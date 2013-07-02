@@ -50,6 +50,8 @@
     unstage = reset HEAD
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    untrack = update-index --assume-unchanged
+    track = update-index --no-assume-unchanged
 
     # Commands found online
     # http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
