@@ -309,10 +309,10 @@ autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list = 2  " Close error window automatically when there are no errors.
-let g:syntastic_enable_signs = 1  " Show sidebar signs.
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_enable_signs = 1
 let g:syntastic_java_checker = "checkstyle"
-let g:syntastic_java_javac_delete_output=0  " Don't delete .class files after syntax check.
+let g:syntastic_java_javac_delete_output=0
 
 "
 " Misc Settings
