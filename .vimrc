@@ -146,75 +146,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 "
-" Custom Bindings
-"
-
-" Bind PasteToggle to something quick and easy
-nm <leader>tP :cal PasteToggle()<cr>
-
-" Bind :sort to something easy, don't press enter, allow for options (eg -u,
-" n, sorting in reverse [sort!])
-vnoremap <leader>s :sort
-
-"
-" Bundle Settings/Bindings
-"
-
-" Vundle mapping
-nm <leader>vl :BundleList<cr>
-nm <leader>vi :BundleInstall<cr>
-nm <leader>vI :BundleInstall!<cr>
-nm <leader>vc :BundleClean<cr>
-nm <leader>vC :BundleClean!<cr>
-
-" NERDTree Options
-let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
-nm <leader>tb :NERDTreeTabsToggle<cr>
-
-" Show CtrlP
-nn <leader>p :CtrlP<cr>
-
-" Autoclose Plugin options
-let g:AutoClosePairs = "() {} [] \" ' `"
-au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
-
-" Python-mode settings
-let g:pymode_run_key = '<leader>r'
-let g:pymode_lint_ignore = 'E501'
-let g:pymode_folding = 0
-let g:pymode_lint_config = "$HOME/.pylintrc"
-let g:pymode_run = 0
-
-" Powerline options
-let g:Powerline_symbols = 'fancy'
-
-" Fugitive mapping
-nm <leader>gb :Gblame<cr>
-nm <leader>gc :Gcommit<cr>
-nm <leader>gd :Gdiff<cr>
-nm <leader>gg :Ggrep
-nm <leader>gl :Glog<cr>
-nm <leader>gp :Git pull<cr>
-nm <leader>gP :Git push<cr>
-nm <leader>gs :Gstatus<cr>
-nm <leader>gw :Gbrowse<cr>
-
-" Python-mode options
-if !has('python')
-    " Only load Python-mode when Python is enabled
-    let g:pymode = 0
-endif
-
-" Cpplint Settings
-autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
-
-" Eclim Settings
-set rtp+=~/.vim/bundle/eclim/
-autocmd FileType java nm <buffer> <leader>ei :JavaImport<cr>
-autocmd FileType java nm <buffer> <leader>ed :JavaDocSearch -x declarations<cr>
-autocmd FileType java nm <buffer> <leader>es :JavaSearchContext<cr>
-
-"
 " Start Vundle
 "
 
@@ -310,6 +241,78 @@ Bundle 'mattn/gist-vim'
 
 " CoVim
 "Bundle 'FredKSchott/CoVim'
+
+"
+" Custom Bindings
+"
+
+" Bind PasteToggle to something quick and easy
+nm <leader>tP :cal PasteToggle()<cr>
+
+" Bind :sort to something easy, don't press enter, allow for options (eg -u,
+" n, sorting in reverse [sort!])
+vnoremap <leader>s :sort
+
+"
+" Bundle Settings/Bindings
+"
+
+" Vundle mapping
+nm <leader>vl :BundleList<cr>
+nm <leader>vi :BundleInstall<cr>
+nm <leader>vI :BundleInstall!<cr>
+nm <leader>vc :BundleClean<cr>
+nm <leader>vC :BundleClean!<cr>
+
+" NERDTree Options
+let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
+nm <leader>tb :NERDTreeTabsToggle<cr>
+
+" Show CtrlP
+nn <leader>p :CtrlP<cr>
+
+" Autoclose Plugin options
+let g:AutoClosePairs = "() {} [] \" ' `"
+au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
+
+" Python-mode settings
+let g:pymode_run_key = '<leader>r'
+let g:pymode_lint_ignore = 'E501'
+let g:pymode_folding = 0
+let g:pymode_lint_config = "$HOME/.pylintrc"
+let g:pymode_run = 0
+
+" Powerline options
+let g:Powerline_symbols = 'fancy'
+
+" Fugitive mapping
+nm <leader>gb :Gblame<cr>
+nm <leader>gc :Gcommit<cr>
+nm <leader>gd :Gdiff<cr>
+nm <leader>gg :Ggrep
+nm <leader>gl :Glog<cr>
+nm <leader>gp :Git pull<cr>
+nm <leader>gP :Git push<cr>
+nm <leader>gs :Gstatus<cr>
+nm <leader>gw :Gbrowse<cr>
+
+" Python-mode options
+if !has('python')
+    " Only load Python-mode when Python is enabled
+    let g:pymode = 0
+endif
+
+" Cpplint Settings
+autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
+
+" Syntastic Settings
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list = 2  " Close error window automatically when there are no errors.
+let g:syntastic_enable_signs = 1  " Show sidebar signs.
+let g:syntastic_java_checker = "checkstyle"
+let g:syntastic_java_javac_delete_output=0  " Don't delete .class files after syntax check.
 
 "
 " Misc Settings
