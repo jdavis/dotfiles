@@ -311,8 +311,10 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_signs = 1
-let g:syntastic_java_checker = "checkstyle"
-let g:syntastic_java_javac_delete_output=0
+let g:syntastic_java_checkers = ["checkstyle", "javac"]
+let g:syntastic_java_javac_delete_output = 0
+let g:syntastic_java_checkstyle_conf_file = '~/jars/sun_checks.xml'
+let g:syntastic_java_checkstyle_classpath = '~/jars/checkstyle-5.5-all.jar'
 
 "
 " Misc Settings
