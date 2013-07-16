@@ -4,3 +4,6 @@
 [submodule ".vim"]
 	path = .vim
 	url = git://github.com/jdavis/vim-files.git
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git
