@@ -37,7 +37,7 @@ endfunction
 "
 
 " The default 20 isn't nearly enough
-set history=1000
+set history=9999
 
 " Show the numbers on the left of the screen
 set number
