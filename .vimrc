@@ -286,6 +286,7 @@ let g:pymode_run = 0
 let g:airline_enable_fugitive=1
 let g:airline_enable_syntastic=1
 let g:airline_powerline_fonts=1
+let g:airline_theme='light'
 
 " Fugitive mapping
 nm <leader>gb :Gblame<cr>
