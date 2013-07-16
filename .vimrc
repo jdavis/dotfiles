@@ -212,7 +212,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 
 " For better status lines
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 
 " Let's add some colors
 Bundle 'flazz/vim-colorschemes'
@@ -282,8 +282,10 @@ let g:pymode_folding = 0
 let g:pymode_lint_config = "$HOME/.pylintrc"
 let g:pymode_run = 0
 
-" Powerline options
-let g:Powerline_symbols = 'fancy'
+" Airline options
+let g:airline_enable_fugitive=1
+let g:airline_enable_syntastic=1
+let g:airline_powerline_fonts=1
 
 " Fugitive mapping
 nm <leader>gb :Gblame<cr>
