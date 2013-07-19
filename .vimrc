@@ -13,15 +13,6 @@
 set nocompatible
 
 "
-" Custom Commands
-"
-
-" I'm getting tired of accidentally holding down the shift key...
-" Reissue `w` even if I capitalize it...
-com W w
-
-
-"
 " Custom Functions
 "
 
