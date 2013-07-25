@@ -16,6 +16,7 @@
     # Shortcuts
     a = add
     b = branch
+    bl = blame
     c = commit -v
     cl = clone
     co = checkout
