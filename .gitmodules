@@ -7,3 +7,6 @@
 [submodule ".fonts"]
 	path = .fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule ".z"]
+	path = .z
+	url = https://github.com/rupa/z.git
