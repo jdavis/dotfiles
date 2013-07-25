@@ -34,6 +34,7 @@
     rs = reset
     rv = revert
     s = status
+    sh = show
     sl = shortlog
     sm = submodule
     st = stash
