@@ -120,9 +120,15 @@ nn <CR> :noh<CR><CR>
 " hahaha
 imap <C-F> <RIGHT>
 imap <C-B> <LEFT>
-imap <M-BS> <Esc>vBc
+imap <M-BS> <ESC>vBc
 imap <C-P> <UP>
 imap <C-N> <DOWN>
+
+" Map Ctrl+V to paste in Insert mode
+imap <C-V> <C-R>*
+
+" Map Ctrl+C to copy in Visual mode
+vmap <C-C> "+y
 
 "
 " Custom Settings
