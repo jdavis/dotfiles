@@ -243,8 +243,12 @@ Bundle 'mattn/gist-vim'
 " http://www.reddit.com/r/vim/comments/1im4d9/do_you_ever_accidentally_hold_the_shift_key_to/cb5za1t
 Bundle 'takac/vim-commandcaps'
 
+" Long live ctags
+Bundle 'majutsushi/tagbar'
+
 " CoVim
 "Bundle 'FredKSchott/CoVim'
+
 
 "
 " Custom Bindings
@@ -268,12 +272,15 @@ nm <leader>vI :BundleInstall!<cr>
 nm <leader>vc :BundleClean<cr>
 nm <leader>vC :BundleClean!<cr>
 
-" NERDTree Options
+" NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
 
 " Show CtrlP
 nn <leader>p :CtrlP<cr>
+
+" Tagbar Options: Toggle Tagbar
+nm <leader>tt :TagbarToggle<CR>
 
 " Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
