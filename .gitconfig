@@ -46,6 +46,7 @@
     # New Commands
     amend = commit --amend
     count = shortlog -sn
+    ctags = !.git/hooks/ctags
     back = checkout HEAD~
     forward = checkout HEAD^
     graph = log --all --graph --decorate --oneline -n100
