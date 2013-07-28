@@ -3,15 +3,17 @@
 [user]
     name = Josh Davis
     email = josh@joshldavis.com
-[github]
-    user = jdavis
+[color]
+    ui = true
 [core]
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore
+[github]
+    user = jdavis
 [help]
     autocorrect = 1
-[color]
-    ui = true
+[init]
+    templatedir = ~/.git_template
 [alias]
     # Shortcuts
     a = add
