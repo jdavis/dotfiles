@@ -286,7 +286,7 @@ nm <leader>tb :NERDTreeTabsToggle<cr>
 nn <leader>p :CtrlP<cr>
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|class)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
 " Tagbar Options: Toggle Tagbar

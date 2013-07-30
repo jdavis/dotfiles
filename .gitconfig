@@ -1,8 +1,5 @@
 [advice]
     statusHints = false
-[user]
-    name = Josh Davis
-    email = josh@joshldavis.com
 [color]
     ui = true
 [core]
@@ -14,6 +11,9 @@
     autocorrect = 1
 [init]
     templatedir = ~/.git_template
+[user]
+    name = Josh Davis
+    email = davisjos@amazon.com
 [alias]
     # Shortcuts
     a = add
@@ -68,3 +68,5 @@
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 [amazon]
 	append-cr-url = true
+[push]
+	default = simple
