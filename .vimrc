@@ -282,8 +282,12 @@ nm <leader>vC :BundleClean!<cr>
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
 
-" Show CtrlP
+" CtrlP Settings
 nn <leader>p :CtrlP<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class)$',
+\}
 
 " Tagbar Options: Toggle Tagbar
 nm <leader>tt :TagbarToggle<CR>
