@@ -255,6 +255,8 @@ Bundle 'majutsushi/tagbar'
 " CoVim
 "Bundle 'FredKSchott/CoVim'
 
+" Ack support in Vim
+Bundle 'mileszs/ack.vim'
 
 "
 " Custom Bindings
