@@ -167,7 +167,7 @@ call vundle#rc()
 "
 
 " Vundle bundle
-Bundle 'jdavis/vundle'
+Bundle 'gmarik/vundle'
 
 " Updated Vim-Git runtime files
 Bundle 'tpope/vim-git'
