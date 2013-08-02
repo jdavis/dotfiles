@@ -167,7 +167,7 @@ call vundle#rc()
 "
 
 " Vundle bundle
-Bundle 'jdavis/vundle'
+Bundle 'gmarik/vundle'
 
 " Updated Vim-Git runtime files
 Bundle 'tpope/vim-git'
@@ -255,6 +255,8 @@ Bundle 'majutsushi/tagbar'
 " CoVim
 "Bundle 'FredKSchott/CoVim'
 
+" Ack support in Vim
+Bundle 'mileszs/ack.vim'
 
 "
 " Custom Bindings
@@ -282,8 +284,12 @@ nm <leader>vC :BundleClean!<cr>
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
 
-" Show CtrlP
+" CtrlP Settings
 nn <leader>p :CtrlP<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
 
 " Tagbar Options: Toggle Tagbar
 nm <leader>tt :TagbarToggle<CR>
@@ -300,7 +306,7 @@ let g:pymode_lint_config = "$HOME/.pylintrc"
 let g:pymode_run = 0
 
 " Airline options
-let g:airline_enable_fugitive=1
+let g:airline_enable_branch=1
 let g:airline_enable_syntastic=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='light'
