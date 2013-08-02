@@ -13,7 +13,7 @@
     templatedir = ~/.git_template
 [user]
     name = Josh Davis
-    email = davisjos@amazon.com
+    email = josh@joshldavis.com
 [alias]
     # Shortcuts
     a = add
@@ -66,7 +66,3 @@
     snapshot = !git stash save "snapshot: $(date)" && git stash apply "$stash@{0}"
     ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
     theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-[amazon]
-	append-cr-url = true
-[push]
-	default = simple
