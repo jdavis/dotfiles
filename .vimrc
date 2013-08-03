@@ -130,6 +130,9 @@ imap <C-V> <C-R>*
 " Map Ctrl+C to copy in Visual mode
 vmap <C-C> "+y
 
+" Map Ctrl+V to copy in Visual mode
+nmap <C-S-V> "+p
+
 "
 " Custom Settings
 "
