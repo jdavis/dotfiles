@@ -101,11 +101,20 @@ let mapleader = ","
 " Show two lines for the status line
 set laststatus=2
 
+" Always show the last line
+set display+=lastline
+
 " UTF-8 THIS SHITTTTTT
 set encoding=utf-8
 
 " Enable spellcheck for Markdown files
 autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_us
+
+" Enhanced mode for command-line completion
+set wildmenu
+
+" Automatically re-read the file if it has changed
+set autoread
 
 "
 " Global Bindings
