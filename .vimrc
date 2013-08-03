@@ -147,6 +147,15 @@ vmap <C-C> "+y
 " Map Ctrl+V to copy in Visual mode
 nmap <C-S-V> "+p
 
+" GVim Settings
+if has('gui_running')
+    " Who uses a GUI in GVim anyways? Let's be serious.
+    set guioptions=aegirLt
+
+    " Let's make the fonts look nice
+    set guifont=Inconsolata\ for\ Powerline\ 11
+endif
+
 "
 " Custom Settings
 "
