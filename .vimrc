@@ -127,8 +127,8 @@ nm <leader>T :tabnew<cr>
 nm <leader>s<bar> :vsplit<cr>
 nm <leader>s- :split<cr>
 
-" Unhighlight (:nohlsearch) the last search pattern on Enter
-nn <CR> :noh<CR><CR>
+" Unhighlight the last search pattern on Enter
+nn <silent> <CR> :nohlsearch<CR><CR>
 
 " Better controls while in insert mode by better I mean more like emacs,
 " hahaha
