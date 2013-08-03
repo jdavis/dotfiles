@@ -70,8 +70,9 @@ set showcmd
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Use smart indenting
+" Use smarter defaults
 set smartindent
+set smarttab
 
 " Use autoindenting
 set autoindent
