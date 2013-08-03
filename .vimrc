@@ -297,8 +297,12 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
-" Tagbar Options: Toggle Tagbar
+" Tagbar Options
+" Toggle Tagbar
 nm <leader>tt :TagbarToggle<CR>
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+
 
 " Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
