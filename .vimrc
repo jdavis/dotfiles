@@ -261,6 +261,9 @@ Bundle 'majutsushi/tagbar'
 " Ack support in Vim
 Bundle 'mileszs/ack.vim'
 
+" Better Undo
+Bundle 'sjl/gundo.vim'
+
 "
 " Custom Bindings
 "
@@ -344,6 +347,10 @@ let g:syntastic_java_checkers = ["checkstyle", "javac"]
 let g:syntastic_java_javac_delete_output = 0
 let g:syntastic_java_checkstyle_conf_file = '~/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/jars/checkstyle-5.5-all.jar'
+
+" Gundo settings
+nm <leader>tg :GundoToggle<CR>
+let g:gundo_width=30
 
 "
 " Misc Settings
