@@ -42,6 +42,9 @@ set history=9999
 " Show the numbers on the left of the screen
 set number
 
+" Show the column/row
+set ruler
+
 " Pretty colors are fun, yayyy
 syntax on
 
