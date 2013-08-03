@@ -55,9 +55,10 @@ set showmatch
 " of insert
 set backspace=indent,eol,start
 
-" Ignore case when doing a search as well as highlight it
+" Ignore case when doing a search as well as highlight it as it is typed
 set ignorecase smartcase
 set hlsearch
+set incsearch
 
 " Don't show the startup message
 set shortmess=I
