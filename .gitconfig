@@ -47,14 +47,13 @@
     amend = commit --amend
     count = shortlog -sn
     ctags = !.git/hooks/ctags
-    back = checkout HEAD~
     forward = checkout HEAD^
     graph = log --all --graph --decorate --oneline -n100
-    dag = log --graph --decorate --all
-    last = "log --pretty=format:'%h - %an, %ar : %s' HEAD~10..HEAD~"
-    unstage = reset HEAD
-    zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
+    last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    unstage = reset HEAD
+    up = --set-upstream
+    zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
 
     # Found here: http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
     # Thanks to http://github.com/zdwolfe for tweeting it.
