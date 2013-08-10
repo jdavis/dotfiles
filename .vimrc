@@ -144,6 +144,13 @@ nnoremap ; :
 " just to the expected location rather than to the next line
 nnoremap j gj
 nnoremap k gk
+
+" Arrow key users won't survive in this environment
+map <UP> <NOP>
+map <DOWN> <NOP>
+map <LEFT> <NOP>
+map <RIGHT> <NOP>
+
 " Map Ctrl+V to paste in Insert mode
 imap <C-V> <C-R>*
 
