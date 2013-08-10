@@ -137,6 +137,8 @@ imap <M-BS> <ESC>vBc
 imap <C-P> <UP>
 imap <C-N> <DOWN>
 
+" No more colons
+nnoremap ; :
 " Map Ctrl+V to paste in Insert mode
 imap <C-V> <C-R>*
 
