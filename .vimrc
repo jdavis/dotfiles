@@ -139,6 +139,11 @@ imap <C-N> <DOWN>
 
 " No more colons
 nnoremap ; :
+
+" When pushing j/k on a line that is wrapped, it navigates to the same line,
+" just to the expected location rather than to the next line
+nnoremap j gj
+nnoremap k gk
 " Map Ctrl+V to paste in Insert mode
 imap <C-V> <C-R>*
 
