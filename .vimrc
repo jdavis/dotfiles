@@ -130,8 +130,7 @@ nm <leader>s- :split<cr>
 " Unhighlight the last search pattern on Enter
 nn <silent> <CR> :nohlsearch<CR><CR>
 
-" Better controls while in insert mode by better I mean more like emacs,
-" hahaha
+" Control enhancements in insert mode
 imap <C-F> <RIGHT>
 imap <C-B> <LEFT>
 imap <M-BS> <ESC>vBc
