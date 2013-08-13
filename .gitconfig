@@ -58,9 +58,3 @@
     # Thanks to http://github.com/zdwolfe for tweeting it.
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
-
-    # Commands found online
-    # http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
-    snapshot = !git stash save "snapshot: $(date)" && git stash apply "$stash@{0}"
-    ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
-    theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
