@@ -48,7 +48,6 @@
     count = shortlog -sn
     ctags = !.git/hooks/ctags
     forward = checkout HEAD^
-    graph = log --all --graph --decorate --oneline -n100
     last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     unstage = reset HEAD
