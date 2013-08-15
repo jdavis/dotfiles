@@ -58,3 +58,5 @@
     # Thanks to http://github.com/zdwolfe for tweeting it.
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
+[push]
+	default = simple
