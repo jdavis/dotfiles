@@ -25,6 +25,18 @@ function! PasteToggle()
     endif
 endfunction
 
+" Remove trailing whitespace
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+function! StripTrailingWhitespace()
+    if !&binary && &filetype != 'diff'
+        normal mz
+        normal Hmy
+        %s/\s\+$//e
+        normal 'yz<CR>
+        normal `z
+    endif
+endfunction
+
 " Check if a colorscheme exists
 " http://stackoverflow.com/a/5703164
 function! HasColorScheme(scheme)
