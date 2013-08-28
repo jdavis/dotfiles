@@ -181,7 +181,12 @@ if has('gui_running')
     set guioptions=aegirLt
 
     " Let's make the fonts look nice
-    set guifont=Inconsolata\ for\ Powerline\ 11
+    let os=substitute(system('uname'), '\n', '', '')
+    if os == 'Darwin' || os == 'Mac'
+        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
+    elseif os == 'Linux'
+        set guifont=Inconsolata\ for\ Powerline:h11
+    endif
 endif
 
 "
