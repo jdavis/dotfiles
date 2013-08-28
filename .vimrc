@@ -142,6 +142,9 @@ nm <leader>s- :split<cr>
 " Unhighlight the last search pattern on Enter
 nn <silent> <CR> :nohlsearch<CR><CR>
 
+" Remove trailing whitespace
+nm <leader>tW :cal StripTrailingWhitespace()<CR>
+
 " Control enhancements in insert mode
 imap <C-F> <RIGHT>
 imap <C-B> <LEFT>
