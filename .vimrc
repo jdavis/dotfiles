@@ -372,10 +372,10 @@ let g:pymode_lint_config = "$HOME/.pylintrc"
 let g:pymode_run = 0
 
 " Airline options
-let g:airline_enable_branch=1
-let g:airline_enable_syntastic=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='light'
+let g:airline_enable_branch = 1
+let g:airline_enable_syntastic = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'light'
 
 " Fugitive mapping
 nm <leader>gb :Gblame<cr>
@@ -410,7 +410,7 @@ let g:syntastic_java_checkstyle_classpath = '~/jars/checkstyle-5.5-all.jar'
 
 " Gundo settings
 nm <leader>tg :GundoToggle<CR>
-let g:gundo_width=30
+let g:gundo_width = 30
 
 "
 " Misc Settings
