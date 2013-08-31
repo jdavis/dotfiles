@@ -362,7 +362,7 @@ let g:tagbar_width = 30
 
 " Autoclose Plugin options
 let g:AutoClosePairs = "() {} [] \" ' `"
-au FileType html,php,xhtml,xml let g:AutoClosePairs_del = "<>"
+au FileType scheme let g:AutoClosePairs = "() {} [] \" `"
 
 " Python-mode settings
 let g:pymode_run_key = '<leader>r'
