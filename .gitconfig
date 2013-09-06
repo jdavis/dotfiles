@@ -29,6 +29,7 @@
     l = log
     ls = ls-files
     m = merge
+    p = pull
     r = remote
     rb = rebase
     re = reset
