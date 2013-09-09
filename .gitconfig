@@ -30,6 +30,7 @@
     ls = ls-files
     m = merge
     p = pull
+    pu = push -u origin master
     r = remote
     rb = rebase
     re = reset
