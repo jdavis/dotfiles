@@ -13,3 +13,6 @@
 [submodule ".git-extras"]
 	path = .git-extras
 	url = https://github.com/visionmedia/git-extras.git
+[submodule "Scripts/git-calendar"]
+	path = Scripts/git-calendar
+	url = https://github.com/k4rthik/git-cal
