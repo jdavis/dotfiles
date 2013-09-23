@@ -185,7 +185,7 @@ if has('gui_running')
     if os == 'Darwin' || os == 'Mac'
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
     elseif os == 'Linux'
-        set guifont=Inconsolata\ for\ Powerline:h11
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
 endif
 
