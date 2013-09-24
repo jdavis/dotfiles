@@ -343,7 +343,7 @@ nm <leader>vc :BundleClean<cr>
 nm <leader>vC :BundleClean!<cr>
 
 " NERDTree Options: Toggle Browser
-let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$']
+let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
 nm <leader>tb :NERDTreeTabsToggle<cr>
 
 " CtrlP Settings
