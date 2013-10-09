@@ -1,4 +1,4 @@
-if ($^O == 'darwin') {
+if ($^O eq 'darwin') {
     # Open Skim when using OS X
     $pdf_previewer = "open -a Skim.app";
 } else {
