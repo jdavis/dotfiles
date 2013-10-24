@@ -53,7 +53,7 @@ ZSH_THEME='jdavis'
 export DISABLE_AUTO_UPDATE='true'
 
 # Plugins for all environments
-plugins=(git node npm python pip coffee)
+plugins=(gitfast node npm python pip coffee)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
