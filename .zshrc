@@ -52,8 +52,18 @@ ZSH_THEME='jdavis'
 # Auto-update is too ungodly slow
 export DISABLE_AUTO_UPDATE='true'
 
-# Plugins for all environments
-plugins=(gitfast node npm python pip coffee)
+#
+# Plugins
+#
+
+# General Plugins
+plugins=(gitfast)
+
+# Node Plugins
+plugins=(node npm coffee)
+
+# Python Plugins
+plugins+=(python pip virtualenv)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
@@ -61,7 +71,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
-    plugins+=(cygwin virtualenv)
+    plugins+=(cygwin)
 fi
 
 # Launch oh-my-zsh
