@@ -57,7 +57,7 @@ plugins=(gitfast node npm python pip coffee)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    plugins+=(brew gem)
+    plugins+=(osx brew gem)
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
