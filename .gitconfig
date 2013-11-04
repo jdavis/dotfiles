@@ -33,7 +33,6 @@
     pu = push -u origin master
     r = remote
     rb = rebase
-    re = reset
     rf = reflog
     rs = reset
     rv = revert
