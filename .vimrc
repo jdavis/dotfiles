@@ -101,11 +101,23 @@ set expandtab
 " Turn on persistent undo
 " Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
 if has('persistent_undo')
-    set undodir=~/.vim/undo
+    set undodir=~/.vim/undo//
     set undofile
     set undolevels=1000
     set undoreload=10000
 endif
+
+" Use backups
+" Source:
+"   http://stackoverflow.com/a/15317146
+set backup
+set writebackup
+set backupdir=~/.vim/backup//
+
+" Use a specified swap folder
+" Source:
+"   http://stackoverflow.com/a/15317146
+set directory=~/.vim/swap//
 
 " The comma makes a great leader of men, heh heh
 let mapleader = ","
