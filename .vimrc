@@ -320,6 +320,10 @@ Bundle 'mileszs/ack.vim'
 " Better Undo
 Bundle 'sjl/gundo.vim'
 
+" Better Session Management
+Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
+
 "
 " Custom Bindings
 "
