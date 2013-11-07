@@ -419,6 +419,14 @@ let g:gundo_width = 30
 " Vim-Session Settings
 let g:session_autosave_periodic = 5
 let g:session_directory = '~/.vim/sessions/'
+nm <leader>Ss :SaveSession
+nm <leader>So :OpenSession
+nm <leader>Sr :RestartVim<cr>
+nm <leader>Sc :CloseSession<cr>
+nm <leader>SC :CloseSession!<cr>
+nm <leader>Sd :DeleteSession
+nm <leader>SD :DeleteSession!
+nm <leader>Sv :ViewSession
 
 "
 " Misc Settings
