@@ -416,6 +416,10 @@ let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 nm <leader>tg :GundoToggle<CR>
 let g:gundo_width = 30
 
+" Vim-Session Settings
+let g:session_autosave_periodic = 5
+let g:session_directory = '~/.vim/sessions/'
+
 "
 " Misc Settings
 "
