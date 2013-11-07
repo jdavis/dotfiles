@@ -432,6 +432,7 @@ let g:gundo_width = 30
 let g:session_autosave_periodic = 5
 let g:session_directory = '~/.vim/sessions/'
 let g:session_command_aliases = 1
+let g:session_autosave = 'yes'
 
 nm <leader>Ss :SaveSession
 nm <leader>So :OpenSession
