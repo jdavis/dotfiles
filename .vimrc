@@ -339,6 +339,9 @@ Bundle 'xolox/vim-misc'
 " YouCompleteMe
 Bundle 'Valloric/YouCompleteMe'
 
+" Vim-Racket
+Bundle 'wlangstroth/vim-racket'
+
 "
 " Custom Bindings
 "
