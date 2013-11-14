@@ -336,6 +336,9 @@ Bundle 'sjl/gundo.vim'
 Bundle 'xolox/vim-session'
 Bundle 'xolox/vim-misc'
 
+" YouCompleteMe
+Bundle 'Valloric/YouCompleteMe'
+
 "
 " Custom Bindings
 "
