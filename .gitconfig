@@ -3,7 +3,7 @@
 [color]
     ui = true
 [core]
-    editor = /usr/bin/vim
+    editor = vim
     excludesfile = ~/.gitignore
 [github]
     user = jdavis
