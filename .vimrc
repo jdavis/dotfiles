@@ -449,6 +449,9 @@ nm <leader>Sd :DeleteSession
 nm <leader>SD :DeleteSession!
 nm <leader>Sv :ViewSession
 
+" YouCompleteMe Settings
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 "
 " Misc Settings
 "
