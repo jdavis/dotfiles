@@ -256,13 +256,13 @@ Bundle 'jistr/vim-nerdtree-tabs'
 " Bundle 'tomtom/tlib_vim'
 
 " For tab completion
-Bundle 'ervandew/supertab'
+" Bundle 'ervandew/supertab'
 
 " Various commenting capabilities
 Bundle 'scrooloose/nerdcommenter'
 
 " Autocloses characters
-Bundle 'Townk/vim-autoclose'
+"Bundle 'Townk/vim-autoclose'
 
 " For checking the syntax of any file
 Bundle 'scrooloose/syntastic'
