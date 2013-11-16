@@ -251,7 +251,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/nerdcommenter'
 
 " Autocloses characters
-"Bundle 'Townk/vim-autoclose'
+Bundle 'jiangmiao/auto-pairs'
 
 " For checking the syntax of any file
 Bundle 'scrooloose/syntastic'
