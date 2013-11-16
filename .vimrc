@@ -247,17 +247,6 @@ Bundle 'tpope/vim-git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 
-" For the best snippet functionality
-" Bundle 'garbas/vim-snipmate'
-" Bundle 'honza/vim-snippets'
-
-" Required for snipMate
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'tomtom/tlib_vim'
-
-" For tab completion
-" Bundle 'ervandew/supertab'
-
 " Various commenting capabilities
 Bundle 'scrooloose/nerdcommenter'
 
