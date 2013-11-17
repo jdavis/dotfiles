@@ -331,6 +331,9 @@ Bundle 'Valloric/YouCompleteMe'
 " Vim-Racket
 Bundle 'wlangstroth/vim-racket'
 
+" Multiple Cursors like Sublime
+Bundle 'terryma/vim-multiple-cursors'
+
 "
 " Custom Bindings
 "
