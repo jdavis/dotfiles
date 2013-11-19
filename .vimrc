@@ -145,17 +145,17 @@ set autoread
 "
 
 " Create a new tab with nicer shortcut
-nm <leader>T :tabnew<cr>
+nmap <leader>T :tabnew<cr>
 
 " Split the window using some nice shortcuts
-nm <leader>s<bar> :vsplit<cr>
-nm <leader>s- :split<cr>
+nmap <leader>s<bar> :vsplit<cr>
+nmap <leader>s- :split<cr>
 
 " Unhighlight the last search pattern on Enter
 nn <silent> <CR> :nohlsearch<CR><CR>
 
 " Remove trailing whitespace
-nm <leader>tW :cal StripTrailingWhitespace()<CR>
+nmap <leader>tW :cal StripTrailingWhitespace()<CR>
 
 " Control enhancements in insert mode
 imap <C-F> <RIGHT>
@@ -339,7 +339,7 @@ Bundle 'terryma/vim-multiple-cursors'
 "
 
 " Bind PasteToggle to something quick and easy
-nm <leader>tP :cal PasteToggle()<cr>
+nmap <leader>tP :cal PasteToggle()<cr>
 
 " Bind :sort to something easy, don't press enter, allow for options (eg -u,
 " n, sorting in reverse [sort!])
@@ -350,15 +350,15 @@ vnoremap <leader>s :sort
 "
 
 " Vundle mapping
-nm <leader>vl :BundleList<cr>
-nm <leader>vi :BundleInstall<cr>
-nm <leader>vI :BundleInstall!<cr>
-nm <leader>vc :BundleClean<cr>
-nm <leader>vC :BundleClean!<cr>
+nmap <leader>vl :BundleList<cr>
+nmap <leader>vi :BundleInstall<cr>
+nmap <leader>vI :BundleInstall!<cr>
+nmap <leader>vc :BundleClean<cr>
+nmap <leader>vC :BundleClean!<cr>
 
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
-nm <leader>tb :NERDTreeTabsToggle<cr>
+nmap <leader>tb :NERDTreeTabsToggle<cr>
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
@@ -369,7 +369,7 @@ let g:ctrlp_custom_ignore = {
 
 " Tagbar Options
 " Toggle Tagbar
-nm <leader>tt :TagbarToggle<CR>
+nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 30
 
@@ -392,15 +392,15 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
 
 " Fugitive mapping
-nm <leader>gb :Gblame<cr>
-nm <leader>gc :Gcommit<cr>
-nm <leader>gd :Gdiff<cr>
-nm <leader>gg :Ggrep
-nm <leader>gl :Glog<cr>
-nm <leader>gp :Git pull<cr>
-nm <leader>gP :Git push<cr>
-nm <leader>gs :Gstatus<cr>
-nm <leader>gw :Gbrowse<cr>
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gg :Ggrep
+nmap <leader>gl :Glog<cr>
+nmap <leader>gp :Git pull<cr>
+nmap <leader>gP :Git push<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gw :Gbrowse<cr>
 
 " Python-mode options
 if !has('python')
@@ -423,7 +423,7 @@ let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 
 " Gundo settings
-nm <leader>tg :GundoToggle<CR>
+nmap <leader>tg :GundoToggle<CR>
 let g:gundo_width = 30
 
 " Vim-Session Settings
@@ -432,14 +432,14 @@ let g:session_directory = '~/.vim/sessions/'
 let g:session_command_aliases = 1
 let g:session_autosave = 'yes'
 
-nm <leader>Ss :SaveSession
-nm <leader>So :OpenSession
-nm <leader>Sr :RestartVim<cr>
-nm <leader>Sc :CloseSession<cr>
-nm <leader>SC :CloseSession!<cr>
-nm <leader>Sd :DeleteSession
-nm <leader>SD :DeleteSession!
-nm <leader>Sv :ViewSession
+nmap <leader>Ss :SaveSession
+nmap <leader>So :OpenSession
+nmap <leader>Sr :RestartVim<cr>
+nmap <leader>Sc :CloseSession<cr>
+nmap <leader>SC :CloseSession!<cr>
+nmap <leader>Sd :DeleteSession
+nmap <leader>SD :DeleteSession!
+nmap <leader>Sv :ViewSession
 
 " YouCompleteMe Settings
 let g:ycm_autoclose_preview_window_after_completion = 1
