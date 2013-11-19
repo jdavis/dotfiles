@@ -206,13 +206,13 @@ endif
 "
 
 " Set on textwidth when in markdown files
-au FileType markdown set textwidth=80
+autocmd FileType markdown set textwidth=80
 
 " Smarter completion in C
-au FileType c set omnifunc=ccomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
 
 " My own special flavoring to running programs
-au FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
+autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
 
 " Highlight trailing whitespace obnoxiously
 highlight ExtraWhitespace ctermbg=red guibg=red
