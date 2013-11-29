@@ -268,9 +268,6 @@ Bundle 'tpope/vim-fugitive'
 " Easily surround things
 Bundle 'tpope/vim-surround'
 
-" Awesome Python utilities
-"Bundle 'klen/python-mode'
-
 " For CoffeeScript, YAY!
 Bundle 'kchmck/vim-coffee-script'
 
