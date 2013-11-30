@@ -7,7 +7,7 @@ Todo
 
 - [ ] Add tmux oh-my-zsh plugin
 
-- [ ] Update my .tmux.conf
+- [ ] Update my .tmux.conf (read Tmux book)
 
 - [ ] Look into web-search oh-my-zsh plugin
 
