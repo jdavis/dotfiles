@@ -12,3 +12,7 @@ Todo
 - [ ] Look into web-search oh-my-zsh plugin
 
 - [ ] Look into github oh-my-zsh plugin
+
+- [ ] Explore Slate config (layout directive, monitors, etc) [sample][slate]
+
+slate: https://github.com/jigish/dotfiles/blob/master/slate
