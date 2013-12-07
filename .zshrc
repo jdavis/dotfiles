@@ -57,7 +57,7 @@ export DISABLE_AUTO_UPDATE='true'
 #
 
 # General Plugins
-plugins=(gitfast)
+plugins=(gitfast tmuxinator)
 
 # Node Plugins
 plugins=(node npm coffee)
