@@ -6,9 +6,13 @@
 # https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
 alias sudo='sudo '
 
+# Ensure languages are set
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Ensure editor is set
+export EDITOR=vim
 
 # Start X at login for Arch boxes
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] ; then
