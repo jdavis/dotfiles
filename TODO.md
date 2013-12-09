@@ -9,5 +9,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - Look into web-search oh-my-zsh plugin
 - Look into github oh-my-zsh plugin
 - Explore Slate config (layout directive, monitors, etc) [sample][slate]
+- Look into [antigen][anti] (again)
 
-slate: https://github.com/jigish/dotfiles/blob/master/slate
+[slate]: https://github.com/jigish/dotfiles/blob/master/slate
+[anti]: https://github.com/zsh-users/antigen
