@@ -217,13 +217,9 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " My own special flavoring to running programs
 autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
 
-" Highlight trailing whitespace obnoxiously
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" Show trailing whitespace and tabs obnoxiously
+set list listchars=tab:>-,trail:.,extends:>
+set list
 
 "
 " Start Vundle
