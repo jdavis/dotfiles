@@ -250,7 +250,6 @@ Bundle 'tpope/vim-git'
 
 " For file browsing
 Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 
 " Various commenting capabilities
 Bundle 'scrooloose/nerdcommenter'
@@ -360,7 +359,7 @@ nmap <leader>vC :BundleClean!<cr>
 
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
-nmap <leader>tb :NERDTreeTabsToggle<cr>
+nmap <leader>tb :NERDTreeToggle<cr>
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
