@@ -39,8 +39,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-
 " Remove trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 function! StripTrailingWhitespace()
@@ -374,6 +372,13 @@ nmap <leader>vC :BundleClean!<cr>
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
 nmap <leader>tb :NERDTreeToggle<cr>
+
+" Close NERDTree if it is the last buffer open
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Automatically open NERDTree whenever opened
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
