@@ -376,9 +376,11 @@ nmap <leader>tb :NERDTreeToggle<cr>
 " Close NERDTree if it is the last buffer open
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
-" Automatically open NERDTree whenever opened
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" Automatically open NERDTree whenever opened with GUI
+if has('gui_running')
+    autocmd VimEnter * NERDTree
+    autocmd VimEnter * wincmd p
+endif
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
