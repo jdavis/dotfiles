@@ -187,9 +187,6 @@ imap <M-BS> <ESC>vBc
 imap <C-P> <UP>
 imap <C-N> <DOWN>
 
-" No more colons
-nnoremap ; :
-
 " When pushing j/k on a line that is wrapped, it navigates to the same line,
 " just to the expected location rather than to the next line
 nnoremap j gj
