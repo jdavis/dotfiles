@@ -150,6 +150,13 @@ set autoread
 " Create a new tab with nicer shortcut
 nmap <leader>T :tabnew<cr>
 
+" Buffer management
+set hidden
+nmap gB :bnext<CR>
+nmap gb :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
 nmap <leader>s- :split<cr>
