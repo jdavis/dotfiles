@@ -72,6 +72,7 @@ set number
 set ruler
 
 " Highlight only the lines that go past 80 characters
+highlight ColorColumn ctermbg=green guibg=green
 call matchadd('ColorColumn', '\%82v', 100)
 
 " Pretty colors are fun, yayyy
