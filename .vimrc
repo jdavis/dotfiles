@@ -52,6 +52,33 @@ function! StripTrailingWhitespace()
     endif
 endfunction
 
+function! ToggleSelected(visual)
+    highlight HideSelected ctermfg=bg ctermbg=bg guifg=bg guibg=bg gui=none term=none cterm=none
+    highlight Unbold gui=none term=none cterm=none
+
+    if exists("g:toggle_selected_hide")
+        call matchdelete(g:toggle_selected_hide)
+        call matchdelete(g:toggle_selected_unbold)
+
+        unlet g:toggle_selected_hide
+        unlet g:toggle_selected_unbold
+        redraw
+
+        if !a:visual
+            return
+        endif
+    endif
+
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+
+    let pattern = '\%^\|\%<'.lnum1.'l\|\%<'.col1.'v\|\%>'.lnum2.'l\|\%>'.col2.'v'
+    let g:toggle_selected_hide = matchadd('HideSelected', pattern, 1000)
+    let g:toggle_selected_unbold = matchadd('Unbold', pattern, 1000)
+
+    redraw
+endfunction
+
 " Check if a colorscheme exists
 " http://stackoverflow.com/a/5703164
 function! HasColorScheme(scheme)
@@ -169,6 +196,10 @@ nmap gt :bnext<CR>
 nmap gT :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
+
+" Show only selected in Visual Mode
+nmap <leader>th :cal ToggleSelected(0)<CR>
+vmap <leader>th :cal ToggleSelected(1)<CR>
 
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
