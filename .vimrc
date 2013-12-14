@@ -163,12 +163,10 @@ set autoread
 " Global Bindings
 "
 
-" Create a new tab with nicer shortcut
-nmap <leader>T :tabnew<cr>
-
 " Buffer Shortcuts
-nmap gB :bnext<CR>
-nmap gb :bprevious<CR>
+nmap <leader>T :enew<cr>
+nmap gt :bnext<CR>
+nmap gT :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
