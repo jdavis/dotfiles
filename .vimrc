@@ -25,6 +25,22 @@ function! PasteToggle()
     endif
 endfunction
 
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+" Source: https://github.com/scrooloose/nerdtree/issues/21
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
 " Remove trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 function! StripTrailingWhitespace()
