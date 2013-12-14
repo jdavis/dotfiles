@@ -101,6 +101,9 @@ set shiftwidth=4
 " from here on out
 set expandtab
 
+" Buffer Settings
+set hidden
+
 " Turn on persistent undo
 " Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
 if has('persistent_undo')
@@ -150,8 +153,7 @@ set autoread
 " Create a new tab with nicer shortcut
 nmap <leader>T :tabnew<cr>
 
-" Buffer management
-set hidden
+" Buffer Shortcuts
 nmap gB :bnext<CR>
 nmap gb :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
