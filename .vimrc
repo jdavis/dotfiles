@@ -48,6 +48,7 @@ function! StripTrailingWhitespace()
         %s/\s\+$//e
         normal 'yz<CR>
         normal `z
+        retab
     endif
 endfunction
 
