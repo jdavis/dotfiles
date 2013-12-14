@@ -338,8 +338,10 @@ Bundle 'sjl/gundo.vim'
 Bundle 'xolox/vim-session'
 Bundle 'xolox/vim-misc'
 
-" YouCompleteMe
-Bundle 'Valloric/YouCompleteMe'
+" YouCompleteMe needs 7.3.584
+if v:version >= 703 && has("patch584")
+    Bundle 'Valloric/YouCompleteMe'
+endif
 
 " Vim-Racket
 Bundle 'wlangstroth/vim-racket'
