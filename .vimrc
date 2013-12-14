@@ -54,14 +54,11 @@ endfunction
 
 function! ToggleSelected(visual)
     highlight HideSelected ctermfg=bg ctermbg=bg guifg=bg guibg=bg gui=none term=none cterm=none
-    highlight Unbold gui=none term=none cterm=none
 
     if exists("g:toggle_selected_hide")
         call matchdelete(g:toggle_selected_hide)
-        call matchdelete(g:toggle_selected_unbold)
 
         unlet g:toggle_selected_hide
-        unlet g:toggle_selected_unbold
         redraw
 
         if !a:visual
@@ -74,7 +71,6 @@ function! ToggleSelected(visual)
 
     let pattern = '\%^\|\%<'.lnum1.'l\|\%<'.col1.'v\|\%>'.lnum2.'l\|\%>'.col2.'v'
     let g:toggle_selected_hide = matchadd('HideSelected', pattern, 1000)
-    let g:toggle_selected_unbold = matchadd('Unbold', pattern, 1000)
 
     redraw
 endfunction
