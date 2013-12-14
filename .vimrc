@@ -266,8 +266,8 @@ Bundle 'scrooloose/nerdtree'
 " Various commenting capabilities
 Bundle 'scrooloose/nerdcommenter'
 
-" Autocloses characters
-Bundle 'jiangmiao/auto-pairs'
+" Automatically close things
+Bundle 'Raimondi/delimitMate'
 
 " For checking the syntax of any file
 Bundle 'scrooloose/syntastic'
@@ -394,11 +394,6 @@ let g:ctrlp_custom_ignore = {
 nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 30
-
-
-" Autoclose Plugin options
-let g:AutoClosePairs = "() {} [] \" ' `"
-au FileType scheme let g:AutoClosePairs = "() {} [] \" `"
 
 " Python-mode settings
 let g:pymode_run_key = '<leader>r'
