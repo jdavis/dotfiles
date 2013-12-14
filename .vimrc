@@ -137,9 +137,6 @@ set display+=lastline
 " UTF-8 THIS SHITTTTTT
 set encoding=utf-8
 
-" Enable spellcheck for Markdown files
-autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_us
-
 " Enhanced mode for command-line completion
 set wildmenu
 
