@@ -344,6 +344,9 @@ Bundle 'funorpain/vim-cpplint'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" EasyMotion Plugin
+Bundle 'Lokaltog/vim-easymotion'
+
 " Awesome plugin for my capitalization woes:
 " http://www.reddit.com/r/vim/comments/1im4d9/do_you_ever_accidentally_hold_the_shift_key_to/cb5za1t
 Bundle 'takac/vim-commandcaps'
