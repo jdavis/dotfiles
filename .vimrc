@@ -502,7 +502,7 @@ let g:multi_cursor_skip_key = '<C-l>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 " EasyMotion Settings
-let g:EasyMotion_leader_key = ' '
+let g:EasyMotion_leader_key = '<leader>'
 
 "
 " Misc Settings
