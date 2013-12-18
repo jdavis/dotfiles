@@ -10,7 +10,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - Look into github oh-my-zsh plugin
 - Explore Slate config (layout directive, monitors, etc) [sample][slate]
 - Look into [antigen][anti] (again)
-- Learn about Vim buffers
+- ✓ Learn about Vim buffers
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
