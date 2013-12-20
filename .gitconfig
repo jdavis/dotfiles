@@ -30,7 +30,7 @@
     ls = ls-files
     m = merge
     p = pull
-    pu = push -u origin master
+    pu = !git push -u origin `git rev-parse --abbrev-ref HEAD`
     r = remote
     rb = rebase
     rf = reflog
