@@ -61,4 +61,4 @@
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
 [push]
-	default = matching
+    default = simple
