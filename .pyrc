@@ -19,4 +19,4 @@ else:
         readline.parse_and_bind('tab: complete')
 
 atexit.register(readline.write_history_file, hist_path)
-del os, sys, readline, histfile, rlcompleter, atexit
+del os, sys, readline, rlcompleter, atexit
