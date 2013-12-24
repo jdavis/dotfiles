@@ -14,7 +14,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - Look into [antigen][anti] (again)
 - ✓ Learn about Vim buffers
 - Fix up secret dotfiles
-- Use SSH keys more, see Michael Davis' dotfiles
+- ✓ Use SSH keys more, see Michael Davis' dotfiles
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
