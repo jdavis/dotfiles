@@ -18,3 +18,24 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
+
+## Server
+
+- Setup key only SSH
+- VPS security
+- Setup [OwnCloud][owncloud]
+- Traffic Tunnel
+- Setup Git
+- Setup [tshock][tshock]
+- [GitLab][gitlab]?
+- [Fail2ban][f2b] & [Denyhosts][deny]
+- Backup?
+- rtorrent?
+- SFTP
+- Connecting to IRC
+
+[owncloud]: http://owncloud.org/
+[tshock]: http://tshock.co/xf/index.php
+[gitlab]: http://gitlab.org/
+[f2b]: https://www.digitalocean.com/community/articles/how-to-protect-ssh-with-fail2ban-on-centos-6
+[deny]: https://www.digitalocean.com/community/articles/how-to-install-denyhosts-on-centos-6
