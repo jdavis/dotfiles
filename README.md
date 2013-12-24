@@ -22,20 +22,20 @@ this repository.
 please, look over any file that you are doing this for. In this case, the
 original file can be viewed [here][installer].
 
-[installer]: https://github.com/jdavis/dotfiles/blob/master/Scripts/install_dotfiles.sh
+[installer]: https://github.com/jdavis/dotfiles/blob/master/bin/install_dotfiles.sh
 
 To install, use one of the commands listed below:
 
 Using `curl`:
 
 ```bash
-    $ curl -L https://raw.github.com/jdavis/dotfiles/master/Scripts/install_dotfiles.sh | sh
+    $ curl -L https://raw.github.com/jdavis/dotfiles/master/bin/install_dotfiles.sh | sh
 ```
 
 Using `wget`:
 
 ```bash
-    $ wget https://raw.github.com/jdavis/dotfiles/master/Scripts/install_dotfiles.sh -O | sh
+    $ wget https://raw.github.com/jdavis/dotfiles/master/bin/install_dotfiles.sh -O | sh
 ```
 
 ### Manual Installation
