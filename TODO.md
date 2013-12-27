@@ -26,7 +26,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - Setup [OwnCloud][owncloud]
 - Traffic Tunnel
 - Setup Git
-- Setup [tshock][tshock]
+- ~~Setup [tshock][tshock]~~ (Too memory intensive)
 - ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
