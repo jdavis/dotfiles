@@ -28,7 +28,8 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - Setup Git
 - Setup [tshock][tshock]
 - [GitLab][gitlab]?
-- [Fail2ban][f2b] & [Denyhosts][deny]
+- [Fail2ban][f2b]
+- ✓ [Denyhosts][deny]
 - Backup?
 - rtorrent?
 - SFTP
