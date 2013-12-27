@@ -32,7 +32,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - ✓ [Denyhosts][deny]
 - Backup?
 - rtorrent?
-- SFTP
+- BitTorrent Sync
 - Connecting to IRC
 
 [owncloud]: http://owncloud.org/
