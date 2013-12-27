@@ -22,12 +22,12 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 ## Server
 
 - ✓ Setup key only SSH
-- VPS security
+- ✓ VPS security
 - Setup [OwnCloud][owncloud]
 - Traffic Tunnel
 - Setup Git
 - Setup [tshock][tshock]
-- [GitLab][gitlab]?
+- ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
 - Backup?
@@ -35,6 +35,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 - BitTorrent Sync
 - Connecting to IRC
 
+[klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
 [tshock]: http://tshock.co/xf/index.php
 [gitlab]: http://gitlab.org/
