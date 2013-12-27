@@ -21,7 +21,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 
 ## Server
 
-- Setup key only SSH
+- ✓ Setup key only SSH
 - VPS security
 - Setup [OwnCloud][owncloud]
 - Traffic Tunnel
