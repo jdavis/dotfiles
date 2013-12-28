@@ -23,10 +23,10 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 
 - ✓ Setup key only SSH
 - ✓ VPS security
-- ~~Setup [OwnCloud][owncloud]~~
+- ~~Setup [OwnCloud][owncloud]~~ Not worth it
 - Traffic Tunnel
 - ✓ Setup Git
-- ~~Setup [tshock][tshock]~~ (Too memory intensive)
+- ✓ Setup [tshock][tshock]
 - ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
