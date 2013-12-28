@@ -23,16 +23,16 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done.
 
 - ✓ Setup key only SSH
 - ✓ VPS security
-- Setup [OwnCloud][owncloud]
+- ~~Setup [OwnCloud][owncloud]~~
 - Traffic Tunnel
-- Setup Git
+- ✓ Setup Git
 - ~~Setup [tshock][tshock]~~ (Too memory intensive)
 - ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
 - Backup?
 - rtorrent?
-- BitTorrent Sync
+- ✓ BitTorrent Sync
 - Connecting to IRC
 
 [klaus]: https://github.com/jonashaag/klaus
