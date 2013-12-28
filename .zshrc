@@ -64,7 +64,7 @@ export DISABLE_AUTO_UPDATE='true'
 plugins=(gitfast tmuxinator)
 
 # Node Plugins
-plugins=(node npm coffee)
+plugins+=(node npm coffee)
 
 # Python Plugins
 plugins+=(python pip virtualenv)
