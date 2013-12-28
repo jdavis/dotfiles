@@ -25,6 +25,20 @@ function! PasteToggle()
     endif
 endfunction
 
+
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+" Source: https://github.com/scrooloose/nerdtree/issues/21
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
 " Remove trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 function! StripTrailingWhitespace()
@@ -34,7 +48,31 @@ function! StripTrailingWhitespace()
         %s/\s\+$//e
         normal 'yz<CR>
         normal `z
+        retab
     endif
+endfunction
+
+function! ToggleSelected(visual)
+    highlight HideSelected ctermfg=bg ctermbg=bg guifg=bg guibg=bg gui=none term=none cterm=none
+
+    if exists("g:toggle_selected_hide")
+        call matchdelete(g:toggle_selected_hide)
+
+        unlet g:toggle_selected_hide
+        redraw
+
+        if !a:visual
+            return
+        endif
+    endif
+
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+
+    let pattern = '\%^\|\%<'.lnum1.'l\|\%<'.col1.'v\|\%>'.lnum2.'l\|\%>'.col2.'v'
+    let g:toggle_selected_hide = matchadd('HideSelected', pattern, 1000)
+
+    redraw
 endfunction
 
 " Check if a colorscheme exists
@@ -56,6 +94,10 @@ set number
 
 " Show the column/row
 set ruler
+
+" Highlight only the lines that go past 80 characters
+highlight ColorColumn ctermbg=green guibg=green
+call matchadd('ColorColumn', '\%82v', 100)
 
 " Pretty colors are fun, yayyy
 syntax on
@@ -98,6 +140,9 @@ set shiftwidth=4
 " from here on out
 set expandtab
 
+" Buffer Settings
+set hidden
+
 " Turn on persistent undo
 " Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
 if has('persistent_undo')
@@ -131,9 +176,6 @@ set display+=lastline
 " UTF-8 THIS SHITTTTTT
 set encoding=utf-8
 
-" Enable spellcheck for Markdown files
-autocmd BufNewFile,BufRead *.md setlocal spell spelllang=en_us
-
 " Enhanced mode for command-line completion
 set wildmenu
 
@@ -144,8 +186,16 @@ set autoread
 " Global Bindings
 "
 
-" Create a new tab with nicer shortcut
-nmap <leader>T :tabnew<cr>
+" Buffer Shortcuts
+nmap <leader>T :enew<cr>
+nmap gt :bnext<CR>
+nmap gT :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
+
+" Show only selected in Visual Mode
+nmap <leader>th :cal ToggleSelected(0)<CR>
+vmap <leader>th :cal ToggleSelected(1)<CR>
 
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
@@ -163,9 +213,6 @@ imap <C-B> <LEFT>
 imap <M-BS> <ESC>vBc
 imap <C-P> <UP>
 imap <C-N> <DOWN>
-
-" No more colons
-nnoremap ; :
 
 " When pushing j/k on a line that is wrapped, it navigates to the same line,
 " just to the expected location rather than to the next line
@@ -214,13 +261,9 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " My own special flavoring to running programs
 autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
 
-" Highlight trailing whitespace obnoxiously
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" Show trailing whitespace and tabs obnoxiously
+set list listchars=tab:>-,trail:.,extends:>
+set list
 
 "
 " Start Vundle
@@ -245,13 +288,12 @@ Bundle 'tpope/vim-git'
 
 " For file browsing
 Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
 
 " Various commenting capabilities
 Bundle 'scrooloose/nerdcommenter'
 
-" Autocloses characters
-Bundle 'jiangmiao/auto-pairs'
+" Automatically close things
+Bundle 'Raimondi/delimitMate'
 
 " For checking the syntax of any file
 Bundle 'scrooloose/syntastic'
@@ -302,6 +344,9 @@ Bundle 'funorpain/vim-cpplint'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
+" EasyMotion Plugin
+Bundle 'Lokaltog/vim-easymotion'
+
 " Awesome plugin for my capitalization woes:
 " http://www.reddit.com/r/vim/comments/1im4d9/do_you_ever_accidentally_hold_the_shift_key_to/cb5za1t
 Bundle 'takac/vim-commandcaps'
@@ -322,8 +367,10 @@ Bundle 'sjl/gundo.vim'
 Bundle 'xolox/vim-session'
 Bundle 'xolox/vim-misc'
 
-" YouCompleteMe
-Bundle 'Valloric/YouCompleteMe'
+" YouCompleteMe needs 7.3.584
+if v:version >= 703 && has("patch584")
+    Bundle 'Valloric/YouCompleteMe'
+endif
 
 " Vim-Racket
 Bundle 'wlangstroth/vim-racket'
@@ -355,7 +402,16 @@ nmap <leader>vC :BundleClean!<cr>
 
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
-nmap <leader>tb :NERDTreeTabsToggle<cr>
+nmap <leader>tb :NERDTreeToggle<cr>
+
+" Close NERDTree if it is the last buffer open
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+" Automatically open NERDTree whenever opened with GUI
+if has('gui_running')
+    autocmd VimEnter * NERDTree
+    autocmd VimEnter * wincmd p
+endif
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
@@ -370,11 +426,6 @@ nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_left = 1
 let g:tagbar_width = 30
 
-
-" Autoclose Plugin options
-let g:AutoClosePairs = "() {} [] \" ' `"
-au FileType scheme let g:AutoClosePairs = "() {} [] \" `"
-
 " Python-mode settings
 let g:pymode_run_key = '<leader>r'
 let g:pymode_lint_ignore = 'E501'
@@ -387,6 +438,8 @@ let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Fugitive mapping
 nmap <leader>gb :Gblame<cr>
@@ -447,6 +500,9 @@ let g:multi_cursor_next_key = '<C-j>'
 let g:multi_cursor_prev_key = '<C-k>'
 let g:multi_cursor_skip_key = '<C-l>'
 let g:multi_cursor_quit_key = '<Esc>'
+
+" EasyMotion Settings
+let g:EasyMotion_leader_key = '<space>'
 
 "
 " Misc Settings

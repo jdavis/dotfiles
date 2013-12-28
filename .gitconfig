@@ -30,7 +30,6 @@
     ls = ls-files
     m = merge
     p = pull
-    pu = push -u origin master
     r = remote
     rb = rebase
     rf = reflog
@@ -56,9 +55,13 @@
     up = --set-upstream
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
 
+    # Fixes this issue:
+    # http://stackoverflow.com/q/6089294
+    pu = !git push -u origin `git rev-parse --abbrev-ref HEAD`
+
     # Found here: http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
     # Thanks to http://github.com/zdwolfe for tweeting it.
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
 [push]
-	default = matching
+    default = simple
