@@ -35,6 +35,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - rtorrent?
 - ✓ BitTorrent Sync
 - Connecting to IRC
+- [Meshnet][meshnet] node
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
@@ -43,3 +44,4 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 [gitlab]: http://gitlab.org/
 [f2b]: https://www.digitalocean.com/community/articles/how-to-protect-ssh-with-fail2ban-on-centos-6
 [deny]: https://www.digitalocean.com/community/articles/how-to-install-denyhosts-on-centos-6
+[meshnet]: http://projectmeshnet.org/
