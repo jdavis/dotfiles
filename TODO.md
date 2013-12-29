@@ -27,7 +27,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Traffic Tunnel
 - ✓ Setup Git
 - ✓ Setup [tshock][tshock]
-- Setup [Starbound Server][starbound]
+- ✓ Setup [Starbound Server][starbound]
 - ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
