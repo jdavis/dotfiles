@@ -36,7 +36,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ BitTorrent Sync
 - Connecting to IRC
 - [Meshnet][meshnet] node
-- [RSS Reader][rss]
+- ✓ [RSS Reader][rss]
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
