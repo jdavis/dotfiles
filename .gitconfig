@@ -4,7 +4,7 @@
     ui = true
 [core]
     editor = vim
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.git_excludes
 [github]
     user = jdavis
 [help]
