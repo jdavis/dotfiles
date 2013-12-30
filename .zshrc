@@ -30,17 +30,28 @@ fi
 # OS Detection
 #
 
-if [[ $HOME == '/Users/Davis' ]] || [[ $HOME == '/Users/davis' ]]; then
+UNAME=`uname`
+
+# Fallback info
+CURRENT_OS='Linux'
+DISTRO=''
+
+if [[ $UNAME == 'Darwin' ]]; then
     CURRENT_OS='OS X'
-elif [[ $HOME == '/home/davis' ]] || [[ $HOME == '/home/jdavis' ]]; then
-    if [[ $TERM == 'cygwin' ]]; then
-        CURRENT_OS='Cygwin'
-    else
-        CURRENT_OS='Linux'
-    fi
+elif [[ $UNAME =~ 'CYGWIN' ]]; then
+    CURRENT_OS='Cygwin'
 else
-    # Use Linux fallback
-    CURRENT_OS='Linux'
+    # Must be Linux, determine distro
+    # Work in progress, so far CentOS is the only Linux distro I have needed to
+    # determine
+    if [[ -f /etc/redhat-release ]]; then
+        # CentOS or Redhat?
+        if grep -q "CentOS" /etc/redhat-release; then
+            DISTRO='CentOS'
+        else
+            DISTRO='RHEL'
+        fi
+    fi
 fi
 
 #
@@ -74,6 +85,10 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
     plugins+=(osx brew gem)
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
+
+    if [[ $DISTRO == 'CentOS' ]]; then
+        plugins+=(centos)
+    fi
 elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     plugins+=(cygwin)
 fi
