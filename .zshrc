@@ -71,9 +71,28 @@ export DISABLE_AUTO_UPDATE='true'
 # Plugins
 #
 
+#
+# Plugin Config
+#
+
+# Turn on agent forwarding
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+
+# Use the three identities
+zstyle :omz:plugins:ssh-agent identities github pyrite server
+
+#
+# Load Plugins
+#
+
+plugins=()
+
 # General Plugins
-#plugins=(gitfast tmuxinator)
-plugins=(git tmuxinator)
+#plugins+=(gitfast tmuxinator)
+plugins=+(git tmuxinator)
+
+# For SSH, starting ssh-agent is annoying
+plugins+=(ssh-agent)
 
 # Node Plugins
 plugins+=(node npm coffee)
