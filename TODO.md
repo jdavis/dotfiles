@@ -23,10 +23,11 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 
 - ✓ Setup key only SSH
 - ✓ VPS security
-- ~~Setup [OwnCloud][owncloud]~~
-- Traffic Tunnel
+- ~~Setup [OwnCloud][owncloud]~~ Not worth it
+- ✓ VPN Tunnel
 - ✓ Setup Git
-- ~~Setup [tshock][tshock]~~ (Too memory intensive)
+- ✓ Setup [tshock][tshock]
+- ✓ Setup [Starbound Server][starbound]
 - ~~[GitLab][gitlab]?~~ [Klaus][klaus]
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
@@ -34,10 +35,18 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - rtorrent?
 - ✓ BitTorrent Sync
 - Connecting to IRC
+- [Meshnet][meshnet] node
+- ✓ [RSS Reader][rss]
+- Create Dashboard similar to [Reportr][reportr] and that either looks like or uses [dashing][dashing].
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
 [tshock]: http://tshock.co/xf/index.php
+[starbound]: http://www.reddit.com/r/starbound/comments/1s3rdp/how_to_linux_dedicated_server_setup/
 [gitlab]: http://gitlab.org/
 [f2b]: https://www.digitalocean.com/community/articles/how-to-protect-ssh-with-fail2ban-on-centos-6
 [deny]: https://www.digitalocean.com/community/articles/how-to-install-denyhosts-on-centos-6
+[meshnet]: http://projectmeshnet.org/
+[rss]: https://github.com/swanson/stringer
+[reportr]: https://github.com/SamyPesse/reportr
+[dashing]: http://shopify.github.io/dashing/
