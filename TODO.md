@@ -24,7 +24,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ Setup key only SSH
 - ✓ VPS security
 - ~~Setup [OwnCloud][owncloud]~~ Not worth it
-- Traffic Tunnel
+- ✓ VPN Tunnel
 - ✓ Setup Git
 - ✓ Setup [tshock][tshock]
 - ✓ Setup [Starbound Server][starbound]
