@@ -24,7 +24,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ Setup key only SSH
 - ✓ VPS security
 - ~~Setup [OwnCloud][owncloud]~~ Not worth it
-- Traffic Tunnel
+- ✓ VPN Tunnel
 - ✓ Setup Git
 - ✓ Setup [tshock][tshock]
 - ✓ Setup [Starbound Server][starbound]
@@ -37,6 +37,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Connecting to IRC
 - [Meshnet][meshnet] node
 - ✓ [RSS Reader][rss]
+- Create Dashboard similar to [Reportr][reportr] and that either looks like or uses [dashing][dashing].
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
@@ -47,3 +48,5 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 [deny]: https://www.digitalocean.com/community/articles/how-to-install-denyhosts-on-centos-6
 [meshnet]: http://projectmeshnet.org/
 [rss]: https://github.com/swanson/stringer
+[reportr]: https://github.com/SamyPesse/reportr
+[dashing]: http://shopify.github.io/dashing/
