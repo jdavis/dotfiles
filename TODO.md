@@ -28,7 +28,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ Setup Git
 - ✓ Setup [tshock][tshock]
 - ✓ Setup [Starbound Server][starbound]
-- ~~[GitLab][gitlab]?~~ [Klaus][klaus]
+- ~~[GitLab][gitlab]? [Klaus][klaus]~~ (Not needed anymore)
 - [Fail2ban][f2b]
 - ✓ [Denyhosts][deny]
 - Backup?
