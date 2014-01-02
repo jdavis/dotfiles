@@ -52,6 +52,9 @@ function! StripTrailingWhitespace()
     endif
 endfunction
 
+" Function to hide all the text except for the text selected in visual mode.
+" This is great for highlighting parts of the code. Just call the function
+" again to deselect everything.
 function! ToggleSelected(visual)
     highlight HideSelected ctermfg=bg ctermbg=bg guifg=bg guibg=bg gui=none term=none cterm=none
 
