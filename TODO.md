@@ -34,7 +34,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Backup?
 - rtorrent?
 - ✓ BitTorrent Sync
-- Connecting to IRC
+- IRC Client (Weechat/Irssi)
 - [Meshnet][meshnet] node
 - ✓ [RSS Reader][rss]
 - Create Dashboard similar to [Reportr][reportr] and that either looks like or uses [dashing][dashing].
