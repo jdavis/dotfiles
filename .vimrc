@@ -358,9 +358,6 @@ Bundle 'takac/vim-commandcaps'
 " Long live ctags
 Bundle 'majutsushi/tagbar'
 
-" CoVim
-"Bundle 'FredKSchott/CoVim'
-
 " Ack support in Vim
 Bundle 'mileszs/ack.vim'
 
