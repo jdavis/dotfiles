@@ -56,7 +56,8 @@ endfunction
 " This is great for highlighting parts of the code. Just call the function
 " again to deselect everything.
 function! ToggleSelected(visual)
-    highlight HideSelected ctermfg=bg ctermbg=bg guifg=bg guibg=bg gui=none term=none cterm=none
+    highlight HideSelected ctermfg=bg ctermbg=bg
+                         \ guifg=bg guibg=bg gui=none term=none cterm=none
 
     if exists("g:toggle_selected_hide")
         call matchdelete(g:toggle_selected_hide)
@@ -351,7 +352,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'Lokaltog/vim-easymotion'
 
 " Awesome plugin for my capitalization woes:
-" http://www.reddit.com/r/vim/comments/1im4d9/do_you_ever_accidentally_hold_the_shift_key_to/cb5za1t
+" http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
 Bundle 'takac/vim-commandcaps'
 
 " Long live ctags
