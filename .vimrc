@@ -362,7 +362,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 
 " Better Undo
-Bundle 'sjl/gundo.vim'
+Bundle 'mbbill/undotree'
 
 " Better Session Management
 Bundle 'xolox/vim-session'
@@ -473,9 +473,10 @@ let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 
-" Gundo settings
-nmap <leader>tg :GundoToggle<CR>
-let g:gundo_width = 30
+" Undotree settings
+nmap <leader>tu :UndotreeToggle<CR>
+let g:undotree_SplitWidth = 30
+let g:undotree_SplitLocation = 'botright'
 
 " Vim-Session Settings
 let g:session_autosave_periodic = 5
