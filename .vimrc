@@ -379,6 +379,11 @@ Bundle 'wlangstroth/vim-racket'
 " Multiple Cursors like Sublime
 Bundle 'terryma/vim-multiple-cursors'
 
+" Vim-Slime
+" A description of vim-slime is below:
+"   Source: http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/
+Bundle 'jpalardy/vim-slime'
+
 "
 " Custom Bindings
 "
@@ -505,6 +510,13 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 " EasyMotion Settings
 let g:EasyMotion_leader_key = '<space>'
+
+" Vim Slime Settings
+let g:slime_target = 'tmux'
+let g:slime_default_config = {
+\   'socket_name': 'default',
+\   'target_pane': '1'
+\}
 
 "
 " Misc Settings
