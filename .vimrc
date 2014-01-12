@@ -55,7 +55,7 @@ endfunction
 " Function to hide all the text except for the text selected in visual mode.
 " This is great for highlighting parts of the code. Just call the function
 " again to deselect everything.
-function! ToggleSelected(visual)
+function! ToggleSelected(visual) range
     highlight HideSelected ctermfg=bg ctermbg=bg
                          \ guifg=bg guibg=bg gui=none term=none cterm=none
 
@@ -198,8 +198,8 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 
 " Show only selected in Visual Mode
-nmap <leader>th :cal ToggleSelected(0)<CR>
-vmap <leader>th :cal ToggleSelected(1)<CR>
+nmap <silent> <leader>th :cal ToggleSelected(0)<CR>
+vmap <silent> <leader>th :cal ToggleSelected(1)<CR>
 
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
