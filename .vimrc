@@ -384,6 +384,9 @@ Bundle 'terryma/vim-multiple-cursors'
 "   Source: http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/
 Bundle 'jpalardy/vim-slime'
 
+" Vimux
+Bundle 'jdavis/vimux'
+
 "
 " Custom Bindings
 "
@@ -517,6 +520,70 @@ let g:slime_default_config = {
 \   'socket_name': 'default',
 \   'target_pane': '1'
 \}
+
+" Vimux Settings
+let g:VimuxUseNearest = 1
+let g:VimuxPromptString = 'tmux > '
+let g:VimuxRunnerType = 'window'
+
+"
+" Vimux Functions
+" I could make a plugin out of these...
+"
+
+function! VimuxSetupRacket()
+    call VimuxRunCommand('racket')
+    call VimuxClearRunnerHistory()
+endfunction
+
+function! VimuxQuitRacket()
+    call VimuxInterruptRunner()
+    call VimuxCloseRunner()
+endfunction
+
+function! VimuxRunSelection() range
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+
+    let lines = getline(lnum1, lnum2)
+
+    let lines[-1] = lines[-1][: col2 - 1]
+    let lines[0] = lines[0][col1 - 1:]
+
+    call VimuxRunCommand(join(lines, "\n"))
+endfunction
+
+function! VimuxRunLine()
+    call VimuxRunCommand(getline('.'))
+endfunction
+
+function! VimuxRunParagraph()
+    let lnum1 = getpos("'{")[1:1]
+    let lnum2 = getpos("'}")[1:1]
+
+    let lines = getline(lnum1, lnum2)
+
+    let filtered = filter(lines, 'v:val !~ "^\s*;"')
+
+    call VimuxRunCommand(join(filtered, ''))
+endfunction
+
+"
+" Vimux Bindings
+"
+
+" Setup autocmd if Racket filetype
+autocmd Filetype racket call SetupVimuxRacket()
+
+function! SetupVimuxRacket()
+    " Start interpretter
+    nmap <silent> <leader>mi :call VimuxSetupRacket()<CR>
+    nmap <silent> <leader>mq :call VimuxQuitRacket()<CR>
+    nmap <silent> <leader>ml :call VimuxRunLine()<CR>
+    nmap <silent> <leader>mr :call VimuxRunParagraph()<CR>
+    nmap <silent> <leader>mp :call VimuxRunParagraph()<CR>
+    vmap <silent> <leader>mr :call VimuxRunSelection()<CR>
+endfunction
 
 "
 " Misc Settings
