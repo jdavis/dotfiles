@@ -25,7 +25,6 @@ function! PasteToggle()
     endif
 endfunction
 
-
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 " Source: https://github.com/scrooloose/nerdtree/issues/21
@@ -525,9 +524,15 @@ let g:slime_default_config = {
 \}
 
 " Vimux Settings
-let g:VimuxUseNearest = 1
+if has('gui_running')
+    let g:VimuxUseNearest = 1
+    let g:VimuxRunnerType = 'window'
+else
+    let g:VimuxUseNearest = 0
+    let g:VimuxRunnerType = 'pane'
+endif
+
 let g:VimuxPromptString = 'tmux > '
-let g:VimuxRunnerType = 'window'
 
 "
 " Vimux Functions
