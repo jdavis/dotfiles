@@ -387,6 +387,9 @@ Bundle 'jpalardy/vim-slime'
 " Vimux
 Bundle 'jdavis/vimux'
 
+" Syntax Range for Vimdeck
+Bundle 'vim-scripts/SyntaxRange'
+
 "
 " Custom Bindings
 "
