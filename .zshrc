@@ -79,7 +79,7 @@ export DISABLE_AUTO_UPDATE='true'
 zstyle :omz:plugins:ssh-agent agent-forwarding yes
 
 # Use the three identities
-zstyle :omz:plugins:ssh-agent identities github pyrite server
+zstyle :omz:plugins:ssh-agent identities github pyrite arrakis
 
 #
 # Load Plugins
