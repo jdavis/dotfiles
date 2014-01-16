@@ -378,11 +378,6 @@ Bundle 'wlangstroth/vim-racket'
 " Multiple Cursors like Sublime
 Bundle 'terryma/vim-multiple-cursors'
 
-" Vim-Slime
-" A description of vim-slime is below:
-"   Source: http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/
-Bundle 'jpalardy/vim-slime'
-
 " Vimux
 Bundle 'jdavis/vimux'
 
