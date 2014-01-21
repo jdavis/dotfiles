@@ -13,7 +13,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Explore Slate config (layout directive, monitors, etc) [sample][slate]
 - Look into [antigen][anti] (again)
 - ✓ Learn about Vim buffers
-- Fix up secret dotfiles
+- ✓ Fix up secret dotfiles
 - ✓ Use SSH keys more, see Michael Davis' dotfiles
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
