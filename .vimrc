@@ -185,6 +185,14 @@ set wildmenu
 " Automatically re-read the file if it has changed
 set autoread
 
+" Fold Settings
+
+" Off on start
+set nofoldenable
+
+" Indent seems to work the best
+set foldmethod=indent
+
 "
 " Global Bindings
 "
@@ -250,6 +258,9 @@ if has('gui_running')
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
 endif
+
+" Fold Keybindings
+nnoremap <Space> za
 
 "
 " Custom Settings
