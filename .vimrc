@@ -561,11 +561,10 @@ function! VimuxRunLine()
 endfunction
 
 function! VimuxRunParagraph()
-    let lnum1 = getpos("'{")[1:1]
-    let lnum2 = getpos("'}")[1:1]
+    let [lnum1] = getpos("'{")[1:1]
+    let [lnum2] = getpos("'}")[1:1]
 
     let lines = getline(lnum1, lnum2)
-
     let filtered = filter(lines, 'v:val !~ "^\s*;"')
 
     call VimuxRunCommand(join(filtered, ''))
