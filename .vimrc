@@ -520,7 +520,7 @@ let g:multi_cursor_skip_key = '<C-l>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 " EasyMotion Settings
-let g:EasyMotion_leader_key = '<space>'
+let g:EasyMotion_leader_key = '<leader><leader>'
 
 " Vim Slime Settings
 let g:slime_target = 'tmux'
@@ -589,6 +589,8 @@ endfunction
 autocmd Filetype racket call SetupVimuxRacket()
 
 function! SetupVimuxRacket()
+    set shiftwidth=2
+
     " Start interpretter
     nmap <silent> <leader>mi :call VimuxSetupRacket()<CR>
     nmap <silent> <leader>mq :call VimuxQuitRacket()<CR>
