@@ -546,7 +546,7 @@ let g:VimuxPromptString = 'tmux > '
 "
 
 function! VimuxSetupRacket()
-    call VimuxRunCommand('racket')
+    call VimuxRunCommand('racket -il readline')
     call VimuxClearRunnerHistory()
 endfunction
 
