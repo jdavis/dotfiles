@@ -492,7 +492,7 @@ let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 " Undotree settings
 nmap <leader>tu :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
-let g:undotree_SplitLocation = 'botright'
+let g:undotree_WindowLayout = 3
 
 " Vim-Session Settings
 let g:session_autosave_periodic = 5
