@@ -168,7 +168,8 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
 " The comma makes a great leader of men, heh heh
-let mapleader = ","
+let mapleader = ','
+let maplocalleader = '\'
 
 " Show two lines for the status line
 set laststatus=2
