@@ -396,6 +396,10 @@ Bundle 'jdavis/vimux'
 " Syntax Range for Vimdeck
 Bundle 'vim-scripts/SyntaxRange'
 
+" R for Vim
+Bundle 'jalvesaq/VimCom'
+Bundle 'jcfaria/Vim-R-plugin'
+
 "
 " Custom Bindings
 "
