@@ -1,5 +1,7 @@
 #
 # RProfile for R Startup
+# Links:
+#   http://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile
 #
 
 #
