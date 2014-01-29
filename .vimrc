@@ -592,12 +592,12 @@ function! SetupVimuxRacket()
     set shiftwidth=2
 
     " Start interpretter
-    nmap <silent> <leader>mi :call VimuxSetupRacket()<CR>
-    nmap <silent> <leader>mq :call VimuxQuitRacket()<CR>
-    nmap <silent> <leader>ml :call VimuxRunLine()<CR>
-    nmap <silent> <leader>mr :call VimuxRunParagraph()<CR>
-    nmap <silent> <leader>mp :call VimuxRunParagraph()<CR>
-    vmap <silent> <leader>mr :call VimuxRunSelection()<CR>
+    nmap <silent> <localleader>ri :call VimuxSetupRacket()<CR>
+    nmap <silent> <localleader>rq :call VimuxQuitRacket()<CR>
+    nmap <silent> <localleader>rl :call VimuxRunLine()<CR>
+    nmap <silent> <localleader>R :call VimuxRunParagraph()<CR>
+    nmap <silent> <localleader>rp :call VimuxRunParagraph()<CR>
+    vmap <silent> <localleader>R :call VimuxRunSelection()<CR>
 endfunction
 
 "
