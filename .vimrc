@@ -400,6 +400,9 @@ Bundle 'vim-scripts/SyntaxRange'
 Bundle 'jalvesaq/VimCom'
 Bundle 'jcfaria/Vim-R-plugin'
 
+" Scala for Vim
+Bundle 'derekwyatt/vim-scala'
+
 "
 " Custom Bindings
 "
