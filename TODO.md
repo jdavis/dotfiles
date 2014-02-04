@@ -40,6 +40,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Create Dashboard similar to [Reportr][reportr] and that either looks like or uses [dashing][dashing].
 - ✓ Install [RStudio Server][rstudio]
 - ✓ Configure RStudio Server
+- Better RStudio username
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
