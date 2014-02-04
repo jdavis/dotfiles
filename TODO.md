@@ -38,6 +38,8 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - [Meshnet][meshnet] node
 - ✓ [RSS Reader][rss]
 - Create Dashboard similar to [Reportr][reportr] and that either looks like or uses [dashing][dashing].
+- ✓ Install [RStudio Server][rstudio]
+- Configure RStudio Server
 
 [klaus]: https://github.com/jonashaag/klaus
 [owncloud]: http://owncloud.org/
@@ -50,3 +52,4 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 [rss]: https://github.com/swanson/stringer
 [reportr]: https://github.com/SamyPesse/reportr
 [dashing]: http://shopify.github.io/dashing/
+[rstudio]: http://www.rstudio.com/ide/docs/server/getting_started
