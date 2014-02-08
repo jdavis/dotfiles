@@ -63,5 +63,8 @@
     # Thanks to http://github.com/zdwolfe for tweeting it.
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
+
+    # Show Git root
+    root = rev-parse --show-toplevel
 [push]
     default = simple
