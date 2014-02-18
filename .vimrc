@@ -404,7 +404,7 @@ Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'derekwyatt/vim-scala'
 
 " The powers of Gitignore + wildignore combine!
-Bundle 'zdwolfe/vim-gitwildignore'
+"Bundle 'zdwolfe/vim-gitwildignore'
 
 "
 " Custom Bindings
