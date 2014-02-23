@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FILE="${1}"
+
+if [[ ! -f "${FILE}" ]]; then
+    echo "Uh oh, it looks like the file you provided me doesn't exist: ${FILE}."
+    exit
+fi
+
+hash watchmedo 2> /dev/null || {
+    echo "Oh dear. I watchmedo."
+    echo "Install it with:"
+    echo
+    echo "\t$ pip install watchdog"
+    exit
+}
+
+PATTERN="*.Rnw"
+KNITR="echo \"Rerunning Knitr...\"; Rscript -e \"library(knitr); knit('./${FILE}')\""
+
+echo "Watching ${FILE}..."
+watchmedo shell-command --patterns="${PATTERN}" --command="${KNITR}" .
