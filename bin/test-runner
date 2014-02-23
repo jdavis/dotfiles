@@ -1,0 +1,10 @@
+#!/bin/sh
+
+racket << EOF
+
+(#%require "${1}")
+
+; Run all the tests
+(test-all)
+
+EOF
