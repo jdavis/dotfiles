@@ -611,6 +611,14 @@ function! SetupVimuxRacket()
     vmap <silent> <localleader>R :call VimuxRunSelection()<CR>
 endfunction
 
+" Vim-R-Plugin Settings
+
+" Worthless mapping
+let g:vimrplugin_assign = 0
+
+" Disable ridiculous mappings
+let g:vimrplugin_insert_mode_cmds = 0
+
 "
 " Misc Settings
 "
