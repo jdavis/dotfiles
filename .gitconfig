@@ -66,5 +66,9 @@
 
     # Show Git root
     root = rev-parse --show-toplevel
+
+    # SVN Commands
+    spull = !git-svn fetch && git-svn rebase
+    spush = !git-svn dcommit
 [push]
     default = simple
