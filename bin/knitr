@@ -2,6 +2,11 @@
 
 FILE="${1}"
 
+if [[ $# != 1 ]]; then
+    echo "Usage: knitr <file>"
+    exit
+fi
+
 if [[ ! -f "${FILE}" ]]; then
     echo "Uh oh, it looks like the file you provided me doesn't exist: ${FILE}"
     exit
