@@ -498,6 +498,8 @@ let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 
+let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
+
 " Undotree settings
 nmap <leader>tu :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
