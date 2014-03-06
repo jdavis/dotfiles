@@ -113,5 +113,14 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     plugins+=(cygwin)
 fi
 
+#
+# Completions
+#
+
+# Use zsh-completions if it exists
+if [[ -f "/usr/local/share/zsh-completions" ]]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
 # Launch oh-my-zsh
 source $ZSH/oh-my-zsh.sh
