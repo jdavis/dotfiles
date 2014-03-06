@@ -113,6 +113,9 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     plugins+=(cygwin)
 fi
 
+# ZSH Improvements: MUST BE LAST!
+plugins=+(zsh-syntax-highlighting)
+
 #
 # Completions
 #
