@@ -89,7 +89,7 @@ plugins=()
 
 # General Plugins
 #plugins+=(gitfast tmuxinator)
-plugins=+(git tmuxinator)
+plugins+=(git tmuxinator)
 
 # For SSH, starting ssh-agent is annoying
 plugins+=(ssh-agent)
@@ -114,7 +114,7 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 # ZSH Improvements: MUST BE LAST!
-plugins=+(zsh-syntax-highlighting)
+plugins+=(zsh-syntax-highlighting)
 
 #
 # Completions
