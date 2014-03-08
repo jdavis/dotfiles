@@ -49,7 +49,7 @@
     ctags = !.git/hooks/ctags
     forward = checkout HEAD^
     last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(A: %ad - C: %cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     man = help
     sync = !git pull && git push
     unstage = reset HEAD
