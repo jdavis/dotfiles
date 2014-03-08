@@ -1,5 +1,57 @@
-# Tig Colors
+# Tig Config
+
 #
+# Basic Config
+#
+
+# Graphs are good
+set show-rev-graph = yes
+
+# Show references on startup
+set show-refs = yes
+
+# Just say no to 8 spaces
+set tab-size = 4
+
+set line-graphics = utf-8
+
+#
+# Keybindings
+#
+
+# Unbind commands
+bind generic B none
+bind generic H none
+bind generic S none
+bind generic b none
+bind generic y none
+bind generic o none
+bind generic F none
+
+# b for Branches
+bind generic b view-branch
+
+# B for Blame
+bind generic B view-blame
+
+# s for Status
+bind generic s view-status
+
+# S for Stash
+bind generic S view-stash
+
+# Up and down like vim
+bind generic ^f move-page-down
+bind generic ^b move-page-up
+
+# o for open
+bind generic o enter
+
+# Maximize = Fullscreen
+bind generic F maximize
+
+#
+# Colors
 # Source:
 #   https://github.com/cbertoldi/dotfiles/blob/master/tigrc.symlink
 #
