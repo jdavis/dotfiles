@@ -71,5 +71,9 @@
     # SVN Commands
     spull = !git-svn fetch && git-svn rebase
     spush = !git-svn dcommit
+
+    # Git + Tig
+    tig = !tig
+    t = !tig
 [push]
     default = simple
