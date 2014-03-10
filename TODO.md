@@ -17,7 +17,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ Use SSH keys more, see Michael Davis' dotfiles
 - Look up Vimshell and possibly use it
 - Look at Neocomplcache and possibly use it
-- Setup [Tig][tig] and learn how to use it
+- ✓ Setup [Tig][tig] and learn how to use it
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
@@ -25,7 +25,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 
 ## Server
 
-- Setup key only SSH
+- ✓ Setup key only SSH
 - ✓ VPS security
 - ~~Setup [OwnCloud][owncloud]~~ Not worth it
 - ✓ VPN Tunnel
