@@ -17,6 +17,7 @@
 [alias]
     # Shortcuts
     a = add
+    aa = add --all
     b = branch
     bl = blame
     c = commit -v
