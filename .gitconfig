@@ -1,19 +1,44 @@
 [advice]
     statusHints = false
+
 [color]
     ui = true
+
 [core]
     editor = vim
     excludesfile = ~/.git_excludes
+
 [github]
     user = jdavis
+
 [help]
     autocorrect = 1
+
 [init]
     templatedir = ~/.git_template
+
 [user]
     name = Josh Davis
     email = josh@joshldavis.com
+
+[push]
+    default = matching
+
+#[url "https://github.com/"]
+    #insteadOf = "gh:"
+
+#[url "git@github.com:"]
+    #pushInsteadOf = "gh:"
+
+#[url "https://github.com/jdavis/"]
+    #insteadOf = "jd:"
+
+#[url "git@github.com:jdavis/"]
+    #pushInsteadOf = "jd:"
+
+#[url "git@gist.github.com:"]
+    #pushInsteadOf = "gist:"
+
 [alias]
     # Shortcuts
     a = add
@@ -76,5 +101,3 @@
     # Git + Tig
     tig = !tig
     t = !tig
-[push]
-    default = simple
