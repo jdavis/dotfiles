@@ -51,6 +51,7 @@
     d = diff
     dc = diff --cached
     f = fetch
+    fa = fetch --all
     h = help
     l = log
     ls = ls-files
