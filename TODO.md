@@ -18,6 +18,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - Look up Vimshell and possibly use it
 - Look at Neocomplcache and possibly use it
 - ✓ Setup [Tig][tig] and learn how to use it
+- [GoldenView][golden] looks AWESOME
 
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
@@ -58,3 +59,4 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 [reportr]: https://github.com/SamyPesse/reportr
 [dashing]: http://shopify.github.io/dashing/
 [rstudio]: http://www.rstudio.com/ide/docs/server/getting_started
+[golden]: http://zhaocai.github.io/GoldenView.Vim/
