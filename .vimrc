@@ -13,6 +13,16 @@
 set nocompatible
 
 "
+" Determine the OS for OS specific code
+"
+let g:OS = 'linux'
+
+let os = substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+    let g:OS = 'osx'
+endif
+
+"
 " Custom Functions
 "
 
@@ -252,10 +262,9 @@ if has('gui_running')
     set guioptions=aegirLt
 
     " Let's make the fonts look nice
-    let os=substitute(system('uname'), '\n', '', '')
-    if os == 'Darwin' || os == 'Mac'
+    if g:OS == 'osx'
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
-    elseif os == 'Linux'
+    elseif g:OS == 'linux'
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
 endif
