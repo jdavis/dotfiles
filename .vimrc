@@ -13,6 +13,16 @@
 set nocompatible
 
 "
+" Determine the OS for OS specific code
+"
+let g:OS = 'linux'
+
+let os = substitute(system('uname'), '\n', '', '')
+if os == 'Darwin' || os == 'Mac'
+    let g:OS = 'osx'
+endif
+
+"
 " Custom Functions
 "
 
@@ -252,10 +262,9 @@ if has('gui_running')
     set guioptions=aegirLt
 
     " Let's make the fonts look nice
-    let os=substitute(system('uname'), '\n', '', '')
-    if os == 'Darwin' || os == 'Mac'
+    if g:OS == 'osx'
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
-    elseif os == 'Linux'
+    elseif g:OS == 'linux'
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
 endif
@@ -292,135 +301,15 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 "
-" Vundle Bundles
+" Vundle Bundles + Settings
+"
+
+"
+" Vundle: Plugin management
 "
 
 " Vundle bundle
 Bundle 'gmarik/vundle'
-
-" Updated Vim-Git runtime files
-Bundle 'tpope/vim-git'
-
-" For file browsing
-Bundle 'scrooloose/nerdtree'
-
-" Various commenting capabilities
-Bundle 'scrooloose/nerdcommenter'
-
-" Automatically close things
-Bundle 'Raimondi/delimitMate'
-
-" For checking the syntax of any file
-Bundle 'scrooloose/syntastic'
-
-" For fuzzyfinding
-Bundle 'kien/ctrlp.vim'
-
-" Better JavaScript support
-Bundle 'pangloss/vim-javascript'
-
-" Vim and Git, sayyyy whatttt
-Bundle 'tpope/vim-fugitive'
-
-" Easily surround things
-Bundle 'tpope/vim-surround'
-
-" For CoffeeScript, YAY!
-Bundle 'kchmck/vim-coffee-script'
-
-" For LESS
-Bundle 'groenewege/vim-less'
-
-" For better status lines
-Bundle 'bling/vim-airline'
-
-" Let's add some colors
-Bundle 'flazz/vim-colorschemes'
-
-" Better Markdown
-Bundle 'tpope/vim-markdown'
-
-" Rust-Lang Features
-Bundle 'wting/rust.vim'
-
-" Git Gutter
-Bundle 'airblade/vim-gitgutter'
-
-" Stylus Plugin
-Bundle 'wavded/vim-stylus'
-
-" Vim-bad-whitespace, highlights bad whitespace
-Bundle 'bitc/vim-bad-whitespace'
-
-" Follow Google's C++ Style Guide
-Bundle 'funorpain/vim-cpplint'
-
-" Add Gist-vim
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-
-" EasyMotion Plugin
-Bundle 'Lokaltog/vim-easymotion'
-
-" Awesome plugin for my capitalization woes:
-" http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
-Bundle 'takac/vim-commandcaps'
-
-" Long live ctags
-Bundle 'majutsushi/tagbar'
-
-" Ack support in Vim
-Bundle 'mileszs/ack.vim'
-
-" Better Undo
-Bundle 'mbbill/undotree'
-
-" Better Session Management
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-misc'
-
-" YouCompleteMe needs 7.3.584
-Bundle 'Valloric/YouCompleteMe'
-
-" Vim-Racket
-Bundle 'wlangstroth/vim-racket'
-
-" Multiple Cursors like Sublime
-Bundle 'terryma/vim-multiple-cursors'
-
-" Vimux
-Bundle 'jdavis/vimux'
-
-" Syntax Range for Vimdeck
-Bundle 'vim-scripts/SyntaxRange'
-
-" R for Vim
-Bundle 'jalvesaq/VimCom'
-Bundle 'jcfaria/Vim-R-plugin'
-
-" Scala for Vim
-Bundle 'derekwyatt/vim-scala'
-
-" The powers of Gitignore + wildignore combine!
-"Bundle 'zdwolfe/vim-gitwildignore'
-
-" GitHub Issues + Vim
-Bundle 'jaxbot/github-issues.vim'
-
-"
-" Custom Bindings
-"
-
-" Bind PasteToggle to something quick and easy
-nmap <leader>tP :cal PasteToggle()<cr>
-
-" Bind :sort to something easy, don't press enter, allow for options (eg -u,
-" n, sorting in reverse [sort!])
-vnoremap <leader>s :sort
-
-"
-" Bundle Settings/Bindings
-"
 
 " Vundle mapping
 nmap <leader>vl :BundleList<cr>
@@ -428,6 +317,37 @@ nmap <leader>vi :BundleInstall<cr>
 nmap <leader>vI :BundleInstall!<cr>
 nmap <leader>vc :BundleClean<cr>
 nmap <leader>vC :BundleClean!<cr>
+
+"
+" Vim + Git
+"
+
+" Updated Vim-Git runtime files
+Bundle 'tpope/vim-git'
+
+" Git Gutter
+Bundle 'airblade/vim-gitgutter'
+
+" Vim and Git, sayyyy whatttt
+Bundle 'tpope/vim-fugitive'
+
+" Fugitive mapping
+nmap <leader>gb :Gblame<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>gg :Ggrep
+nmap <leader>gl :Glog<cr>
+nmap <leader>gp :Git pull<cr>
+nmap <leader>gP :Git push<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gw :Gbrowse<cr>
+
+"
+" File Management
+"
+
+" For file browsing
+Bundle 'scrooloose/nerdtree'
 
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
@@ -442,53 +362,14 @@ if has('gui_running')
     autocmd VimEnter * wincmd p
 endif
 
-" CtrlP Settings
-nn <leader>p :CtrlP<cr>
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
+" Various commenting capabilities
+Bundle 'scrooloose/nerdcommenter'
 
-" Tagbar Options
-" Toggle Tagbar
-nmap <leader>tt :TagbarToggle<CR>
-let g:tagbar_left = 1
-let g:tagbar_width = 30
+" Automatically close things
+Bundle 'Raimondi/delimitMate'
 
-" Python-mode settings
-let g:pymode_run_key = '<leader>r'
-let g:pymode_lint_ignore = 'E501'
-let g:pymode_folding = 0
-let g:pymode_lint_config = "$HOME/.pylintrc"
-let g:pymode_run = 0
-
-" Airline options
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'light'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Fugitive mapping
-nmap <leader>gb :Gblame<cr>
-nmap <leader>gc :Gcommit<cr>
-nmap <leader>gd :Gdiff<cr>
-nmap <leader>gg :Ggrep
-nmap <leader>gl :Glog<cr>
-nmap <leader>gp :Git pull<cr>
-nmap <leader>gP :Git push<cr>
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>gw :Gbrowse<cr>
-
-" Python-mode options
-if !has('python')
-    " Only load Python-mode when Python is enabled
-    let g:pymode = 0
-endif
-
-" Cpplint Settings
-autocmd FileType cpp map <buffer> <leader>l :call Cpplint()<cr>
+" For checking the syntax of any file
+Bundle 'scrooloose/syntastic'
 
 " Syntastic Settings
 let g:syntastic_always_populate_loc_list=1
@@ -500,13 +381,103 @@ let g:syntastic_java_checkers = ["checkstyle", "javac"]
 let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
-
 let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
+
+
+" For fuzzyfinding
+Bundle 'kien/ctrlp.vim'
+
+" CtrlP Settings
+nn <leader>p :CtrlP<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Easily surround things
+Bundle 'tpope/vim-surround'
+
+" Airline options
+let g:airline_enable_branch = 1
+let g:airline_enable_syntastic = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'light'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+"
+" Language Bundles
+"
+
+" Better JavaScript support
+Bundle 'pangloss/vim-javascript'
+
+
+" Let's add some colors
+Bundle 'flazz/vim-colorschemes'
+
+" For CoffeeScript, YAY!
+Bundle 'kchmck/vim-coffee-script'
+
+" For LESS
+Bundle 'groenewege/vim-less'
+
+" For better status lines
+Bundle 'bling/vim-airline'
+
+" Better Markdown
+Bundle 'tpope/vim-markdown'
+
+" Rust-Lang Features
+Bundle 'wting/rust.vim'
+
+" Stylus Plugin
+Bundle 'wavded/vim-stylus'
+
+"
+" Misc Bundles
+"
+
+" Vim-bad-whitespace, highlights bad whitespace
+Bundle 'bitc/vim-bad-whitespace'
+
+" Add Gist-vim
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
+" Sneak, alternative to Easymotion
+Bundle 'justinmk/vim-sneak'
+
+" Sneak settings
+let g:sneak#streak = 1
+
+" Awesome plugin for my capitalization woes:
+" http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
+Bundle 'takac/vim-commandcaps'
+
+" Long live ctags
+Bundle 'majutsushi/tagbar'
+
+" Tagbar Options
+" Toggle Tagbar
+nmap <leader>tt :TagbarToggle<CR>
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+
+" Ack support in Vim
+Bundle 'mileszs/ack.vim'
+
+" Better Undo
+Bundle 'mbbill/undotree'
 
 " Undotree settings
 nmap <leader>tu :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 3
+
+" Better Session Management
+Bundle 'xolox/vim-session'
+Bundle 'xolox/vim-misc'
 
 " Vim-Session Settings
 let g:session_autosave_periodic = 5
@@ -523,8 +494,14 @@ nmap <leader>Sd :DeleteSession
 nmap <leader>SD :DeleteSession!
 nmap <leader>Sv :ViewSession
 
-" YouCompleteMe Settings
-let g:ycm_autoclose_preview_window_after_completion = 1
+" YouCompleteMe needs 7.3.584
+Bundle 'Valloric/YouCompleteMe'
+
+" Vim-Racket
+Bundle 'wlangstroth/vim-racket'
+
+" Multiple Cursors like Sublime
+Bundle 'terryma/vim-multiple-cursors'
 
 " Multiple Cursors Settings
 let g:multi_cursor_use_default_mapping = 0
@@ -533,17 +510,68 @@ let g:multi_cursor_prev_key = '<C-k>'
 let g:multi_cursor_skip_key = '<C-l>'
 let g:multi_cursor_quit_key = '<Esc>'
 
-" EasyMotion Settings
-let g:EasyMotion_leader_key = '<leader><leader>'
+" Vimux
+Bundle 'jdavis/vimux'
 
-" Vim Slime Settings
-let g:slime_target = 'tmux'
-let g:slime_default_config = {
-\   'socket_name': 'default',
-\   'target_pane': '1'
-\}
+" Syntax Range for Vimdeck
+Bundle 'vim-scripts/SyntaxRange'
 
+" R for Vim
+Bundle 'jalvesaq/VimCom'
+Bundle 'jcfaria/Vim-R-plugin'
+
+" Worthless mapping
+let g:vimrplugin_assign = 0
+
+" Disable ridiculous mappings
+let g:vimrplugin_insert_mode_cmds = 0
+
+" Scala for Vim
+Bundle 'derekwyatt/vim-scala'
+
+" The powers of Gitignore + wildignore combine!
+"Bundle 'zdwolfe/vim-gitwildignore'
+
+" GitHub Issues + Vim
+Bundle 'jaxbot/github-issues.vim'
+
+" Vim + LaTeX
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
+" LaTex-Box Settings
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_viewer = 'open -a Skim.app'
+let g:LatexBox_viewer = 'mate-open'
+
+" Ultisnips plugin
+Bundle 'SirVer/ultisnips'
+
+" Grab some snippets
+Bundle 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-o>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+nmap <leader>U :call UltiSnips#ListSnippets()<cr>
+
+"
+" Custom Bindings
+"
+
+" Bind PasteToggle to something quick and easy
+nmap <leader>tP :cal PasteToggle()<cr>
+
+" Bind :sort to something easy, don't press enter, allow for options (eg -u,
+" n, sorting in reverse [sort!])
+vnoremap <leader>s :sort
+
+"
 " Vimux Settings
+"
+
 if has('gui_running')
     let g:VimuxUseNearest = 1
     let g:VimuxRunnerType = 'window'
@@ -600,7 +628,7 @@ endfunction
 "
 
 " Setup autocmd if Racket filetype
-autocmd Filetype racket call SetupVimuxRacket()
+autocmd FileType racket call SetupVimuxRacket()
 
 function! SetupVimuxRacket()
     set shiftwidth=2
@@ -613,14 +641,6 @@ function! SetupVimuxRacket()
     nmap <silent> <localleader>rp :call VimuxRunParagraph()<CR>
     vmap <silent> <localleader>R :call VimuxRunSelection()<CR>
 endfunction
-
-" Vim-R-Plugin Settings
-
-" Worthless mapping
-let g:vimrplugin_assign = 0
-
-" Disable ridiculous mappings
-let g:vimrplugin_insert_mode_cmds = 0
 
 "
 " Misc Settings
