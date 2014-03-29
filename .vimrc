@@ -445,11 +445,11 @@ Bundle 'bitc/vim-bad-whitespace'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
-" EasyMotion Plugin
-Bundle 'Lokaltog/vim-easymotion'
+" Sneak, alternative to Easymotion
+Bundle 'justinmk/vim-sneak'
 
-" EasyMotion Settings
-let g:EasyMotion_leader_key = '<leader><leader>'
+" Sneak settings
+let g:sneak#streak = 1
 
 " Awesome plugin for my capitalization woes:
 " http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
