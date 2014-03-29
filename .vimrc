@@ -404,6 +404,9 @@ Bundle 'derekwyatt/vim-scala'
 " The powers of Gitignore + wildignore combine!
 "Bundle 'zdwolfe/vim-gitwildignore'
 
+" GitHub Issues + Vim
+Bundle 'jaxbot/github-issues.vim'
+
 "
 " Custom Bindings
 "
