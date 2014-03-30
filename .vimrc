@@ -448,7 +448,7 @@ Bundle 'mattn/gist-vim'
 " Sneak, alternative to Easymotion
 Bundle 'justinmk/vim-sneak'
 
-" Sneak settings
+" Sneak Settings
 let g:sneak#streak = 1
 
 " Awesome plugin for my capitalization woes:
