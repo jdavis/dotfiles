@@ -556,6 +556,8 @@ nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 " I'm gonna have a hard time
 Bundle 'takac/vim-hardtime'
 
+let g:hardtime_default_on = 1
+
 "
 " Custom Bindings
 "
