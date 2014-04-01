@@ -494,9 +494,6 @@ nmap <leader>Sd :DeleteSession
 nmap <leader>SD :DeleteSession!
 nmap <leader>Sv :ViewSession
 
-" YouCompleteMe needs 7.3.584
-Bundle 'Valloric/YouCompleteMe'
-
 " Vim-Racket
 Bundle 'wlangstroth/vim-racket'
 
