@@ -445,11 +445,18 @@ Bundle 'bitc/vim-bad-whitespace'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
-" Sneak, alternative to Easymotion
-Bundle 'justinmk/vim-sneak'
+" Easymotion
+Bundle 'Lokaltog/vim-easymotion'
 
-" Sneak Settings
-let g:sneak#streak = 1
+map <space> <Plug>(easymotion-prefix)
+
+let g:EasyMotion_smartcase = 1
+map <space>h <Plug>(easymotion-lineforward)
+map <space>j <Plug>(easymotion-j)
+map <space>k <Plug>(easymotion-k)
+map <space>l <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0
 
 " Awesome plugin for my capitalization woes:
 " http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
