@@ -39,10 +39,11 @@
 #[url "git@gist.github.com:"]
     #pushInsteadOf = "gist:"
 
-# Also fetch pull requests
-[remote "origin"]
-  fetch = +refs/heads/*:refs/remotes/origin/*
-  fetch = +refs/pull/*/head:refs/pull/origin/*
+# Also fetch pull requests, put this inside repo specific .git/config to use
+# it.
+# [remote "origin"]
+  # fetch = +refs/heads/*:refs/remotes/origin/*
+  # fetch = +refs/pull/*/head:refs/pull/origin/*
 
 [alias]
     # Shortcuts
