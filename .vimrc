@@ -270,7 +270,7 @@ if has('gui_running')
 endif
 
 " Fold Keybindings
-nnoremap <Space> za
+"nnoremap <Space> za
 
 "
 " Custom Settings
