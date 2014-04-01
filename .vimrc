@@ -553,6 +553,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 
+" I'm gonna have a hard time
+Bundle 'takac/vim-hardtime'
+
 "
 " Custom Bindings
 "
