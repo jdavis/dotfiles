@@ -64,6 +64,7 @@
     ls = ls-files
     m = merge
     p = pull
+    pr = !git pull-request
     r = remote
     rb = rebase
     rf = reflog
@@ -101,6 +102,9 @@
 
     # Show Git root
     root = rev-parse --show-toplevel
+
+    # Easy alias for pull requests
+    pull-request = "!pr() { git fetch origin refs/pull/$1/head && git checkout -b $1 refs/pull/origin/$1; }; pr"
 
     # SVN Commands
     spull = !git-svn fetch && git-svn rebase
