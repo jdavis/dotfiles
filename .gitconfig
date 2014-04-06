@@ -49,6 +49,7 @@
     # Shortcuts
     a = add
     aa = add --all
+    ap = add --patch
     b = branch
     bl = blame
     c = commit -v
