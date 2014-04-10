@@ -391,12 +391,15 @@ Bundle 'kien/ctrlp.vim'
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
 
 " Easily surround things
 Bundle 'tpope/vim-surround'
+
+" For better status lines
+Bundle 'bling/vim-airline'
 
 " Airline options
 let g:airline_enable_branch = 1
@@ -422,9 +425,6 @@ Bundle 'kchmck/vim-coffee-script'
 
 " For LESS
 Bundle 'groenewege/vim-less'
-
-" For better status lines
-Bundle 'bling/vim-airline'
 
 " Better Markdown
 Bundle 'tpope/vim-markdown'
