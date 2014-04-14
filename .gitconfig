@@ -71,6 +71,7 @@
     rs = reset
     rv = revert
     s = status
+    sb = status -sb
     sh = show
     sl = shortlog
     sm = submodule
