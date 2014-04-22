@@ -535,7 +535,8 @@ let g:vimrplugin_insert_mode_cmds = 0
 Bundle 'derekwyatt/vim-scala'
 
 " The powers of Gitignore + wildignore combine!
-"Bundle 'zdwolfe/vim-gitwildignore'
+" Originally written by @zdwolfe, updated by @mikewadsten
+"Bundle 'mikewadsten/vim-gitwildignore'
 
 " GitHub Issues + Vim
 Bundle 'jaxbot/github-issues.vim'
