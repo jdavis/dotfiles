@@ -63,6 +63,8 @@
     l = log
     ls = ls-files
     m = merge
+    mnff = merge --no-ff
+    mff = merge --ff-only
     p = pull
     pr = !git pull-request
     r = remote
