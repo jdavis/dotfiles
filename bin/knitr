@@ -8,19 +8,19 @@ if [[ $# != 1 ]]; then
 fi
 
 if [[ ! -f "${FILE}" ]]; then
-    echo "Uh oh."
-    echo "It looks like the file you provided me doesn't exist: ${FILE}"
+    echo "Uh oh, it looks like the file you provided me doesn't exist: ${FILE}"
     exit
 fi
 
-hash kicker 2> /dev/null || {
-    echo "Oh dear. I require Kicker to work"
+hash watchmedo 2> /dev/null || {
+    echo "Oh dear. I require Watchdog to work"
     echo "Install it with:"
-    echo "    $ gem install kicker"
+    echo "\t$ pip install watchdog"
     exit
 }
 
+PATTERN="*.Rnw"
 KNITR="echo \"Rerunning Knitr...\"; Rscript -e \"library(knitr); knit('./${FILE}')\""
 
 echo "Watching ${FILE}..."
-kicker -e "${KNITR}" ${FILE}
+watchmedo shell-command --patterns="${PATTERN}" --command="${KNITR}" .
