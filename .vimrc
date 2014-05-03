@@ -539,7 +539,7 @@ Bundle 'derekwyatt/vim-scala'
 "Bundle 'mikewadsten/vim-gitwildignore'
 
 " GitHub Issues + Vim
-Bundle 'jaxbot/github-issues.vim'
+"Bundle 'jaxbot/github-issues.vim'
 
 " Vim + LaTeX
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
