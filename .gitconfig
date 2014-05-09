@@ -92,7 +92,7 @@
     man = help
     sync = !git pull && git push
     unstage = reset HEAD
-    up = --set-upstream
+    up = "!up() { if [[ $# != 2 ]]; then echo 'git up <remote> <branch>'; exit; fi; git branch -d $1/$2 && git branch --set-upstream-to $1/$2; }; up"
     zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
 
     # Fixes this issue:
