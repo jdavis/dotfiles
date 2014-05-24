@@ -566,6 +566,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 
+" Moonscript
+Bundle 'leafo/moonscript-vim'
+
 "
 " Custom Bindings
 "
