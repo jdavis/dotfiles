@@ -286,6 +286,10 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " My own special flavoring to running programs
 autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
 
+" Set on textwidth when in markdown files
+autocmd FileType lua set tabstop=2
+autocmd FileType lua set shiftwidth=2
+
 " Show trailing whitespace and tabs obnoxiously
 set list listchars=tab:>-,trail:.,extends:>
 set list
