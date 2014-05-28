@@ -2,6 +2,3 @@
 *.sw[po]
 *.log
 ._*
-
-# rbenv ignores
-.ruby-version
