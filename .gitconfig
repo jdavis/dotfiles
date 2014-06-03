@@ -52,7 +52,7 @@
     ap = add --patch
     b = branch
     bl = blame
-    c = commit -v
+    c = commit
     cl = clone
     co = checkout
     cp = cherry-pick
