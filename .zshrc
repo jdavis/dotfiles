@@ -102,7 +102,7 @@ plugins+=(python pip virtualenv)
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    plugins+=(osx brew gem)
+    plugins+=(osx brew gem brew-cask)
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     plugins+=()
 
