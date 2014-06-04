@@ -569,6 +569,9 @@ nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 " Moonscript
 Bundle 'leafo/moonscript-vim'
 
+" Smart indenting
+Bundle 'tpope/vim-sleuth'
+
 "
 " Custom Bindings
 "
