@@ -1,0 +1,12 @@
+--ignore-case
+
+--type-add=md:ext:md,mkd
+
+# Ignore modules for Node
+--ignore-dir=node_modules/
+
+# Ignore ENV for Python
+--ignore-dir=ENV/
+
+# Ignore _site for Jekyll
+--ignore-dir=_site/
