@@ -307,7 +307,7 @@ call vundle#rc()
 "
 
 " Vundle bundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Vundle mapping
 nmap <leader>vl :BundleList<cr>
@@ -321,13 +321,13 @@ nmap <leader>vC :BundleClean!<cr>
 "
 
 " Updated Vim-Git runtime files
-Bundle 'tpope/vim-git'
+Plugin 'tpope/vim-git'
 
 " Git Gutter
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " Vim and Git, sayyyy whatttt
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 " Fugitive mapping
 nmap <leader>gb :Gblame<cr>
@@ -345,7 +345,7 @@ nmap <leader>gw :Gbrowse<cr>
 "
 
 " For file browsing
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " NERDTree Options: Toggle Browser
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
@@ -361,13 +361,13 @@ if has('gui_running')
 endif
 
 " Various commenting capabilities
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " Automatically close things
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
 " For checking the syntax of any file
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Syntastic Settings
 let g:syntastic_always_populate_loc_list=1
@@ -383,7 +383,7 @@ let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
 
 
 " For fuzzyfinding
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " CtrlP Settings
 nn <leader>p :CtrlP<cr>
@@ -393,10 +393,10 @@ let g:ctrlp_custom_ignore = {
 \}
 
 " Easily surround things
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " For better status lines
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 " Airline options
 let g:airline_enable_branch = 1
@@ -409,40 +409,40 @@ let g:airline_theme = 'light'
 "
 
 " Better JavaScript support
-Bundle 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 
 " Let's add some colors
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 " For CoffeeScript, YAY!
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 " For LESS
-Bundle 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 
 " Better Markdown
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " Rust-Lang Features
-Bundle 'wting/rust.vim'
+Plugin 'wting/rust.vim'
 
 " Stylus Plugin
-Bundle 'wavded/vim-stylus'
+Plugin 'wavded/vim-stylus'
 
 "
 " Misc Bundles
 "
 
 " Vim-bad-whitespace, highlights bad whitespace
-Bundle 'bitc/vim-bad-whitespace'
+Plugin 'bitc/vim-bad-whitespace'
 
 " Add Gist-vim
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 " Easymotion
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 map <space> <Plug>(easymotion-prefix)
 
@@ -456,10 +456,10 @@ let g:EasyMotion_startofline = 0
 
 " Awesome plugin for my capitalization woes:
 " http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
-Bundle 'takac/vim-commandcaps'
+Plugin 'takac/vim-commandcaps'
 
 " Long live ctags
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " Tagbar Options
 " Toggle Tagbar
@@ -468,7 +468,7 @@ let g:tagbar_left = 0
 let g:tagbar_width = 30
 
 " Ack support in Vim
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
 let g:ackpreview = 2
 "let g:ack_autoclose = 1
@@ -476,7 +476,7 @@ let g:ackhighlight = 1
 nmap <leader>/ :Ack!<space>
 
 " Better Undo
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
 
 " Undotree settings
 nmap <leader>tu :UndotreeToggle<CR>
@@ -484,8 +484,8 @@ let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 3
 
 " Better Session Management
-Bundle 'xolox/vim-session'
-Bundle 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
 
 " Vim-Session Settings
 let g:session_autosave_periodic = 5
@@ -503,10 +503,10 @@ nmap <leader>SD :DeleteSession!
 nmap <leader>Sv :ViewSession
 
 " Vim-Racket
-Bundle 'wlangstroth/vim-racket'
+Plugin 'wlangstroth/vim-racket'
 
 " Multiple Cursors like Sublime
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Multiple Cursors Settings
 let g:multi_cursor_use_default_mapping = 0
@@ -516,14 +516,14 @@ let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 " Vimux
-Bundle 'jdavis/vimux'
+Plugin 'jdavis/vimux'
 
 " Syntax Range for Vimdeck
-Bundle 'vim-scripts/SyntaxRange'
+Plugin 'vim-scripts/SyntaxRange'
 
 " R for Vim
-Bundle 'jalvesaq/VimCom'
-Bundle 'jcfaria/Vim-R-plugin'
+Plugin 'jalvesaq/VimCom'
+Plugin 'jcfaria/Vim-R-plugin'
 
 " Worthless mapping
 let g:vimrplugin_assign = 0
@@ -532,7 +532,7 @@ let g:vimrplugin_assign = 0
 let g:vimrplugin_insert_mode_cmds = 0
 
 " Scala for Vim
-Bundle 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
 
 " The powers of Gitignore + wildignore combine!
 " Originally written by @zdwolfe, updated by @mikewadsten
@@ -542,7 +542,7 @@ Bundle 'derekwyatt/vim-scala'
 "Bundle 'jaxbot/github-issues.vim'
 
 " Vim + LaTeX
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " LaTex-Box Settings
 let g:LatexBox_latexmk_async = 1
@@ -551,10 +551,10 @@ let g:LatexBox_viewer = 'open -a Skim.app'
 let g:LatexBox_viewer = 'mate-open'
 
 " Ultisnips plugin
-Bundle 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 " Grab some snippets
-Bundle 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -563,13 +563,13 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 
 " Moonscript
-Bundle 'leafo/moonscript-vim'
+Plugin 'leafo/moonscript-vim'
 
 " Smart indenting
 "Bundle 'tpope/vim-sleuth'
 
 " Buffer management
-Bundle 'jeetsukumaran/vim-buffergator'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
