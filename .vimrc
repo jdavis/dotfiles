@@ -464,11 +464,16 @@ Bundle 'majutsushi/tagbar'
 " Tagbar Options
 " Toggle Tagbar
 nmap <leader>tt :TagbarToggle<CR>
-let g:tagbar_left = 1
+let g:tagbar_left = 0
 let g:tagbar_width = 30
 
 " Ack support in Vim
 Bundle 'mileszs/ack.vim'
+
+let g:ackpreview = 2
+"let g:ack_autoclose = 1
+let g:ackhighlight = 1
+nmap <leader>/ :Ack!<space>
 
 " Better Undo
 Bundle 'mbbill/undotree'
