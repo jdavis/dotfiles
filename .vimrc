@@ -209,13 +209,6 @@ set foldmethod=indent
 " Global Bindings
 "
 
-" Buffer Shortcuts
-nmap <leader>T :enew<cr>
-nmap gt :bnext<CR>
-nmap gT :bprevious<CR>
-nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>
-
 " Show only selected in Visual Mode
 nmap <silent> <leader>th :cal ToggleSelected(0)<CR>
 vmap <silent> <leader>th :cal ToggleSelected(1)<CR>
@@ -514,7 +507,7 @@ Bundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping = 0
 let g:multi_cursor_next_key = '<C-j>'
 let g:multi_cursor_prev_key = '<C-k>'
-let g:multi_cursor_skip_key = '<C-l>'
+let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 
 " Vimux
@@ -569,6 +562,22 @@ Bundle 'leafo/moonscript-vim'
 
 " Smart indenting
 "Bundle 'tpope/vim-sleuth'
+
+" Buffer management
+Bundle 'jeetsukumaran/vim-buffergator'
+
+" I want my own keymappings...
+let g:buffergator_suppress_keymaps = 1
+
+" Looper!
+"let g:buffergator_mru_cycle_loop = 1
+
+nmap <leader>T :enew<cr>
+nmap <C-h> :BuffergatorMruCyclePrev<CR>
+nmap <C-l> :BuffergatorMruCycleNext<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :BuffergatorOpen<CR>
+
 
 "
 " Custom Bindings
