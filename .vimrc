@@ -583,6 +583,9 @@ nmap <C-l> :BuffergatorMruCycleNext<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :BuffergatorOpen<CR>
 
+" YCM
+Plugin 'Valloric/YouCompleteMe'
+
 
 "
 " Custom Bindings
