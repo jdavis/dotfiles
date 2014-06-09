@@ -10,3 +10,6 @@
 
 # Ignore _site for Jekyll
 --ignore-dir=_site/
+
+# Ignore .deps for Moonrocks
+--ignore-dir=.deps/
