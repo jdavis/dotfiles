@@ -60,10 +60,12 @@
     dc = diff --cached
     f = fetch
     fa = fetch --all
+    gh = !git gh-pages
     h = help
     l = log
     ls = ls-files
     m = merge
+    ma = !git master
     mnff = merge --no-ff
     mff = merge --ff-only
     p = pull
@@ -87,10 +89,12 @@
     count = shortlog -sn
     ctags = !.git/hooks/ctags
     forward = checkout HEAD^
+    gh-pages = checkout gh-pages
     last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(A: %ad - C: %cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     ln = log --graph --oneline --all --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(A: %ad - C: %cr) %C(bold blue)<%an>%Creset'
     man = help
+    master = checkout master
     sync = !git pull && git push
     unstage = reset HEAD
     up = "!up() { if [[ $# != 2 ]]; then echo 'git up <remote> <branch>'; exit; fi; exists=`git show-ref refs/heads/$2`; if [ -n \"$exists\" ]; then git branch -d $1/$2; fi; git branch --set-upstream-to $1/$2; }; up"
