@@ -386,11 +386,20 @@ let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
 Plugin 'kien/ctrlp.vim'
 
 " CtrlP Settings
-nn <leader>p :CtrlP<cr>
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
 \}
+
+" Use nearest .git dir
+let g:ctrlp_working_path_mode = 'r'
+
+nmap <leader>p :CtrlP<cr>
+
+" Buffer controls to go with Buffergator
+nmap <leader>bb :CtrlPBuffer<CR>
+nmap <leader>bm :CtrlPMixed<CR>
+nmap <leader>bs :CtrlPMRU<CR>
 
 " Easily surround things
 Plugin 'tpope/vim-surround'
