@@ -348,7 +348,7 @@ nmap <leader>gw :Gbrowse<cr>
 Plugin 'scrooloose/nerdtree'
 
 " NERDTree Options: Toggle Browser
-let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$']
+let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$', '\.aux$']
 nmap <leader>tb :NERDTreeToggle<cr>
 
 " Close NERDTree if it is the last buffer open
