@@ -53,7 +53,7 @@
     b = branch
     bl = blame
     c = commit
-    cl = clone
+    cl = !git clone
     co = checkout
     cp = cherry-pick
     d = diff
