@@ -631,6 +631,9 @@ let g:ycm_filetype_blacklist = {
 \ 'gitcommit': 1,
 \}
 
+" {Inc,Dec}rement more than numbers
+Plugin 'tpope/vim-speeddating'
+
 "
 " Custom Bindings
 "
