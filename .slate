@@ -37,16 +37,16 @@ bind h:ctrl;shift ${lefthalf}
 bind l:ctrl;shift ${righthalf}
 
 # Top-Left Corner
-bind u:ctrl;shift ${topleft}
+#bind u:ctrl;shift ${topleft}
 
 # Top-Right Corner
-bind p:ctrl;shift ${topright}
+#bind p:ctrl;shift ${topright}
 
 # Bottom-Left Corner
-bind n:ctrl;shift ${bottomleft}
+#bind n:ctrl;shift ${bottomleft}
 
 # Bottom-Right Corner
-bind .:ctrl;shift ${bottomright}
+#bind .:ctrl;shift ${bottomright}
 
 # Grow Right by 10%
 bind right:ctrl;shift       resize +10% +0
