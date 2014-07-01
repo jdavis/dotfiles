@@ -55,6 +55,7 @@
     c = commit
     cl = !git clone
     co = checkout
+    cop = checkout --patch
     cp = cherry-pick
     d = diff
     dc = diff --cached
