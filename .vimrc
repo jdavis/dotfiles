@@ -209,6 +209,16 @@ set foldmethod=indent
 " Global Bindings
 "
 
+" Disable ex mode, ick, remap it to Q instead.
+"
+" Tip:
+"   Use command-line-window with q:
+"   Use search history with q/
+"
+" More info:
+" http://blog.sanctum.geek.nz/vim-command-window/
+nmap Q q
+
 " Show only selected in Visual Mode
 nmap <silent> <leader>th :cal ToggleSelected(0)<CR>
 vmap <silent> <leader>th :cal ToggleSelected(1)<CR>
