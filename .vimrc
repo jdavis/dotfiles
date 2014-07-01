@@ -647,6 +647,9 @@ Plugin 'tpope/vim-speeddating'
 " Better repeat
 Plugin 'tpope/vim-repeat'
 
+" More tpope magic
+Plugin 'tpope/vim-endwise'
+
 "
 " Custom Bindings
 "
