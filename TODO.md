@@ -24,6 +24,8 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - [GoldenView][golden] looks AWESOME
 - Use and configure [LaTeX Box][latex]
 - Use an autocomplete that I like
+- Look into https://github.com/kshenoy/vim-signature
+- Look into https://github.com/wellle/targets.vim
 
 ## Server
 
