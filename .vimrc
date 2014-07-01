@@ -644,6 +644,9 @@ let g:ycm_filetype_blacklist = {
 " {Inc,Dec}rement more than numbers
 Plugin 'tpope/vim-speeddating'
 
+" Better repeat
+Plugin 'tpope/vim-repeat'
+
 "
 " Custom Bindings
 "
