@@ -96,6 +96,13 @@ function! HasColorScheme(scheme)
     return filereadable(expand(path))
 endfunction
 
+" Bootstrap Vundle on new systems
+" Borrowed from @justinmk's vimrc
+fun! InstallVundle()
+    silent call mkdir(expand("~/.vim/bundle", 1), 'p')
+    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endfun
+
 "
 " Global Settings
 "
