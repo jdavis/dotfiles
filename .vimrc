@@ -14,14 +14,17 @@
 set nocompatible
 
 "
-" Determine the OS for OS specific code
+" Determine what we have
 "
-let g:OS = 'linux'
+
+let s:OS = 'linux'
 
 let os = substitute(system('uname'), '\n', '', '')
 if os == 'Darwin' || os == 'Mac'
-    let g:OS = 'osx'
+    let s:OS = 'osx'
 endif
+
+let s:plugins=isdirectory(expand("~/.vim/bundle/vundle", 1))
 
 "
 " Custom Functions
@@ -95,13 +98,6 @@ function! HasColorScheme(scheme)
     let path = '~/.vim/bundle/vim-colorschemes/colors/' . a:scheme . '.vim'
     return filereadable(expand(path))
 endfunction
-
-" Bootstrap Vundle on new systems
-" Borrowed from @justinmk's vimrc
-fun! InstallVundle()
-    silent call mkdir(expand("~/.vim/bundle", 1), 'p')
-    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-endfun
 
 "
 " Global Settings
@@ -273,9 +269,9 @@ if has('gui_running')
     set guioptions=aegirLt
 
     " Let's make the fonts look nice
-    if g:OS == 'osx'
+    if s:OS == 'osx'
         set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
-    elseif g:OS == 'linux'
+    elseif s:OS == 'linux'
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
 endif
@@ -304,9 +300,16 @@ autocmd FileType lua,ruby set shiftwidth=2
 set list listchars=tab:>-,trail:.,extends:>
 set list
 
-"
-" Start Vundle
-"
+if !s:plugins
+
+" Bootstrap Vundle on new systems
+" Borrowed from @justinmk's vimrc
+fun! InstallVundle()
+    silent call mkdir(expand("~/.vim/bundle", 1), 'p')
+    silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+endfun
+
+else
 
 " Required by Vundle
 filetype off
@@ -319,12 +322,48 @@ call vundle#rc()
 " Vundle Bundles + Settings
 "
 
-"
-" Vundle: Plugin management
-"
-
-" Vundle bundle
 Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-git'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'pangloss/vim-javascript'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'wting/rust.vim'
+Plugin 'wavded/vim-stylus'
+Plugin 'bitc/vim-bad-whitespace'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'takac/vim-commandcaps'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'mbbill/undotree'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'benmills/vimux'
+Plugin 'vim-scripts/SyntaxRange'
+Plugin 'jalvesaq/VimCom'
+Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'leafo/moonscript-vim'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
+
 
 " Vundle mapping
 nmap <leader>vl :BundleList<cr>
@@ -332,19 +371,6 @@ nmap <leader>vi :BundleInstall<cr>
 nmap <leader>vI :BundleInstall!<cr>
 nmap <leader>vc :BundleClean<cr>
 nmap <leader>vC :BundleClean!<cr>
-
-"
-" Vim + Git
-"
-
-" Updated Vim-Git runtime files
-Plugin 'tpope/vim-git'
-
-" Git Gutter
-Plugin 'airblade/vim-gitgutter'
-
-" Vim and Git, sayyyy whatttt
-Plugin 'tpope/vim-fugitive'
 
 " Fugitive mapping
 nmap <leader>gb :Gblame<cr>
@@ -357,31 +383,18 @@ nmap <leader>gP :Git push<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gbrowse<cr>
 
-"
-" File Management
-"
-
-" For file browsing
-Plugin 'scrooloose/nerdtree'
-
-" NERDTree Options: Toggle Browser
+" NERDTree Options
 let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$', '\.aux$']
 nmap <leader>tb :NERDTreeToggle<cr>
 
 " Close NERDTree if it is the last buffer open
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
-" Automatically open NERDTree whenever opened with GUI
+" Automatically open NERDTree whenever opened with GUI, not not terminal
 if has('gui_running')
     autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
 endif
-
-" Various commenting capabilities
-Plugin 'scrooloose/nerdcommenter'
-
-" For checking the syntax of any file
-Plugin 'scrooloose/syntastic'
 
 " Syntastic Settings
 let g:syntastic_always_populate_loc_list=1
@@ -394,10 +407,6 @@ let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
-
-
-" For fuzzyfinding
-Plugin 'kien/ctrlp.vim'
 
 " CtrlP Settings
 let g:ctrlp_custom_ignore = {
@@ -415,57 +424,11 @@ nmap <leader>bb :CtrlPBuffer<CR>
 nmap <leader>bm :CtrlPMixed<CR>
 nmap <leader>bs :CtrlPMRU<CR>
 
-" Easily surround things
-Plugin 'tpope/vim-surround'
-
-" For better status lines
-Plugin 'bling/vim-airline'
-
 " Airline options
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
-
-"
-" Language Bundles
-"
-
-" Better JavaScript support
-Plugin 'pangloss/vim-javascript'
-
-
-" Let's add some colors
-Plugin 'flazz/vim-colorschemes'
-
-" For CoffeeScript, YAY!
-Plugin 'kchmck/vim-coffee-script'
-
-" For LESS
-Plugin 'groenewege/vim-less'
-
-" Better Markdown
-Plugin 'tpope/vim-markdown'
-
-" Rust-Lang Features
-Plugin 'wting/rust.vim'
-
-" Stylus Plugin
-Plugin 'wavded/vim-stylus'
-
-"
-" Misc Bundles
-"
-
-" Vim-bad-whitespace, highlights bad whitespace
-Plugin 'bitc/vim-bad-whitespace'
-
-" Add Gist-vim
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-
-" Easymotion
-Plugin 'Lokaltog/vim-easymotion'
 
 map <space> <Plug>(easymotion-prefix)
 
@@ -477,59 +440,21 @@ map <space>l <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0
 
-" Awesome plugin for my capitalization woes:
-" http://www.reddit.com/r/vim/comments/1im4d9/c/cb6906n
-Plugin 'takac/vim-commandcaps'
-
-" Long live ctags
-Plugin 'majutsushi/tagbar'
-
 " Tagbar Options
 " Toggle Tagbar
 nmap <leader>tt :TagbarToggle<CR>
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 
-" Ack support in Vim
-Plugin 'mileszs/ack.vim'
-
 let g:ackpreview = 2
 "let g:ack_autoclose = 1
 let g:ackhighlight = 1
 nmap <leader>/ :Ack!<space>
 
-" Better Undo
-Plugin 'mbbill/undotree'
-
 " Undotree settings
 nmap <leader>tu :UndotreeToggle<CR>
 let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 3
-
-" Better Session Management
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
-
-" Vim-Session Settings
-let g:session_autosave_periodic = 5
-let g:session_directory = '~/.vim/sessions/'
-let g:session_command_aliases = 1
-let g:session_autosave = 'yes'
-
-nmap <leader>Ss :SaveSession
-nmap <leader>So :OpenSession
-nmap <leader>Sr :RestartVim<cr>
-nmap <leader>Sc :CloseSession<cr>
-nmap <leader>SC :CloseSession!<cr>
-nmap <leader>Sd :DeleteSession
-nmap <leader>SD :DeleteSession!
-nmap <leader>Sv :ViewSession
-
-" Vim-Racket
-Plugin 'wlangstroth/vim-racket'
-
-" Multiple Cursors like Sublime
-Plugin 'terryma/vim-multiple-cursors'
 
 " Multiple Cursors Settings
 let g:multi_cursor_use_default_mapping = 0
@@ -538,46 +463,21 @@ let g:multi_cursor_prev_key = '<C-k>'
 let g:multi_cursor_skip_key = '<C-x>'
 let g:multi_cursor_quit_key = '<Esc>'
 
-" Vimux
-Plugin 'jdavis/vimux'
-
-" Syntax Range for Vimdeck
-Plugin 'vim-scripts/SyntaxRange'
-
-" R for Vim
-Plugin 'jalvesaq/VimCom'
-Plugin 'jcfaria/Vim-R-plugin'
-
 " Worthless mapping
 let g:vimrplugin_assign = 0
 
 " Disable ridiculous mappings
 let g:vimrplugin_insert_mode_cmds = 0
 
-" Scala for Vim
-Plugin 'derekwyatt/vim-scala'
-
 " The powers of Gitignore + wildignore combine!
 " Originally written by @zdwolfe, updated by @mikewadsten
 "Bundle 'mikewadsten/vim-gitwildignore'
-
-" GitHub Issues + Vim
-"Bundle 'jaxbot/github-issues.vim'
-
-" Vim + LaTeX
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " LaTex-Box Settings
 let g:LatexBox_latexmk_async = 1
 let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_viewer = 'open -a Skim.app'
 let g:LatexBox_viewer = 'mate-open'
-
-" Ultisnips plugin
-Plugin 'SirVer/ultisnips'
-
-" Grab some snippets
-Plugin 'honza/vim-snippets'
 
 nmap <leader>U :call UltiSnips#ListSnippets()<cr>
 
@@ -603,15 +503,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" Moonscript
-Plugin 'leafo/moonscript-vim'
-
-" Smart indenting
-"Bundle 'tpope/vim-sleuth'
-
-" Buffer management
-Plugin 'jeetsukumaran/vim-buffergator'
-
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
 
@@ -623,9 +514,6 @@ nmap <C-h> :BuffergatorMruCyclePrev<CR>
 nmap <C-l> :BuffergatorMruCycleNext<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :BuffergatorOpen<CR>
-
-" YCM
-Plugin 'Valloric/YouCompleteMe'
 
 " Use extra conf file
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -645,26 +533,6 @@ let g:ycm_filetype_blacklist = {
 \ 'gitcommit': 1,
 \}
 
-" {Inc,Dec}rement more than numbers
-Plugin 'tpope/vim-speeddating'
-
-" Better repeat
-Plugin 'tpope/vim-repeat'
-
-" More tpope magic
-Plugin 'tpope/vim-endwise'
-
-"
-" Custom Bindings
-"
-
-" Bind PasteToggle to something quick and easy
-nmap <leader>tP :cal PasteToggle()<cr>
-
-" Bind :sort to something easy, don't press enter, allow for options (eg -u,
-" n, sorting in reverse [sort!])
-vnoremap <leader>s :sort
-
 "
 " Vimux Settings
 "
@@ -678,11 +546,6 @@ else
 endif
 
 let g:VimuxPromptString = 'tmux > '
-
-"
-" Vimux Functions
-" I could make a plugin out of these...
-"
 
 function! VimuxSetupRacket()
     call VimuxRunCommand('racket -il readline')
@@ -720,10 +583,6 @@ function! VimuxRunParagraph()
     call VimuxRunCommand(join(filtered, ''))
 endfunction
 
-"
-" Vimux Bindings
-"
-
 " Setup autocmd if Racket filetype
 autocmd FileType racket call SetupVimuxRacket()
 
@@ -739,9 +598,24 @@ function! SetupVimuxRacket()
     vmap <silent> <localleader>R :call VimuxRunSelection()<CR>
 endfunction
 
+" End the conditional for plugins
+endif
+
+" Load plugins and indent for the filtype
+" **Must be last for Vundle**
+filetype plugin indent on
+
 "
-" Misc Settings
+" Misc/Non Plugin Settings
 "
+
+" Bind PasteToggle to something quick and easy
+nmap <leader>tP :cal PasteToggle()<cr>
+
+" Bind :sort to something easy, don't press enter, allow for options (eg -u,
+" n, sorting in reverse [sort!])
+vnoremap <leader>s :sort
+
 
 " Let's make it pretty
 set background=dark
@@ -753,7 +627,3 @@ set t_AF=[38;5;%dm
 if HasColorScheme('moria')
     colorscheme moria
 endif
-
-" Load plugins and indent for the filtype
-" **Must be last for Vundle**
-filetype plugin indent on
