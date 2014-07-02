@@ -373,9 +373,6 @@ endif
 " Various commenting capabilities
 Plugin 'scrooloose/nerdcommenter'
 
-" Automatically close things
-Plugin 'Raimondi/delimitMate'
-
 " For checking the syntax of any file
 Plugin 'scrooloose/syntastic'
 
