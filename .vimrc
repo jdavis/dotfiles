@@ -624,6 +624,6 @@ set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
 
 " Must be loaded after the vim-colorschemes bundle
-if HasColorScheme('moria')
+if HasColorScheme('moria') && s:plugins
     colorscheme moria
 endif
