@@ -110,7 +110,7 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 antigen bundle jdavis/zsh-files aliases/
-antigen bundle jdavis/zsh-files custom/
+antigen bundle jdavis/zsh-files functions/
 antigen bundle jdavis/zsh-files custom/
 antigen bundle jdavis/zsh-files env/
 antigen bundle jdavis/zsh-files path/
