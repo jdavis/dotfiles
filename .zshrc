@@ -54,6 +54,8 @@ else
     fi
 fi
 
+if false; then
+
 #
 # Oh My Zsh Configuration
 #
@@ -75,46 +77,9 @@ export DISABLE_AUTO_UPDATE='true'
 # Plugin Config
 #
 
-# Turn on agent forwarding
-zstyle :omz:plugins:ssh-agent agent-forwarding yes
-
-# Use the three identities
-zstyle :omz:plugins:ssh-agent identities github pyrite arrakis
-
 #
 # Load Plugins
 #
-
-plugins=()
-
-# General Plugins
-#plugins+=(gitfast tmuxinator)
-plugins+=(git tmuxinator)
-
-# For SSH, starting ssh-agent is annoying
-plugins+=(ssh-agent)
-
-# Node Plugins
-plugins+=(node npm coffee)
-
-# Python Plugins
-plugins+=(python pip virtualenv)
-
-# OS specific plugins
-if [[ $CURRENT_OS == 'OS X' ]]; then
-    plugins+=(osx brew gem brew-cask)
-elif [[ $CURRENT_OS == 'Linux' ]]; then
-    plugins+=()
-
-    if [[ $DISTRO == 'CentOS' ]]; then
-        plugins+=(centos)
-    fi
-elif [[ $CURRENT_OS == 'Cygwin' ]]; then
-    plugins+=(cygwin)
-fi
-
-# ZSH Improvements: MUST BE LAST!
-plugins+=(zsh-syntax-highlighting)
 
 #
 # Completions
@@ -127,3 +92,78 @@ fi
 
 # Launch oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+else
+
+# Load Antigen
+source ~/.antigen.zsh
+
+# Load various lib files
+antigen bundle robbyrussell/oh-my-zsh lib/
+
+#
+# Antigen Theme
+#
+
+antigen theme jdavis/zsh-files themes/jdavis
+
+#
+# Antigen Bundles
+#
+
+antigen bundle git
+antigen bundle tmuxinator
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle rupa/z
+
+# For SSH, starting ssh-agent is annoying
+antigen bundle ssh-agent
+
+# Node Plugins
+antigen bundle coffee
+antigen bundle node
+antigen bundle npm
+
+# Python Plugins
+antigen bundle pip
+antigen bundle python
+antigen bundle virtualenv
+
+# OS specific plugins
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    antigen bundle brew
+    antigen bundle brew-cask
+    antigen bundle gem
+    antigen bundle osx
+elif [[ $CURRENT_OS == 'Linux' ]]; then
+    # None so far...
+
+    if [[ $DISTRO == 'CentOS' ]]; then
+        antigen bundle centos
+    fi
+elif [[ $CURRENT_OS == 'Cygwin' ]]; then
+    antigen bundle cygwin
+fi
+
+antigen bundle jdavis/zsh-files aliases/
+antigen bundle jdavis/zsh-files custom/
+antigen bundle jdavis/zsh-files custom/
+antigen bundle jdavis/zsh-files env/
+antigen bundle jdavis/zsh-files path/
+
+# Secret info
+antigen bundle git@github.com:jdavis/secret.git
+
+#
+# Plugin Settings
+#
+
+# Turn on agent forwarding
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+
+# Use the three identities
+zstyle :omz:plugins:ssh-agent identities github pyrite arrakis
+
+antigen apply
+
+fi

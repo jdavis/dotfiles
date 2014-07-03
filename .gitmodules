@@ -1,18 +1,6 @@
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git://github.com/jdavis/oh-my-zsh.git
 [submodule ".vim"]
 	path = .vim
 	url = git://github.com/jdavis/vim-files.git
 [submodule ".fonts"]
 	path = .fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
-[submodule ".z"]
-	path = .z
-	url = https://github.com/rupa/z.git
-[submodule ".git-extras"]
-	path = .git-extras
-	url = https://github.com/visionmedia/git-extras.git
-[submodule "bin/git-calendar"]
-	path = bin/git-calendar
-	url = https://github.com/k4rthik/git-cal
