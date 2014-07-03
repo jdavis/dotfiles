@@ -54,46 +54,10 @@ else
     fi
 fi
 
-if false; then
-
-#
-# Oh My Zsh Configuration
-#
-
-# Point to where oh-my-zsh is
-ZSH=$HOME/.oh-my-zsh
-
-# Select a theme, see, $ZSH/themes for more
-ZSH_THEME='jdavis'
-
-# Auto-update is too ungodly slow
-export DISABLE_AUTO_UPDATE='true'
-
-#
-# Plugins
-#
-
-#
-# Plugin Config
-#
-
-#
-# Load Plugins
-#
-
-#
-# Completions
-#
-
 # Use zsh-completions if it exists
 if [[ -f "/usr/local/share/zsh-completions" ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
-
-# Launch oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-
-else
 
 # Load Antigen
 source ~/.antigen.zsh
@@ -165,5 +129,3 @@ zstyle :omz:plugins:ssh-agent agent-forwarding yes
 zstyle :omz:plugins:ssh-agent identities github pyrite arrakis
 
 antigen apply
-
-fi
