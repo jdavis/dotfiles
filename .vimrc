@@ -309,6 +309,9 @@ fun! InstallVundle()
     silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 endfun
 
+" Instead of install packages, install Vundle
+nmap <leader>vi :call InstallVundle()<cr>
+
 else
 
 " Required by Vundle
