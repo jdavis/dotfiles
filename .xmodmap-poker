@@ -1,0 +1,3 @@
+! Support for my Poker II (60% keyboard).
+! Escape is moved to CapsLock and `~ are moved to what was previously escape.
+keycode 0x9 = grave asciitilde
