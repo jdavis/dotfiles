@@ -24,7 +24,7 @@ if os == 'Darwin' || os == 'Mac'
     let s:OS = 'osx'
 endif
 
-let s:plugins=isdirectory(expand("~/.vim/bundle/vundle", 1))
+let s:plugins=isdirectory(expand('~/.vim/bundle/vundle', 1))
 
 "
 " Custom Functions
@@ -43,9 +43,9 @@ endfunction
 " buffer that's left is the NERDTree buffer
 " Source: https://github.com/scrooloose/nerdtree/issues/21
 function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
+  if exists('t:NERDTreeBufName')
     if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
+      if winnr('$') == 1
         q
       endif
     endif
@@ -59,7 +59,7 @@ function! StripTrailingWhitespace()
         normal mz
         normal Hmy
         %s/\s\+$//e
-        normal 'yz<CR>
+        normal 'yz<cr>
         normal `z
         retab
     endif
@@ -72,7 +72,7 @@ function! ToggleSelected(visual) range
     highlight HideSelected ctermfg=bg ctermbg=bg
                          \ guifg=bg guibg=bg gui=none term=none cterm=none
 
-    if exists("g:toggle_selected_hide")
+    if exists('g:toggle_selected_hide')
         call matchdelete(g:toggle_selected_hide)
 
         unlet g:toggle_selected_hide
@@ -223,25 +223,25 @@ set foldmethod=indent
 nmap Q q
 
 " Show only selected in Visual Mode
-nmap <silent> <leader>th :cal ToggleSelected(0)<CR>
-vmap <silent> <leader>th :cal ToggleSelected(1)<CR>
+nmap <silent> <leader>th :cal ToggleSelected(0)<cr>
+vmap <silent> <leader>th :cal ToggleSelected(1)<cr>
 
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
 nmap <leader>s- :split<cr>
 
 " Unhighlight the last search pattern on Enter
-nn <silent> <CR> :nohlsearch<CR><CR>
+nn <silent> <cr> :nohlsearch<cr><cr>
 
 " Remove trailing whitespace
-nmap <leader>tW :cal StripTrailingWhitespace()<CR>
+nmap <leader>tW :cal StripTrailingWhitespace()<cr>
 
 " Control enhancements in insert mode
-imap <C-F> <RIGHT>
-imap <C-B> <LEFT>
-imap <M-BS> <ESC>vBc
-imap <C-P> <UP>
-imap <C-N> <DOWN>
+imap <C-F> <right>
+imap <C-B> <left>
+imap <M-BS> <esc>vBc
+imap <C-P> <up>
+imap <C-N> <down>
 
 " When pushing j/k on a line that is wrapped, it navigates to the same line,
 " just to the expected location rather than to the next line
@@ -249,10 +249,10 @@ nnoremap j gj
 nnoremap k gk
 
 " Arrow key users won't survive in this environment
-map <UP> <NOP>
-map <DOWN> <NOP>
-map <LEFT> <NOP>
-map <RIGHT> <NOP>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 " Map Ctrl+V to paste in Insert mode
 imap <C-V> <C-R>*
@@ -277,7 +277,7 @@ if has('gui_running')
 endif
 
 " Fold Keybindings
-"nnoremap <Space> za
+"nnoremap <space> za
 
 "
 " Custom Settings
@@ -290,7 +290,7 @@ autocmd FileType markdown set textwidth=80
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 " My own special flavoring to running programs
-autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<CR>
+autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<cr>
 
 " Use 2 spaces when in Lua & Ruby
 autocmd FileType lua,ruby set tabstop=2
@@ -362,7 +362,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'leafo/moonscript-vim'
 Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-endwise'
@@ -423,9 +423,9 @@ let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :CtrlP<cr>
 
 " Buffer controls to go with Buffergator
-nmap <leader>bb :CtrlPBuffer<CR>
-nmap <leader>bm :CtrlPMixed<CR>
-nmap <leader>bs :CtrlPMRU<CR>
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
 
 " Airline options
 let g:airline_enable_branch = 1
@@ -445,7 +445,7 @@ let g:EasyMotion_startofline = 0
 
 " Tagbar Options
 " Toggle Tagbar
-nmap <leader>tt :TagbarToggle<CR>
+nmap <leader>tt :TagbarToggle<cr>
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 
@@ -455,7 +455,7 @@ let g:ackhighlight = 1
 nmap <leader>/ :Ack!<space>
 
 " Undotree settings
-nmap <leader>tu :UndotreeToggle<CR>
+nmap <leader>tu :UndotreeToggle<cr>
 let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 3
 
@@ -502,9 +502,9 @@ endfunction
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
@@ -513,10 +513,10 @@ let g:buffergator_suppress_keymaps = 1
 "let g:buffergator_mru_cycle_loop = 1
 
 nmap <leader>T :enew<cr>
-nmap <C-h> :BuffergatorMruCyclePrev<CR>
-nmap <C-l> :BuffergatorMruCycleNext<CR>
-nmap <leader>bq :bp <BAR> bd #<CR>
-nmap <leader>bl :BuffergatorOpen<CR>
+nmap <C-h> :BuffergatorMruCyclePrev<cr>
+nmap <C-l> :BuffergatorMruCycleNext<cr>
+nmap <leader>bq :bp <BAR> bd #<cr>
+nmap <leader>bl :BuffergatorOpen<cr>
 
 " Use extra conf file
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -593,12 +593,12 @@ function! SetupVimuxRacket()
     set shiftwidth=2
 
     " Start interpretter
-    nmap <silent> <localleader>ri :call VimuxSetupRacket()<CR>
-    nmap <silent> <localleader>rq :call VimuxQuitRacket()<CR>
-    nmap <silent> <localleader>rl :call VimuxRunLine()<CR>
-    nmap <silent> <localleader>R :call VimuxRunParagraph()<CR>
-    nmap <silent> <localleader>rp :call VimuxRunParagraph()<CR>
-    vmap <silent> <localleader>R :call VimuxRunSelection()<CR>
+    nmap <silent> <localleader>ri :call VimuxSetupRacket()<cr>
+    nmap <silent> <localleader>rq :call VimuxQuitRacket()<cr>
+    nmap <silent> <localleader>rl :call VimuxRunLine()<cr>
+    nmap <silent> <localleader>R :call VimuxRunParagraph()<cr>
+    nmap <silent> <localleader>rp :call VimuxRunParagraph()<cr>
+    vmap <silent> <localleader>R :call VimuxRunSelection()<cr>
 endfunction
 
 " End the conditional for plugins
