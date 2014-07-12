@@ -115,7 +115,7 @@
     root = rev-parse --show-toplevel
 
     # Easy alias for pull requests
-    pull-request = "!pr() { git fetch origin refs/pull/$1/head:pr/$1 && git checkout -b $1 pr/$1; }; pr"
+    pull-request = "!pr() { if [[ $# == 2 ]]; then REMOTE=$2; else REMOTE='origin'; fi; git fetch $REMOTE refs/pull/$1/head:pr/$1 && git checkout -b $1 pr/$1; }; pr"
 
     # SVN Commands
     spull = !git-svn fetch && git-svn rebase
@@ -124,3 +124,6 @@
     # Git + Tig
     tig = !tig
     t = !tig
+
+[push]
+    default = simple

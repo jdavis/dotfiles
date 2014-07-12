@@ -109,11 +109,7 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
     antigen bundle cygwin
 fi
 
-antigen bundle jdavis/zsh-files aliases/
-antigen bundle jdavis/zsh-files functions/
-antigen bundle jdavis/zsh-files custom/
-antigen bundle jdavis/zsh-files env/
-antigen bundle jdavis/zsh-files path/
+antigen bundle jdavis/zsh-files
 
 # Secret info
 antigen bundle git@github.com:jdavis/secret.git
