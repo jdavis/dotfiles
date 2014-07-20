@@ -15,8 +15,8 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~c
 - ✓ Learn about Vim buffers
 - ✓ Fix up secret dotfiles
 - ✓ Use SSH keys more, see Michael Davis' dotfiles
-- Look up Vimshell and possibly use it
-- Look at Neocomplcache and possibly use it
+- ~~Look up Vimshell and possibly use it~~
+- ~~Look at Neocomplcache and possibly use it~~
 - ✓ Setup [Tig][tig] and learn how to use it
 
 ## Vim Files
