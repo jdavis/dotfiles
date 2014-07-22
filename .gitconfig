@@ -89,7 +89,6 @@
     amend = commit --amend
     count = shortlog -sn
     ctags = !.git/hooks/ctags
-    forward = checkout HEAD^
     gh-pages = checkout gh-pages
     last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(A: %ad - C: %cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -99,8 +98,6 @@
     sync = !git pull && git push
     unstage = reset HEAD
     up = "!up() { if [[ $# != 2 ]]; then echo 'git up <remote> <branch>'; exit; fi; exists=`git show-ref refs/heads/$2`; if [ -n \"$exists\" ]; then git branch -d $1/$2; fi; git branch --set-upstream-to $1/$2; }; up"
-
-    zip = !git ls-files | zip -@ "${PWD##*/}"-`date +%Y%m%d%H%M%S`
 
     # Fixes this issue:
     # http://stackoverflow.com/q/6089294
