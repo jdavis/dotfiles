@@ -83,8 +83,8 @@ function! ToggleSelected(visual) range
         endif
     endif
 
-    let [lnum1, col1] = getpos("'<")[1:2]
-    let [lnum2, col2] = getpos("'>")[1:2]
+    let [lnum1, col1] = getpos(''<')[1:2]
+    let [lnum2, col2] = getpos(''>')[1:2]
 
     let pattern = '\%^\|\%<'.lnum1.'l\|\%<'.col1.'v\|\%>'.lnum2.'l\|\%>'.col2.'v'
     let g:toggle_selected_hide = matchadd('HideSelected', pattern, 1000)
@@ -305,7 +305,7 @@ if !s:plugins
 " Bootstrap Vundle on new systems
 " Borrowed from @justinmk's vimrc
 fun! InstallVundle()
-    silent call mkdir(expand("~/.vim/bundle", 1), 'p')
+    silent call mkdir(expand('~/.vim/bundle', 1), 'p')
     silent !git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 endfun
 
@@ -405,7 +405,7 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_signs = 1
-let g:syntastic_java_checkers = ["checkstyle", "javac"]
+let g:syntastic_java_checkers = ['checkstyle', 'javac']
 let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
@@ -497,10 +497,10 @@ function! g:UltiSnips_Complete()
             endif
         endif
     endif
-    return ""
+    return ''
 endfunction
 
-au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+au InsertEnter * exec 'inoremap <silent> ' . g:UltiSnipsExpandTrigger . ' <C-R>=g:UltiSnips_Complete()<cr>'
 
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -561,8 +561,8 @@ function! VimuxQuitRacket()
 endfunction
 
 function! VimuxRunSelection() range
-    let [lnum1, col1] = getpos("'<")[1:2]
-    let [lnum2, col2] = getpos("'>")[1:2]
+    let [lnum1, col1] = getpos(''<')[1:2]
+    let [lnum2, col2] = getpos(''>')[1:2]
 
     let lines = getline(lnum1, lnum2)
 
@@ -596,8 +596,7 @@ function! SetupVimuxRacket()
     nmap <silent> <localleader>ri :call VimuxSetupRacket()<cr>
     nmap <silent> <localleader>rq :call VimuxQuitRacket()<cr>
     nmap <silent> <localleader>rl :call VimuxRunLine()<cr>
-    nmap <silent> <localleader>R :call VimuxRunParagraph()<cr>
-    nmap <silent> <localleader>rp :call VimuxRunParagraph()<cr>
+    nmap <silent> <localleader>R :call VimuxRunParagraph()<cr> nmap <silent> <localleader>rp :call VimuxRunParagraph()<cr>
     vmap <silent> <localleader>R :call VimuxRunSelection()<cr>
 endfunction
 
