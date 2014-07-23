@@ -121,3 +121,6 @@
     # Git + Tig
     tig = !tig
     t = !tig
+
+[push]
+    default = simple
