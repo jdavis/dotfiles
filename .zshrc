@@ -38,8 +38,6 @@ DISTRO=''
 
 if [[ $UNAME == 'Darwin' ]]; then
     CURRENT_OS='OS X'
-elif [[ $UNAME =~ 'CYGWIN' ]]; then
-    CURRENT_OS='Cygwin'
 else
     # Must be Linux, determine distro
     # Work in progress, so far CentOS is the only Linux distro I have needed to
