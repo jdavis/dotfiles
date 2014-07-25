@@ -506,6 +506,13 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+"
+" Buffergator Options
+"
+
+let g:buffergator_autoexpand_on_split = 0
+let g:buffergator_viewport_split_policy = 'R'
+
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
 
