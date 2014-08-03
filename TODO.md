@@ -3,7 +3,8 @@ Todo
 
 ## Dotfiles
 
-A list of things to make my dotfiles more awesomer. A ✓ indicates done and ~~crossed out~~ indicates a defunct item.
+A list of things to make my dotfiles more awesomer. A ✓ indicates done and
+~~crossed out~~ indicates a defunct item.
 
 - Add [tmuxinator](https://github.com/aziz/tmuxinator)
 - ✓ Add tmux and/or tmuxinator oh-my-zsh plugin
