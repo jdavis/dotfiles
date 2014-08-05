@@ -296,10 +296,6 @@ autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Sc
 autocmd FileType lua,ruby set tabstop=2
 autocmd FileType lua,ruby set shiftwidth=2
 
-" Show trailing whitespace and tabs obnoxiously
-set list listchars=tab:>-,trail:.,extends:>
-set list
-
 if !s:plugins
 
 " Bootstrap Vundle on new systems
@@ -433,6 +429,25 @@ let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'light'
 
+" Whitespace settings
+
+" Show trailing whitespace and tabs obnoxiously
+set list listchars=tab:▸\ ,trail:.
+set list
+
+fun! ToggleWhitespace()
+    ToggleBadWhitespace
+    if &list
+        set nolist
+    else
+        set list listchars=tab:▸\ ,trail:.
+        set list
+    endif
+endfun
+
+nmap <leader>tw :cal ToggleWhitespace()<cr>
+
+" Easymotion
 map <space> <Plug>(easymotion-prefix)
 
 let g:EasyMotion_smartcase = 1
