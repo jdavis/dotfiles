@@ -11,7 +11,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 - ✓ Update my .tmux.conf (read Tmux book)
 - Look into web-search oh-my-zsh plugin
 - Look into github oh-my-zsh plugin
-- Explore Slate config (layout directive, monitors, etc) [sample][slate]
+- ~~Explore Slate config (layout directive, monitors, etc) [sample][slate]~~
 - ✓ Look into [antigen][anti] (again)
 - ✓ Learn about Vim buffers
 - ✓ Fix up secret dotfiles
@@ -19,6 +19,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 - ~~Look up Vimshell and possibly use it~~
 - ~~Look at Neocomplcache and possibly use it~~
 - ✓ Setup [Tig][tig] and learn how to use it
+- Use and learn [Hydra/Mjolnir][mjolnir]
 
 ## Vim Files
 
@@ -68,3 +69,4 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 [slate]: https://github.com/jigish/dotfiles/blob/master/slate
 [anti]: https://github.com/zsh-users/antigen
 [tig]: https://github.com/jonas/tig
+[mjolnir]: http://mjolnir.io/
