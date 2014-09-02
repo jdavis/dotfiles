@@ -535,8 +535,8 @@ let g:buffergator_suppress_keymaps = 1
 "let g:buffergator_mru_cycle_loop = 1
 
 nmap <leader>T :enew<cr>
-nmap <leader>h :BuffergatorMruCyclePrev<cr>
-nmap <leader>l :BuffergatorMruCycleNext<cr>
+nmap <leader>jj :BuffergatorMruCyclePrev<cr>
+nmap <leader>kk :BuffergatorMruCycleNext<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
 nmap <leader>bl :BuffergatorOpen<cr>
 
