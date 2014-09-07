@@ -21,6 +21,7 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 - ✓ Setup [Tig][tig] and learn how to use it
 - Use and learn [Hydra/Mjolnir][mjolnir]
 - Setup [tmux plugin manager][tpm]
+- Look into [byobu][byobu]
 
 ## Vim Files
 
@@ -72,3 +73,4 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 [tig]: https://github.com/jonas/tig
 [mjolnir]: http://mjolnir.io/
 [tpm]: https://github.com/tmux-plugins
+[byobu]: http://byobu.co/
