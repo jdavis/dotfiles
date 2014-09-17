@@ -87,7 +87,7 @@
     sm = submodule
     st = stash
     su = status -uno
-    un = reset HEAD
+    un = !git unstage
 
     # New Commands
     amend = commit --amend
