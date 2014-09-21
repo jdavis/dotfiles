@@ -82,14 +82,14 @@ antigen bundle rupa/z
 antigen bundle ssh-agent
 
 # Node Plugins
-antigen bundle coffee
-antigen bundle node
-antigen bundle npm
+#antigen bundle coffee
+#antigen bundle node
+#antigen bundle npm
 
 # Python Plugins
 antigen bundle pip
 antigen bundle python
-antigen bundle virtualenv
+#antigen bundle virtualenv
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
