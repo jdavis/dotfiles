@@ -73,6 +73,7 @@ antigen theme jdavis/zsh-files themes/jdavis
 # Antigen Bundles
 #
 
+antigen bundle docker
 antigen bundle git
 antigen bundle tmuxinator
 antigen bundle zsh-users/zsh-syntax-highlighting
