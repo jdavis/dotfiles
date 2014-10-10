@@ -1,15 +1,14 @@
 // Keith's [Phoenix](https://github.com/Keithbsmiley/phoenix) config
 var modifiers = ["ctrl", "shift"];
-var padding = 2;
 
 function windowToGrid(win, x, y, width, height) {
     var screen = win.screen().frameIncludingDockAndMenu();
 
     win.setFrame({
-        x: Math.round(x * screen.width) + padding + screen.x,
-        y: Math.round(y * screen.height) + padding + screen.y,
-        width: Math.round(width * screen.width) - (2 * padding),
-        height: Math.round(height * screen.height) - (2 * padding)
+        x: Math.round(x * screen.width) + screen.x,
+        y: Math.round(y * screen.height) + screen.y,
+        width: Math.round(width * screen.width),
+        height: Math.round(height * screen.height)
     });
 }
 
