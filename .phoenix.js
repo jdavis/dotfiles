@@ -1,4 +1,5 @@
-// Keith's [Phoenix](https://github.com/Keithbsmiley/phoenix) config
+// Josh Davis' Phoenix Config
+// Heavily inspired & borrowed from: https://github.com/Keithbsmiley/phoenix
 var modifiers = ["ctrl", "shift"];
 
 function windowToGrid(win, x, y, width, height) {
