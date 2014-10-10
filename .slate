@@ -5,10 +5,10 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
 # Hints
-bind s:ctrl;shift hint ASDFGHJKLQWERTYUIOPCVBN
-config windowHintsShowIcons true
-config windowHintsIgnoreHiddenWindows false
-config windowHintsSpread true
+#bind s:ctrl;shift hint ASDFGHJKLQWERTYUIOPCVBN
+#config windowHintsShowIcons true
+#config windowHintsIgnoreHiddenWindows false
+#config windowHintsSpread true
 
 # Aliases
 alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
@@ -20,6 +20,9 @@ alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
 alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
 alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+bind a:ctrl;shift throw left  resize
+bind d:ctrl;shift throw right resize
 
 # Fullscreen
 bind f:ctrl;shift ${full}
