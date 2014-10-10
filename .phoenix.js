@@ -53,15 +53,6 @@ Window.bottomRight = function() {
     toGrid(0.5, 0.5, 0.5, 0.5);
 }
 
-function center() {
-    var win = Window.focusedWindow();
-    var sframe = win.screen().frameWithoutDockOrMenu();
-    var frame = win.frame();
-    frame.x = sframe.x + ((sframe.width / 2) - (frame.width / 2));
-    frame.y = sframe.y + ((sframe.height / 2) - (frame.height / 2));
-    win.setFrame(frame);
-}
-
 function throwWindow() {
     var win = Window.focusedWindow();
     var frame = win.frame();
@@ -87,7 +78,7 @@ App.allWithTitle = function( title ) {
 App.focusOrStart = function ( title ) {
     var apps = App.allWithTitle( title );
     if (_.isEmpty(apps)) {
-        api.alert(rageOfDongers + " Starting " + title);
+        api.alert(" Starting " + title);
         api.launch(title)
         return;
     }
@@ -108,7 +99,7 @@ App.focusOrStart = function ( title ) {
     });
 };
 
-api.bind('a', modifiers, throwWindow);
+api.bind('s', modifiers, throwWindow);
 
 api.bind('f', modifiers, Window.fullScreen);
 api.bind('h', modifiers, Window.leftHalf);
