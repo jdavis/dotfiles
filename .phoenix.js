@@ -2,6 +2,10 @@
 // Heavily inspired & borrowed from: https://github.com/Keithbsmiley
 var modifiers = ["ctrl", "shift"];
 
+//
+// Helper Functions
+//
+
 function windowToGrid(win, x, y, width, height) {
     var screen = win.screen().frameIncludingDockAndMenu();
 
@@ -16,6 +20,10 @@ function windowToGrid(win, x, y, width, height) {
 function toGrid(x, y, width, height) {
     windowToGrid(Window.focusedWindow(), x, y, width, height);
 }
+
+//
+// Basic positioning
+//
 
 Window.fullScreen = function() {
     toGrid(0, 0, 1, 1);
@@ -37,6 +45,10 @@ Window.topHalf = function() {
     toGrid(0, 0, 1, 0.5);
 }
 
+//
+// Quarter Window Functions
+//
+
 Window.topLeft = function() {
     toGrid(0, 0, 0.5, 0.5);
 }
@@ -53,7 +65,23 @@ Window.bottomRight = function() {
     toGrid(0.5, 0.5, 0.5, 0.5);
 }
 
-function throwWindow() {
+//
+// Functions for vertical monitors
+//
+
+Window.topPart = function() {
+    toGrid(0, 0, 1, 0.25);
+}
+
+Window.bottomPart = function() {
+    toGrid(0, 0.25, 1, 0.75);
+}
+
+//
+// Cycle current window across monitors
+//
+
+Window.throwWindow = function() {
     var win = Window.focusedWindow();
     var frame = win.frame();
     var nextScreen = win.screen().nextScreen();
@@ -65,6 +93,10 @@ function throwWindow() {
         height: frame.height
     });
 }
+
+//
+// Helper functions for launching applications
+//
 
 App.allWithTitle = function( title ) {
     return _(this.runningApps()).filter( function( app ) {
@@ -99,18 +131,18 @@ App.focusOrStart = function ( title ) {
     });
 };
 
-api.bind('s', modifiers, throwWindow);
+// Rotate current window between monitors
+api.bind('s', modifiers, Window.throwWindow);
 
+// Basic monitor keybindings
 api.bind('f', modifiers, Window.fullScreen);
 api.bind('h', modifiers, Window.leftHalf);
 api.bind('l', modifiers, Window.rightHalf);
-
 api.bind('j', modifiers, Window.bottomHalf);
 api.bind('k', modifiers, Window.topHalf);
 
-//api.bind('n', modifiers, Window.topLeft);
-//api.bind('m', modifiers, Window.bottomLeft);
-//api.bind(',', modifiers, Window.topRight);
-//api.bind('.', modifiers, Window.bottomRight);
+// For vertical monitors
+api.bind('p', modifiers, Window.topPart);
+api.bind('n', modifiers, Window.bottomPart);
 
 api.bind('space', modifiers, function () { App.focusOrStart('Terminal'); });
