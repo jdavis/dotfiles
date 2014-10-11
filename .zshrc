@@ -59,6 +59,7 @@ fi
 source ~/.antigen.zsh
 
 antigen bundle jdavis/zsh-files
+antigen bundle rupa/z
 
 #
 # Antigen Theme
