@@ -30,15 +30,6 @@ let s:plugins=isdirectory(expand('~/.vim/bundle/vundle', 1))
 " Custom Functions
 "
 
-" Switch between paste/nopaste
-function! PasteToggle()
-    if &paste
-        set nopaste
-    else
-        set paste
-    endif
-endfunction
-
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 " Source: https://github.com/scrooloose/nerdtree/issues/21
@@ -633,8 +624,8 @@ filetype plugin indent on
 " Misc/Non Plugin Settings
 "
 
-" Bind PasteToggle to something quick and easy
-nmap <leader>tP :cal PasteToggle()<cr>
+" Paste toggle to something easy
+set pastetoggle=<leader>tP
 
 " Bind :sort to something easy, don't press enter, allow for options (eg -u,
 " n, sorting in reverse [sort!])
