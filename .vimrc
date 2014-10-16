@@ -27,6 +27,22 @@ endif
 let s:plugins=isdirectory(expand('~/.vim/bundle/vundle', 1))
 
 "
+" Setup folder structure
+"
+
+if !isdirectory(expand('~/.vim/undo/', 1))
+    silent call mkdir(expand('~/.vim/undo', 1), 'p')
+endif
+
+if !isdirectory(expand('~/.vim/backup/', 1))
+    silent call mkdir(expand('~/.vim/backup', 1), 'p')
+endif
+
+if !isdirectory(expand('~/.vim/swap/', 1))
+    silent call mkdir(expand('~/.vim/swap', 1), 'p')
+endif
+
+"
 " Custom Functions
 "
 
