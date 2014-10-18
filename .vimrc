@@ -102,8 +102,16 @@ endfunction
 " Check if a colorscheme exists
 " http://stackoverflow.com/a/5703164
 function! HasColorScheme(scheme)
-    let path = '~/.vim/bundle/vim-colorschemes/colors/' . a:scheme . '.vim'
-    return filereadable(expand(path))
+    let basepath = '~/.vim/bundle/'
+
+    for plug in g:color_schemes
+        let path = basepath . '/' . plug . '/colors/' . a:scheme . '.vim'
+        if filereadable(expand(path))
+            return 1
+        endif
+    endfor
+
+    return 0
 endfunction
 
 "
@@ -339,7 +347,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
@@ -369,6 +376,12 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-endwise'
+
+" Themes
+Plugin 'freeo/vim-kalisi'
+Plugin 'flazz/vim-colorschemes'
+
+let g:color_schemes = ['vim-kalisi', 'vim-colorschemes']
 
 
 " Vundle mapping
@@ -434,7 +447,7 @@ nmap <leader>bs :CtrlPMRU<cr>
 let g:airline_enable_branch = 1
 let g:airline_enable_syntastic = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'light'
+let g:airline_theme = 'kalisi'
 
 " Whitespace settings
 
@@ -654,7 +667,7 @@ set t_Co=256
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
 
-" Must be loaded after the vim-colorschemes bundle
-if HasColorScheme('moria') && s:plugins
-    colorscheme moria
+" Must be loaded after all color scheme plugins
+if HasColorScheme('kalisi') && s:plugins
+    colorscheme kalisi
 endif
