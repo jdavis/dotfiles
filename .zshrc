@@ -27,6 +27,14 @@ if [[ $TERM == 'rxvt-unicode' ]] ; then
 fi
 
 #
+# Work specific config
+#
+
+if [[ -f ~/.zshrc-amazon ]]; then
+    source ~/.zshrc-amazon
+fi
+
+#
 # OS Detection
 #
 
