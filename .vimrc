@@ -46,19 +46,6 @@ endif
 " Custom Functions
 "
 
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-" Source: https://github.com/scrooloose/nerdtree/issues/21
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists('t:NERDTreeBufName')
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr('$') == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
 " Remove trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 function! StripTrailingWhitespace()
@@ -222,6 +209,7 @@ set nofoldenable
 
 " Indent seems to work the best
 set foldmethod=indent
+set foldlevel=20
 
 "
 " Global Bindings
@@ -340,9 +328,9 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
@@ -402,17 +390,26 @@ nmap <leader>gP :Git push<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gbrowse<cr>
 
-" NERDTree Options
-let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$', '\.aux$']
-nmap <leader>tb :NERDTreeToggle<cr>
+" VimFiler options
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\|\.class\|\.aux\|\.sw[po]\|\.py[co]\)$'
 
-" Close NERDTree if it is the last buffer open
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
-" Automatically open NERDTree whenever opened with GUI, not not terminal
+call vimfiler#custom#profile('default', 'context', {
+            \ 'explorer' : 1,
+            \ 'safe' : 0,
+            \ })
+
+
+" VimFiler keybindings
+nmap <leader>tb :VimFilerExplorer<cr>
+nmap <leader>tB :VimFiler<cr>
+
+" Automatically open VimFiler whenever opened with GUI, but not terminal
 if has('gui_running')
-    autocmd VimEnter * NERDTree
-    autocmd VimEnter * wincmd p
+    autocmd VimEnter * VimFilerExplorer
+    "autocmd VimEnter * wincmd p
 endif
 
 " Syntastic Settings
