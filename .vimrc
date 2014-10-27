@@ -46,19 +46,6 @@ endif
 " Custom Functions
 "
 
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-" Source: https://github.com/scrooloose/nerdtree/issues/21
-function! s:CloseIfOnlyNerdTreeLeft()
-  if exists('t:NERDTreeBufName')
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr('$') == 1
-        q
-      endif
-    endif
-  endif
-endfunction
-
 " Remove trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 function! StripTrailingWhitespace()
@@ -222,6 +209,7 @@ set nofoldenable
 
 " Indent seems to work the best
 set foldmethod=indent
+set foldlevel=20
 
 "
 " Global Bindings
@@ -294,6 +282,28 @@ if has('gui_running')
     endif
 endif
 
+" Ignore some defaults
+set wildignore=*.o,*.obj,*~,*.pyc
+set wildignore+=.env
+set wildignore+=.env[0-9]+
+set wildignore+=.git,.gitkeep
+set wildignore+=.tmp
+set wildignore+=.coverage
+set wildignore+=*DS_Store*
+set wildignore+=.sass-cache/
+set wildignore+=__pycache__/
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=.tox/**
+set wildignore+=.idea/**
+set wildignore+=*.egg,*.egg-info
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
+set wildignore+=*/.nx/**,*.app
+
 " Fold Keybindings
 "nnoremap <space> za
 
@@ -343,9 +353,9 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-git'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
@@ -405,17 +415,26 @@ nmap <leader>gP :Git push<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gbrowse<cr>
 
-" NERDTree Options
-let NERDTreeIgnore = ['\.py[co]$', '\.sw[po]$', '\.class$', '\.aux$']
-nmap <leader>tb :NERDTreeToggle<cr>
+" VimFiler options
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\|\.class\|\.aux\|\.sw[po]\|\.py[co]\)$'
 
-" Close NERDTree if it is the last buffer open
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
-" Automatically open NERDTree whenever opened with GUI, not not terminal
+call vimfiler#custom#profile('default', 'context', {
+            \ 'explorer' : 1,
+            \ 'safe' : 0,
+            \ })
+
+
+" VimFiler keybindings
+nmap <leader>tb :VimFilerExplorer<cr>
+nmap <leader>tB :VimFiler<cr>
+
+" Automatically open VimFiler whenever opened with GUI, but not terminal
 if has('gui_running')
-    autocmd VimEnter * NERDTree
-    autocmd VimEnter * wincmd p
+    autocmd VimEnter * VimFilerExplorer
+    "autocmd VimEnter * wincmd p
 endif
 
 " Syntastic Settings
@@ -431,10 +450,14 @@ let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
 
 " CtrlP Settings
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
+
+let g:ctrlp_user_command = {
+            \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
+            \ 'fallback': 'find %s -type f'
+            \ }
 
 " Use nearest .git dir
 let g:ctrlp_working_path_mode = 'r'
