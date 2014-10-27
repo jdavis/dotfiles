@@ -281,7 +281,10 @@ nmap <leader>P "+p
 " GVim Settings
 if has('gui_running')
     " Who uses a GUI in GVim anyways? Let's be serious.
-    set guioptions=aegirLt
+    set guioptions=egirLt
+
+    " Ensure that clipboard isn't clobbered when yanking
+    set guioptions-=a
 
     " Let's make the fonts look nice
     if s:OS == 'osx'
