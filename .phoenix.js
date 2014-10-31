@@ -107,11 +107,11 @@ App.allWithTitle = function( title ) {
 };
 
 
-App.focusOrStart = function ( title ) {
-    var apps = App.allWithTitle( title );
+App.focusOrStart = function (title, cmd) {
+    var apps = App.allWithTitle(title);
     if (_.isEmpty(apps)) {
         api.alert(" Starting " + title);
-        api.launch(title)
+        api.launch(title);
         return;
     }
 
@@ -122,7 +122,7 @@ App.focusOrStart = function ( title ) {
 
     activeWindows = _(windows).reject(function(win) { return win.isWindowMinimized();});
     if (_.isEmpty(activeWindows)) {
-        api.runCommand('/bin/bash', ['-c', 'open -a Terminal $HOME']);
+        api.runCommand('/bin/bash', ['-c', cmd]);
         return;
     }
 
@@ -145,4 +145,5 @@ api.bind('k', modifiers, Window.topHalf);
 api.bind('p', modifiers, Window.topPart);
 api.bind('n', modifiers, Window.bottomPart);
 
-api.bind('space', modifiers, function () { App.focusOrStart('Terminal'); });
+api.bind('space', modifiers, function () { App.focusOrStart('Terminal', 'open -a Terminal $HOME'); });
+api.bind('q', modifiers, function () { App.focusOrStart('Finder', 'open -a Finder'); });
