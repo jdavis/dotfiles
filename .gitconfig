@@ -60,6 +60,7 @@
     d = diff
     dc = diff --cached
     dt = difftool
+    dtc = difftool --cached
     f = fetch
     fa = fetch --all
     gh = !git gh-pages
