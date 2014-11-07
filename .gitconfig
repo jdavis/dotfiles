@@ -59,6 +59,7 @@
     cp = cherry-pick
     d = diff
     dc = diff --cached
+    dt = difftool
     f = fetch
     fa = fetch --all
     gh = !git gh-pages
@@ -128,3 +129,7 @@
 
 [push]
     default = simple
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
