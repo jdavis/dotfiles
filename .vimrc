@@ -571,9 +571,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " Buffergator Options
 "
 
-let g:buffergator_autoexpand_on_split = 0
-let g:buffergator_viewport_split_policy = 'R'
-
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
 
@@ -584,7 +581,6 @@ nmap <leader>T :enew<cr>
 nmap <leader>jj :BuffergatorMruCyclePrev<cr>
 nmap <leader>kk :BuffergatorMruCycleNext<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
-nmap <leader>bl :BuffergatorOpen<cr>
 
 " Use extra conf file
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
