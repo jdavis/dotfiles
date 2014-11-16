@@ -6,7 +6,7 @@ var modifiers = ["ctrl", "shift"];
 // Helper Functions
 //
 
-function windowToGrid(win, x, y, width, height) {
+var windowToGrid = function (win, x, y, width, height) {
     var screen = win.screen().frameIncludingDockAndMenu();
 
     win.setFrame({
@@ -15,11 +15,11 @@ function windowToGrid(win, x, y, width, height) {
         width: Math.round(width * screen.width),
         height: Math.round(height * screen.height)
     });
-}
+};
 
-function toGrid(x, y, width, height) {
+var toGrid = function (x, y, width, height) {
     windowToGrid(Window.focusedWindow(), x, y, width, height);
-}
+};
 
 //
 // Basic positioning
@@ -27,23 +27,23 @@ function toGrid(x, y, width, height) {
 
 Window.fullScreen = function() {
     toGrid(0, 0, 1, 1);
-}
+};
 
 Window.leftHalf = function() {
     toGrid(0, 0, 0.5, 1);
-}
+};
 
 Window.rightHalf = function() {
     toGrid(0.5, 0, 0.5, 1);
-}
+};
 
 Window.bottomHalf = function() {
     toGrid(0, 0.5, 1, 0.5);
-}
+};
 
 Window.topHalf = function() {
     toGrid(0, 0, 1, 0.5);
-}
+};
 
 //
 // Quarter Window Functions
@@ -51,19 +51,19 @@ Window.topHalf = function() {
 
 Window.topLeft = function() {
     toGrid(0, 0, 0.5, 0.5);
-}
+};
 
 Window.bottomLeft = function() {
     toGrid(0, 0.5, 0.5, 0.5);
-}
+};
 
 Window.topRight = function() {
     toGrid(0.5, 0, 0.5, 0.5);
-}
+};
 
 Window.bottomRight = function() {
     toGrid(0.5, 0.5, 0.5, 0.5);
-}
+};
 
 //
 // Functions for vertical monitors
@@ -71,11 +71,11 @@ Window.bottomRight = function() {
 
 Window.topPart = function() {
     toGrid(0, 0, 1, 0.25);
-}
+};
 
 Window.bottomPart = function() {
     toGrid(0, 0.25, 1, 0.75);
-}
+};
 
 //
 // Cycle current window across monitors
@@ -83,16 +83,20 @@ Window.bottomPart = function() {
 
 Window.throwWindow = function() {
     var win = Window.focusedWindow();
-    var frame = win.frame();
-    var nextScreen = win.screen().nextScreen();
-    var screenFrame = nextScreen.frameWithoutDockOrMenu();
-    win.setFrame({
-        x: screenFrame.x,
-        y: screenFrame.y,
-        width: frame.width,
-        height: frame.height
-    });
-}
+    var winFrame = win.frame();
+    var current = win.screen().frameIncludingDockAndMenu();
+    var next = win.screen().nextScreen().frameIncludingDockAndMenu();
+
+    // Proportionally place where it should go based on current placement
+    var opts = {
+        x: next.x + (winFrame.x - current.x) / current.width * next.width,
+        y: next.y + (winFrame.y - current.y) / current.height * next.height,
+        width: (winFrame.width / current.width) * next.width,
+        height: (winFrame.height / current.height) * next.height,
+    };
+
+    win.setFrame(opts);
+};
 
 //
 // Helper functions for launching applications
