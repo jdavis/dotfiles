@@ -19,8 +19,8 @@ A list of things to make my dotfiles more awesomer. A ✓ indicates done and
 - ~~Look up Vimshell and possibly use it~~
 - ~~Look at Neocomplcache and possibly use it~~
 - ✓ Setup [Tig][tig] and learn how to use it
-- Use and learn [Hydra/Mjolnir][mjolnir]
-- Setup [tmux plugin manager][tpm]
+- ~~Use and learn [Hydra/Mjolnir][mjolnir]~~ Using Phoenix instead.
+- ✓ Setup [tmux plugin manager][tpm]
 - Look into [byobu][byobu]
 
 ## Vim Files
