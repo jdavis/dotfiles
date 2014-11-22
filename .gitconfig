@@ -89,7 +89,9 @@
     sl = shortlog
     sm = submodule
     st = stash
-    su = status -uno
+    #su = status -uno
+    # Default to shorter status for su as well
+    su = status -s -b -uno
     un = !git unstage
 
     # New Commands
