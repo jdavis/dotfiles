@@ -82,8 +82,9 @@
     rf = reflog
     rs = reset
     rv = revert
-    s = status
-    sb = status -sb
+    #s = status
+    # Default to shorter status with branch info
+    s = status -sb
     sh = show
     sl = shortlog
     sm = submodule
