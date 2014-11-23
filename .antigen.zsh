@@ -73,7 +73,7 @@ antigen-bundle () {
     fi
 
     # Load the plugin.
-    -antigen-load "$url" "$loc" "$btype" "$make_local_clone"
+    -antigen-load "$url" "$loc" "$make_local_clone"
 
 }
 
@@ -255,21 +255,17 @@ antigen-revert () {
 
     local url="$1"
     local loc="$2"
-    local btype="$3"
-    local make_local_clone="$4"
+    local make_local_clone="$3"
 
     # The full location where the plugin is located.
     local location
     if $make_local_clone; then
         location="$(-antigen-get-clone-dir "$url")/$loc"
     else
-        location="$url"
+        location="$url/$loc"
     fi
 
-    if [[ $btype == theme ]]; then
-
-        # Of course, if its a theme, the location would point to the script
-        # file.
+    if [[ -f "$location" ]]; then
         source "$location"
 
     else
