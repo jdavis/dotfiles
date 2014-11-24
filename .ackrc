@@ -1,4 +1,4 @@
---ignore-case
+--smart-case
 
 --type-add=md:ext:md,mkd
 
