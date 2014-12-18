@@ -30,9 +30,9 @@ fi
 # Work specific config
 #
 
-if [[ -f ~/.zshrc-amazon ]]; then
-    source ~/.zshrc-amazon
-fi
+#if [[ -f ~/.zshrc-amazon ]]; then
+    #source ~/.zshrc-amazon
+#fi
 
 #
 # OS Detection
