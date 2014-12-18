@@ -29,13 +29,13 @@ To install, use one of the commands listed below:
 Using `curl`:
 
 ```bash
-    $ curl -L https://raw.github.com/jdavis/dotfiles/master/bin/install_dotfiles.sh | sh
+    $ curl -L https://raw.githubusercontent.com/jdavis/dotfiles/master/bin/install_dotfiles.sh | sh
 ```
 
 Using `wget`:
 
 ```bash
-    $ wget https://raw.github.com/jdavis/dotfiles/master/bin/install_dotfiles.sh -O | sh
+    $ wget https://raw.githubusercontent.com/jdavis/dotfiles/master/bin/install_dotfiles.sh -O | sh
 ```
 
 ### Manual Installation
