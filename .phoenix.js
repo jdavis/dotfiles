@@ -114,7 +114,6 @@ App.allWithTitle = function( title ) {
 App.focusOrStart = function (title, cmd) {
     var apps = App.allWithTitle(title);
     if (_.isEmpty(apps)) {
-        api.alert(" Starting " + title);
         api.launch(title);
         return;
     }
