@@ -136,4 +136,5 @@
 [diff]
     tool = vimdiff
 [difftool]
+    tool = mvim -d
     prompt = false
