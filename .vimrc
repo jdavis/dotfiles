@@ -389,6 +389,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-endwise'
+Plugin 'ryanss/vim-hackernews'
 
 " Themes
 Plugin 'freeo/vim-kalisi'
