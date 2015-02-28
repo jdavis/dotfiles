@@ -454,7 +454,7 @@ let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
 
 let g:ctrlp_user_command = {
             \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files'],
+            \ 1: ['.git', 'cd %s && git ls-files --exclude-standard --others --cached'],
             \ 2: ['.hg', 'hg --cwd %s locate -I .'],
             \ },
             \ 'fallback': 'find %s -type f'
