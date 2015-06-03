@@ -469,6 +469,7 @@ nmap <leader>p :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+nmap <leader>bl :ls<cr>:b<space>
 
 " Airline options
 let g:airline_enable_branch = 1
