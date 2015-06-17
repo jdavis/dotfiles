@@ -97,6 +97,7 @@
     # New Commands
     amend = commit --amend
     count = shortlog -sn
+    commiff = "!commiff() { if [[ $# == 0 ]]; then BRANCH='master'; else BRANCH=$1; fi; git log --abbrev-commit --oneline HEAD...$BRANCH;  }; commiff"
     ctags = !.git/hooks/ctags
     gh-pages = checkout gh-pages
     last = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit HEAD~10..HEAD~
