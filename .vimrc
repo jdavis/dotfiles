@@ -365,6 +365,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'wavded/vim-stylus'
+Plugin 'digitaltoad/vim-jade'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
@@ -472,9 +473,8 @@ nmap <leader>bs :CtrlPMRU<cr>
 nmap <leader>bl :ls<cr>:b<space>
 
 " Airline options
-let g:airline_enable_branch = 1
-let g:airline_enable_syntastic = 1
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 let g:airline_theme = 'kalisi'
 
 " Whitespace settings
