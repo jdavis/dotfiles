@@ -232,12 +232,11 @@ vmap <silent> <leader>th :cal ToggleSelected(1)<cr>
 " Split the window using some nice shortcuts
 nmap <leader>s<bar> :vsplit<cr>
 nmap <leader>s- :split<cr>
+nmap <leader>s? :map <leader>s<cr>
 
 " Unhighlight the last search pattern on Enter
 nn <silent> <cr> :nohlsearch<cr><cr>
 
-" Remove trailing whitespace
-nmap <leader>tW :cal StripTrailingWhitespace()<cr>
 
 " Control enhancements in insert mode
 imap <C-F> <right>
@@ -366,6 +365,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'wting/rust.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'StanAngeloff/php.vim'
+Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
@@ -382,7 +383,6 @@ Plugin 'jalvesaq/VimCom'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'leafo/moonscript-vim'
 Plugin 'jeetsukumaran/vim-buffergator'
@@ -390,7 +390,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-endwise'
-Plugin 'ryanss/vim-hackernews'
+"Plugin 'ryanss/vim-hackernews'
 
 " Themes
 Plugin 'freeo/vim-kalisi'
@@ -398,6 +398,13 @@ Plugin 'flazz/vim-colorschemes'
 
 let g:color_schemes = ['vim-kalisi', 'vim-colorschemes']
 
+nmap <leader>t? :map <leader>t<cr>
+nmap <leader>tB :VimFiler<cr>
+nmap <leader>tW :cal StripTrailingWhitespace()<cr>
+nmap <leader>tb :VimFilerExplorer<cr>
+nmap <leader>tt :TagbarToggle<cr>
+nmap <leader>tu :UndotreeToggle<cr>
+nmap <leader>tw :cal ToggleWhitespace()<cr>
 
 " Vundle mapping
 nmap <leader>vl :BundleList<cr>
@@ -405,6 +412,7 @@ nmap <leader>vi :BundleInstall<cr>
 nmap <leader>vI :BundleInstall!<cr>
 nmap <leader>vc :BundleClean<cr>
 nmap <leader>vC :BundleClean!<cr>
+nmap <leader>v? :map <leader>v <cr>
 
 " Fugitive mapping
 nmap <leader>gb :Gblame<cr>
@@ -416,6 +424,7 @@ nmap <leader>gp :Git pull<cr>
 nmap <leader>gP :Git push<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gbrowse<cr>
+nmap <leader>g? :map <leader>g<cr>
 
 " VimFiler options
 let g:vimfiler_as_default_explorer = 1
@@ -428,10 +437,6 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'safe' : 0,
             \ })
 
-
-" VimFiler keybindings
-nmap <leader>tb :VimFilerExplorer<cr>
-nmap <leader>tB :VimFiler<cr>
 
 " Automatically open VimFiler whenever opened with GUI, but not terminal
 if has('gui_running')
@@ -467,10 +472,12 @@ let g:ctrlp_working_path_mode = 'r'
 nmap <leader>p :CtrlP<cr>
 
 " Buffer controls to go with Buffergator
+nmap <leader>b? :map <leader>b<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
 nmap <leader>bl :ls<cr>:b<space>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bq :bp <BAR> bd #<cr>
+nmap <leader>bs :CtrlPMRU<cr>
 
 " Airline options
 let g:airline#extensions#branch#enabled = 1
@@ -493,8 +500,6 @@ fun! ToggleWhitespace()
     endif
 endfun
 
-nmap <leader>tw :cal ToggleWhitespace()<cr>
-
 " Easymotion
 map <space> <Plug>(easymotion-prefix)
 
@@ -508,17 +513,14 @@ let g:EasyMotion_startofline = 0
 
 " Tagbar Options
 " Toggle Tagbar
-nmap <leader>tt :TagbarToggle<cr>
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 
-let g:ackpreview = 2
-"let g:ack_autoclose = 1
-let g:ackhighlight = 1
 nmap <leader>/ :Ack!<space>
+let g:ackpreview = 2
+let g:ackhighlight = 1
 
 " Undotree settings
-nmap <leader>tu :UndotreeToggle<cr>
 let g:undotree_SplitWidth = 30
 let g:undotree_WindowLayout = 3
 
@@ -545,30 +547,6 @@ let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_viewer = 'open -a Skim.app'
 let g:LatexBox_viewer = 'mate-open'
 
-nmap <leader>U :call UltiSnips#ListSnippets()<cr>
-
-" Complete UltiSnip snippets with <tab>
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ''
-endfunction
-
-au InsertEnter * exec 'inoremap <silent> ' . g:UltiSnipsExpandTrigger . ' <C-R>=g:UltiSnips_Complete()<cr>'
-
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
 "
 " Buffergator Options
 "
@@ -582,7 +560,6 @@ let g:buffergator_suppress_keymaps = 1
 nmap <leader>T :enew<cr>
 nmap <leader>jj :BuffergatorMruCyclePrev<cr>
 nmap <leader>kk :BuffergatorMruCycleNext<cr>
-nmap <leader>bq :bp <BAR> bd #<cr>
 
 " Use extra conf file
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
@@ -635,14 +612,15 @@ if has("cscope")
     " show msg when any other cscope db added
     set cscopeverbose
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>? :map <C-\><cr>
+    nmap <C-\>c :ec 'Find all calls to function' <bar> cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>d :ec 'Find functions that call this function' <bar> cs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>e :ec 'egrep search for the word under cursor' <bar> cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>f :ec 'Open filename under cursor' <bar> cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-\>g :ec 'Find all global definitions' <bar> cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>i :ec 'Find files that include the filename' <bar> cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-\>s :ec 'Find all references' <bar> cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>t :ec 'Find all instances to text' <bar> cs find t <C-R>=expand("<cword>")<CR><CR>
 endif
 
 
