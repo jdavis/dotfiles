@@ -4,6 +4,11 @@
 # Vim swap files
 *.sw[po]
 
+# Java
+.classpath
+.settings
+.project
+
 # Misc other files
 *.log
 ._*
