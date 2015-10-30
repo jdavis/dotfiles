@@ -162,6 +162,9 @@ set expandtab
 " Buffer Settings
 set hidden
 
+" Better completion
+set completeopt+=longest,menuone,preview
+
 " Turn on persistent undo
 " Thanks, Mr Wadsten: github.com/mikewadsten/dotfiles/
 if has('persistent_undo')
@@ -349,48 +352,63 @@ call vundle#rc()
 "
 
 Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-git'
+
+" Git/GitHub plugins
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
-Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
-Plugin 'tpope/vim-markdown'
-Plugin 'wting/rust.vim'
-Plugin 'wavded/vim-stylus'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'StanAngeloff/php.vim'
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'bitc/vim-bad-whitespace'
+Plugin 'tpope/vim-git'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'takac/vim-commandcaps'
+
+" File overview
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
+
+" Navigation
+Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
+
+" Appearance
+Plugin 'bling/vim-airline'
+Plugin 'bitc/vim-bad-whitespace'
+
+" Buffers
+Plugin 'jeetsukumaran/vim-buffergator'
+
+" Syntax
+Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+
+" Utilities
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'takac/vim-commandcaps'
 Plugin 'mbbill/undotree'
-Plugin 'wlangstroth/vim-racket'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'benmills/vimux'
 Plugin 'vim-scripts/SyntaxRange'
-Plugin 'jalvesaq/VimCom'
-Plugin 'jcfaria/Vim-R-plugin'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'honza/vim-snippets'
-Plugin 'leafo/moonscript-vim'
-Plugin 'jeetsukumaran/vim-buffergator'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
+
+" R Lang
+Plugin 'jalvesaq/VimCom'
+Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+" Autocompletion
+Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-endwise'
-"Plugin 'ryanss/vim-hackernews'
+Plugin 'tpope/vim-surround'
+
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" Ruby plugins
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-bundler'
 
 " Themes
 Plugin 'freeo/vim-kalisi'
@@ -580,6 +598,12 @@ let g:ycm_filetype_blacklist = {
 \}
 
 "
+" Supertab Settings
+"
+
+let g:SuperTabDefaultCompletionType = "context"
+
+"
 " CScope bindings
 "
 " Cheat Sheet:
@@ -612,7 +636,7 @@ if has("cscope")
     " show msg when any other cscope db added
     set cscopeverbose
 
-    nmap <C-\>? :map <C-\><cr>
+    nmap <C-\>? :ec 'Cscope reference' <bar> map <C-\><cr>
     nmap <C-\>c :ec 'Find all calls to function' <bar> cs find c <C-R>=expand("<cword>")<CR><CR>
     nmap <C-\>d :ec 'Find functions that call this function' <bar> cs find d <C-R>=expand("<cword>")<CR><CR>
     nmap <C-\>e :ec 'egrep search for the word under cursor' <bar> cs find e <C-R>=expand("<cword>")<CR><CR>
