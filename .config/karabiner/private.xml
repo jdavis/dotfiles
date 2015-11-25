@@ -29,6 +29,22 @@
 </item>
 
 <item>
+    <name>Poker II Macbook Swapping</name>
+    <appendix>Like the above but uses for Caps Lock in Seil.</appendix>
+    <identifier>private.macbook_swapping</identifier>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+
+</item>
+
+<item>
+    <name>Macbook Config</name>
+    <appendix>(Change f19 key to caps lock key in internal keyboard.)</appendix>
+    <identifier>private.f19_hack</identifier>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+</item>
+
+<item>
     <name>Remap Caps Lock to Hyper with Escape on tap</name>
     <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19) to Control + Shift + Option + Command, unless you tap it. Then it sends Escape.</appendix>
 
