@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>Shifts to Parentheses</name>
+        <appendix>Shifts, when pressed alone, type parentheses.  When used with other keys they're normal shifts.</appendix>
+
+        <identifier>private.shifts_to_parens</identifier>
+
+        <!-- This is the basic mapping. -->
+        <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+        <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_R</autogen>
+
+        <!--
+        Remap the "rolls" of () and )( because it's too easy to hit one
+        before finishing the other, and there's no other reason to be
+        pressing both shift keys at once anyway
+    -->
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+</item>
+
+<item>
+    <name>Poker II Swapping</name>
+    <appendix>Change the Caps Lock to No Action in SysPrefs, then use Seil to change Caps Lock to Backquote (keycode 50), then use this to swap the two keys.</appendix>
+    <identifier>private.swap_tilde_and_escape</identifier>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::ESCAPE</autogen>
+
+</item>
+
+<item>
+    <name>Remap Caps Lock to Hyper with Escape on tap</name>
+    <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19) to Control + Shift + Option + Command, unless you tap it. Then it sends Escape.</appendix>
+
+    <identifier>caps_lock_to_hyper_or_escape</identifier>
+
+    <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::F19,
+
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::ESCAPE
+    </autogen>
+</item>
+
+<item>
+    <name>Volume Controls</name>
+    <appendix>Better volume controls</appendix>
+
+    <identifier>private.volume_controls</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L, ConsumerKeyCode::VOLUME_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L, ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L, ConsumerKeyCode::VOLUME_MUTE</autogen>
+</item>
+
+<item>
+    <name>Brightness Controls</name>
+    <appendix>Better brightness controls</appendix>
+
+    <identifier>private.brightness_controls</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+</item>
+
+<item>
+    <name>Mouse Controls</name>
+    <appendix>Forward/back on my Trackball</appendix>
+
+    <identifier>private.mouse_controls</identifier>
+
+    <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON5, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+</item>
+
+<item>
+    <name>Escape as Tilde</name>
+    <appendix>Change Escape to Tilde</appendix>
+
+    <identifier>private.escape_tilde</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+</item>
+
+<item>
+    <name>Caps Lock as Escape</name>
+    <appendix>Change Escape to Tilde</appendix>
+
+    <identifier>private.caps_escape</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::CAPSLOCK, KeyCode::ESCAPE</autogen>
+</item>
+
+</root>
