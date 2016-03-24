@@ -1,4 +1,6 @@
 // Josh Davis' Phoenix Config
+//     Project: https://github.com/kasper/phoenix
+//
 // Heavily inspired & borrowed from: https://github.com/Keithbsmiley
 var modifiers = ["ctrl", "shift"];
 
