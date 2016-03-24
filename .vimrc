@@ -391,15 +391,18 @@ Plugin 'vim-scripts/SyntaxRange'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-repeat'
 
+" Vim improvements
+Plugin 'embear/vim-localvimrc'
+
 " R Lang
 Plugin 'jalvesaq/VimCom'
 Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " Autocompletion
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -476,6 +479,10 @@ let g:syntastic_java_javac_delete_output = 1
 let g:syntastic_java_checkstyle_conf_file = '~/bin/jars/sun_checks.xml'
 let g:syntastic_java_checkstyle_classpath = '~/bin/jars/checkstyle-5.5-all.jar'
 let g:syntastic_filetype_map = { 'rnoweb': 'tex'}
+
+" UltiSnip options
+let g:UltiSnipsExpandTrigger="<C-SPACE>"
+
 
 " CtrlP Settings
 
@@ -619,12 +626,6 @@ let g:ycm_filetype_blacklist = {
 \ 'mail': 1,
 \ 'gitcommit': 1,
 \}
-
-"
-" Supertab Settings
-"
-
-let g:SuperTabDefaultCompletionType = "context"
 
 "
 " CScope bindings
