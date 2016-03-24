@@ -410,6 +410,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-bundler'
 
+" Elixir plugins
+Plugin 'elixir-lang/vim-elixir'
+
 " Themes
 Plugin 'freeo/vim-kalisi'
 Plugin 'flazz/vim-colorschemes'
@@ -485,7 +488,7 @@ let g:ctrlp_user_command = {
             \ }
 
 " Use nearest .git dir
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 'ra'
 
 nmap <leader>p :CtrlP<cr>
 
@@ -534,6 +537,26 @@ let g:EasyMotion_startofline = 0
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 
+" Elixir + ctags + Tagbar
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records'
+    \ ]
+\ }
+
+
+" Ack options
 nmap <leader>/ :Ack!<space>
 let g:ackpreview = 2
 let g:ackhighlight = 1
@@ -636,17 +659,16 @@ if has("cscope")
     " show msg when any other cscope db added
     set cscopeverbose
 
-    nmap <C-\>? :ec 'Cscope reference' <bar> map <C-\><cr>
-    nmap <C-\>c :ec 'Find all calls to function' <bar> cs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>d :ec 'Find functions that call this function' <bar> cs find d <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>e :ec 'egrep search for the word under cursor' <bar> cs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>f :ec 'Open filename under cursor' <bar> cs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-\>g :ec 'Find all global definitions' <bar> cs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>i :ec 'Find files that include the filename' <bar> cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>s :ec 'Find all references' <bar> cs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>t :ec 'Find all instances to text' <bar> cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>c? :ec 'Cscope reference'                       <bar> map <leader>c<cr>
+    nmap <leader>cc :ec 'Find all calls to function'             <bar> cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>cd :ec 'Find functions that call this function' <bar> cs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>ce :ec 'egrep search for the word under cursor' <bar> cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>cf :ec 'Open filename under cursor'             <bar> cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <leader>cg :ec 'Find all global definitions'            <bar> cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>ci :ec 'Find files that include the filename'   <bar> cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <leader>cs :ec 'Find all references'                    <bar> cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <leader>ct :ec 'Find all instances to text'             <bar> cs find t <C-R>=expand("<cword>")<CR><CR>
 endif
-
 
 "
 " Vimux Settings
