@@ -52,7 +52,7 @@
     ap = add --patch
     b = !git branches
     bl = blame
-    c = commit
+    c = commit -v
     cl = !git clone
     co = checkout
     cop = checkout --patch
