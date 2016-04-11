@@ -253,11 +253,11 @@ imap <C-N> <down>
 nnoremap j gj
 nnoremap k gk
 
-" Arrow key users won't survive in this environment
+" Use actually useful arrow keys
+map <right> :bn<cr>
+map <left> :bp<cr>
 map <up> <nop>
 map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 " Map Ctrl+V to paste in Insert mode
 imap <C-V> <C-R>*
@@ -540,7 +540,6 @@ map <space>l <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 
 " Tagbar Options
-" Toggle Tagbar
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 
