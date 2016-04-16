@@ -240,13 +240,15 @@ nmap <leader>s? :map <leader>s<cr>
 " Unhighlight the last search pattern on Enter
 nn <silent> <cr> :nohlsearch<cr><cr>
 
-
 " Control enhancements in insert mode
 imap <C-F> <right>
 imap <C-B> <left>
 imap <M-BS> <esc>vBc
 imap <C-P> <up>
 imap <C-N> <down>
+
+" Non quitting analog of ZZ
+nmap zz :w<cr>
 
 " When pushing j/k on a line that is wrapped, it navigates to the same line,
 " just to the expected location rather than to the next line
