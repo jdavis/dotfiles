@@ -101,6 +101,26 @@ function! HasColorScheme(scheme)
     return 0
 endfunction
 
+nnoremap <space><space> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=500
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
+
 "
 " Global Settings
 "
@@ -322,7 +342,7 @@ autocmd FileType markdown set textwidth=80
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 " My own special flavoring to running programs
-autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!~/Scripts/deepThought.sh '%:p'<cr>
+autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!deepThought.sh '%:p'<cr>
 
 " Use 2 spaces when in Lua & Ruby
 autocmd FileType lua,ruby set tabstop=2
