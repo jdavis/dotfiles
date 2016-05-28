@@ -94,6 +94,6 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 # Secret info
-antigen bundle git@github.com:jdavis/secret.git
+antigen bundle git@bitbucket.org:joshd/secret.git
 
 antigen apply
