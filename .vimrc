@@ -474,7 +474,17 @@ nmap <leader>g? :map <leader>g<cr>
 
 " VimFiler options
 let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_ignore_pattern = '^\%(\.git\|\.DS_Store\|\.class\|\.aux\|\.sw[po]\|\.py[co]\)$'
+let g:vimfiler_ignore_pattern = [
+        \ '^\.git$',
+        \ '^\.cache$',
+        \ '^\.__pycache__$',
+        \ '^\.DS_Store$',
+        \ '\.aux$',
+        \ '\.sw[po]$',
+        \ '\.class$',
+        \ '\.py[co]$',
+        \ '\.py[co]$',
+    \ ]
 
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
