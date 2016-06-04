@@ -534,7 +534,7 @@ nmap <leader>p :CtrlP<cr>
 " Buffer controls to go with Buffergator
 nmap <leader>b? :map <leader>b<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bl :ls<cr>:b<space>
+nmap <leader>bl :BuffergatorOpen<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bq :bp <BAR> bd #<cr>
 nmap <leader>bs :CtrlPMRU<cr>
@@ -632,6 +632,7 @@ let g:LatexBox_viewer = 'mate-open'
 
 " I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
+let g:buffergator_viewport_split_policy = "R"
 
 " Looper!
 "let g:buffergator_mru_cycle_loop = 1
