@@ -442,6 +442,10 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'freeo/vim-kalisi'
 Plugin 'flazz/vim-colorschemes'
 
+" Python
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'nvie/vim-flake8'
+
 let g:color_schemes = ['vim-kalisi', 'vim-colorschemes']
 
 nmap <leader>t? :map <leader>t<cr>
@@ -630,9 +634,9 @@ let g:LatexBox_viewer = 'mate-open'
 " Buffergator Options
 "
 
-" I want my own keymappings...
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = "R"
+let g:buffergator_autoexpand_on_split = 0
 
 " Looper!
 "let g:buffergator_mru_cycle_loop = 1
