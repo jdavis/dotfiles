@@ -141,7 +141,7 @@ App.focusOrStart = function (title, cmd) {
     }
 
     activeWindows.forEach(function(win) {
-        win.focusWindow();
+        win.focus();
     });
 };
 
