@@ -393,6 +393,7 @@ Plugin 'mileszs/ack.vim'
 
 " Appearance
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bitc/vim-bad-whitespace'
 
 " Buffers
@@ -646,7 +647,7 @@ nmap <leader>jj :BuffergatorMruCyclePrev<cr>
 nmap <leader>kk :BuffergatorMruCycleNext<cr>
 
 " Use extra conf file
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Ignore certain filetypes
 let g:ycm_filetype_blacklist = {
