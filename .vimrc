@@ -491,6 +491,11 @@ let g:vimfiler_ignore_pattern = [
         \ '\.py[co]$',
     \ ]
 
+let g:vimfiler_ignore_filters = [
+        \ 'matcher_ignore_pattern',
+        \ 'matcher_ignore_files',
+    \ ]
+
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
 call vimfiler#custom#profile('default', 'context', {
