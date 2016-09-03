@@ -1,5 +1,6 @@
 // Josh Davis' Phoenix Config
 //     Project: https://github.com/kasper/phoenix
+//     Version: 2.3
 //
 // Heavily inspired & borrowed from: https://github.com/Keithbsmiley
 
@@ -18,7 +19,7 @@ Phoenix.set({
 //
 
 var windowToGrid = function (win, x, y, width, height) {
-    var screen = win.screen().frameInRectangle();
+    var screen = win.screen().flippedFrame();
 
     win.setFrame({
         x: Math.round(x * screen.width) + screen.x,
@@ -29,7 +30,7 @@ var windowToGrid = function (win, x, y, width, height) {
 };
 
 var toGrid = function (x, y, width, height) {
-    windowToGrid(Window.focusedWindow(), x, y, width, height);
+    windowToGrid(Window.focused(), x, y, width, height);
 };
 
 //
@@ -93,10 +94,10 @@ Window.bottomPart = function() {
 //
 
 Window.throwWindow = function() {
-    var win = Window.focusedWindow();
+    var win = Window.focused();
     var winFrame = win.frame();
-    var current = win.screen().frameInRectangle();
-    var next = win.screen().next().frameInRectangle();
+    var current = win.screen().flippedFrame();
+    var next = win.screen().next().flippedFrame();
 
     // Proportionally place where it should go based on current placement
     var opts = {
@@ -114,7 +115,7 @@ Window.throwWindow = function() {
 //
 
 App.allWithTitle = function( title ) {
-    return _(this.runningApps()).filter( function( app ) {
+    return _(this.all()).filter( function( app ) {
         if (app.name() === title) {
             return true;
         }
@@ -136,28 +137,30 @@ App.focusOrStart = function (title, cmd) {
 
     activeWindows = _(windows).reject(function(win) { return win.isMinimized();});
     if (_.isEmpty(activeWindows)) {
-        Command.run('/bin/bash', ['-c', cmd]);
+        Task.run('/bin/bash', ['-c', cmd], function() {});
         return;
     }
 
+    /*
     activeWindows.forEach(function(win) {
         win.focus();
     });
+    */
 };
 
 // Rotate current window between monitors
-keys.push(Phoenix.bind('s', modifiers, Window.throwWindow));
+keys.push(Key.on('s', modifiers, Window.throwWindow));
 
 // Basic monitor keybindings
-keys.push(Phoenix.bind('f', modifiers, Window.fullScreen));
-keys.push(Phoenix.bind('h', modifiers, Window.leftHalf));
-keys.push(Phoenix.bind('l', modifiers, Window.rightHalf));
-keys.push(Phoenix.bind('j', modifiers, Window.bottomHalf));
-keys.push(Phoenix.bind('k', modifiers, Window.topHalf));
+keys.push(Key.on('f', modifiers, Window.fullScreen));
+keys.push(Key.on('h', modifiers, Window.leftHalf));
+keys.push(Key.on('l', modifiers, Window.rightHalf));
+keys.push(Key.on('j', modifiers, Window.bottomHalf));
+keys.push(Key.on('k', modifiers, Window.topHalf));
 
 // For vertical monitors
-keys.push(Phoenix.bind('p', modifiers, Window.topPart));
-keys.push(Phoenix.bind('n', modifiers, Window.bottomPart));
+keys.push(Key.on('p', modifiers, Window.topPart));
+keys.push(Key.on('n', modifiers, Window.bottomPart));
 
-keys.push(Phoenix.bind('space', modifiers, function () { App.focusOrStart('Terminal', 'open -a Terminal $HOME'); }));
-keys.push(Phoenix.bind('q', modifiers, function () { App.focusOrStart('Finder', 'open -a Finder'); }));
+keys.push(Key.on('space', modifiers, function () { App.focusOrStart('Terminal', 'open -a Terminal $HOME'); }));
+keys.push(Key.on('q', modifiers, function () { App.focusOrStart('Finder', 'open -a Finder'); }));
