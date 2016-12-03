@@ -122,11 +122,11 @@ App.allWithTitle = function( title ) {
     });
 };
 
-
+// TODO: Fix this
 App.focusOrStart = function (title, cmd) {
     var apps = App.allWithTitle(title);
     if (_.isEmpty(apps)) {
-        Phoenix.launch(title);
+        App.launch(title);
         return;
     }
 
