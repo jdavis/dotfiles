@@ -80,6 +80,7 @@ antigen theme jdavis/zsh-files themes/jdavis
 #
 
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
