@@ -297,10 +297,12 @@ if has('gui_running')
 
     " Ensure that clipboard isn't clobbered when yanking
     set guioptions-=a
+    set term=xterm-256color
+    set termencoding=utf-8
 
     " Let's make the fonts look nice
     if s:OS == 'osx'
-        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h11
+        set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
     elseif s:OS == 'linux'
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
     endif
@@ -345,8 +347,18 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType asm,c,objc,scheme,sh,python,perl,javascript nn <leader>R :!deepThought.sh '%:p'<cr>
 
 " Use 2 spaces when in Lua & Ruby
-autocmd FileType lua,ruby set tabstop=2
-autocmd FileType lua,ruby set shiftwidth=2
+autocmd FileType lua,ruby,scss set tabstop=2
+autocmd FileType lua,ruby,scss set shiftwidth=2
+
+" Vim indent guides for Html like files
+autocmd FileType html,eruby IndentGuidesEnable
+
+"
+" Go
+"
+
+" Hide tab indicators
+autocmd Filetype go set nolist
 
 if !s:plugins
 
@@ -376,11 +388,8 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 
 " Git/GitHub plugins
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+Plugin 'airblade/vim-gitgutter'
 
 " File overview
 Plugin 'Shougo/unite.vim'
@@ -402,17 +411,21 @@ Plugin 'jeetsukumaran/vim-buffergator'
 " Syntax
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
+Plugin 'briancollins/vim-jst'
 Plugin 'tpope/vim-markdown'
+Plugin 'mxw/vim-jsx'
+Plugin 'cakebaker/scss-syntax.vim'
 
 " Utilities
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'takac/vim-commandcaps'
-Plugin 'mbbill/undotree'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'benmills/vimux'
-Plugin 'vim-scripts/SyntaxRange'
-Plugin 'tpope/vim-speeddating'
+Plugin 'mbbill/undotree'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'takac/vim-commandcaps'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'vim-scripts/SyntaxRange'
 
 " Vim improvements
 Plugin 'embear/vim-localvimrc'
@@ -433,21 +446,26 @@ Plugin 'honza/vim-snippets'
 
 " Ruby plugins
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-bundler'
 
 " Elixir plugins
 Plugin 'elixir-lang/vim-elixir'
 
+" Go plugins
+Plugin 'fatih/vim-go'
+
 " Themes
 Plugin 'freeo/vim-kalisi'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
 " Python
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'nvie/vim-flake8'
 
-let g:color_schemes = ['vim-kalisi', 'vim-colorschemes']
+let g:color_schemes = ['vim-kalisi', 'vim-colorschemes', 'vim-colors-solarized']
 
 nmap <leader>t? :map <leader>t<cr>
 nmap <leader>tB :VimFiler<cr>
@@ -664,6 +682,22 @@ let g:ycm_filetype_blacklist = {
 \ 'mail': 1,
 \ 'gitcommit': 1,
 \}
+
+"
+" Go Settings
+"
+
+let g:go_bin_path = expand("$HOME/.vim-go/")
+
+" Custom mappings
+nmap <leader>glf :GoFmt<cr>
+nmap <leader>gli :GoImports<cr>
+nmap <leader>glb :GoBuild<cr>
+nmap <leader>glr :GoRun<cr>
+nmap <leader>glt :GoTest<cr>
+nmap <leader>glc :GoCallees<cr>
+nmap <leader>glC :GoCallers<cr>
+nmap <leader>glu :GoCoverageToggle<cr>
 
 "
 " CScope bindings
