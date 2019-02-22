@@ -465,6 +465,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'nvie/vim-flake8'
 
+" Vim Wiki
+Plugin 'vimwiki/vimwiki'
+
+" Writing
+Plugin 'dpelle/vim-LanguageTool'
+
 let g:color_schemes = ['vim-kalisi', 'vim-colorschemes', 'vim-colors-solarized']
 
 nmap <leader>t? :map <leader>t<cr>
@@ -698,6 +704,13 @@ nmap <leader>glt :GoTest<cr>
 nmap <leader>glc :GoCallees<cr>
 nmap <leader>glC :GoCallers<cr>
 nmap <leader>glu :GoCoverageToggle<cr>
+
+"
+" Language Tool Settings
+"
+
+let g:languagetool_jar='/usr/local/Cellar/languagetool/4.4/libexec/languagetool-commandline.jar'
+
 
 "
 " CScope bindings
