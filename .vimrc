@@ -513,6 +513,7 @@ let g:vimfiler_ignore_pattern = [
         \ '\.class$',
         \ '\.py[co]$',
         \ '\.py[co]$',
+        \ '\.pytest_cache$',
     \ ]
 
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
