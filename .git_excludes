@@ -12,3 +12,6 @@
 # Misc other files
 *.log
 ._*
+
+# Jekyll
+_site/
