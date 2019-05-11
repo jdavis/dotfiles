@@ -89,7 +89,6 @@
     sl = shortlog
     sm = submodule
     st = stash
-    #su = status -uno
     # Default to shorter status for su as well
     su = status -s -b -uno
     un = !git unstage
@@ -131,6 +130,13 @@
     # SVN Commands
     spull = !git-svn fetch && git-svn rebase
     spush = !git-svn dcommit
+
+    # Fuzzy commands
+    # Allows adding/diffing/unstaging of files just based on providing part of the file name. Example: `g za .py` will stage all files that match `.py`
+    za = "!za() { if [[ $# < 1 ]]; then exit; fi; for x in \"$@\"; do git ls-files -m -o --exclude-standard | grep $x | xargs git add; done }; za"
+    zap = "!zap() { if [[ $# < 1 ]]; then exit; fi; for x in \"$@\"; do git ls-files -m -o --exclude-standard | grep $x | xargs git add -p; done }; zap"
+    zd = "!zd() { if [[ $# < 1 ]]; then exit; fi; for x in \"$@\"; do git ls-files -m -o --exclude-standard | grep $x | xargs git diff; done }; zd"
+    zun = "!zun() { if [[ $# < 1 ]]; then exit; fi; for x in \"$@\"; do git diff HEAD --name-only | grep $x | xargs git diff; done }; zun"
 [push]
     default = simple
 [diff]
