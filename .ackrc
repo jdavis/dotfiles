@@ -13,3 +13,9 @@
 
 # Ignore .deps for Moonrocks
 --ignore-dir=.deps/
+
+# For NPM projects
+--ignore-dir=.nyc_output/
+
+# For test coverage
+--ignore-dir=coverage
