@@ -238,7 +238,7 @@ set foldlevel=20
 " Global Bindings
 "
 
-" Disable ex mode, ick, remap it to Q instead.
+" Disable ex mode
 "
 " Tip:
 "   Use command-line-window with q:
@@ -705,6 +705,16 @@ nmap <leader>glt :GoTest<cr>
 nmap <leader>glc :GoCallees<cr>
 nmap <leader>glC :GoCallers<cr>
 nmap <leader>glu :GoCoverageToggle<cr>
+
+"
+" Date Bindings
+"
+"
+
+nmap <leader>dd i<C-R>=strftime("%a %m/%d/%y - %H:%M%p")<cr><Esc>
+nmap <leader>ds i<C-R>=strftime("%m/%d/%y")<cr><Esc>
+nmap <leader>dt i<C-R>=strftime("%H:%M%p")<cr><Esc>
+nmap <leader>d? :map <leader>d<cr>
 
 "
 " Language Tool Settings
