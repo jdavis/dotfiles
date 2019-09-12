@@ -63,29 +63,31 @@ if [[ -d "/usr/local/share/zsh-completions" ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
-# Load Antigen
-source ~/.antigen.zsh
+# Load Antibody
+source <(antibody init)
 
-antigen bundle jdavis/zsh-files
-antigen bundle rupa/z
 
-#
-# Antigen Theme
-#
-
-antigen theme jdavis/zsh-files themes/jdavis
+antibody bundle jdavis/zsh-files
+antibody bundle rupa/z
 
 #
-# Antigen Bundles
+# Antibody Theme
 #
 
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
+antibody bundle jdavis/zsh-files themes/jdavis
+
+#
+# Antibody Bundles
+#
+
+antibody bundle zsh-users/zsh-completions
+antibody bundle zsh-users/zsh-autosuggestions
+antibody bundle zsh-users/zsh-syntax-highlighting
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    #antigen bundle brew
-    #antigen bundle brew-cask
+    #antibody bundle brew
+    #antibody bundle brew-cask
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     # None so far...
 
@@ -95,6 +97,6 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 # Secret info
-antigen bundle git@github.com:jdavis/secret.git
+antibody bundle git@github.com:jdavis/secret.git
 
 antigen apply
