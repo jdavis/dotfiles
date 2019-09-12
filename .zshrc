@@ -99,4 +99,3 @@ fi
 # Secret info
 antibody bundle git@github.com:jdavis/secret.git
 
-antigen apply
