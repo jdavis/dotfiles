@@ -717,6 +717,12 @@ nmap <leader>dt i<C-R>=strftime("%H:%M%p")<cr><Esc>
 nmap <leader>d? :map <leader>d<cr>
 
 "
+" Rot13 Binding
+"
+
+nmap <leader>rr ggg?G
+
+"
 " Language Tool Settings
 "
 
