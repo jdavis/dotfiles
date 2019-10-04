@@ -144,3 +144,5 @@
 [difftool]
     tool = mvim -d
     prompt = false
+[pager]
+	branch = false
