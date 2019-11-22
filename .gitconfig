@@ -79,6 +79,7 @@
     rbc = rebase --continue
     rbi = rebase --interactive
     rbs = rebase --skip
+    rbp = pull --rebase
     rf = reflog
     rs = reset
     rv = revert
