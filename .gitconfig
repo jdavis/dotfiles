@@ -24,27 +24,6 @@
 [push]
     default = matching
 
-#[url "https://github.com/"]
-    #insteadOf = "gh:"
-
-#[url "git@github.com:"]
-    #pushInsteadOf = "gh:"
-
-#[url "https://github.com/jdavis/"]
-    #insteadOf = "jd:"
-
-#[url "git@github.com:jdavis/"]
-    #pushInsteadOf = "jd:"
-
-#[url "git@gist.github.com:"]
-    #pushInsteadOf = "gist:"
-
-# Also fetch pull requests, put this inside repo specific .git/config to use
-# it.
-# [remote "origin"]
-  # fetch = +refs/heads/*:refs/remotes/origin/*
-  # fetch = +refs/pull/*/head:refs/pull/origin/*
-
 [alias]
     # Shortcuts
     a = add
@@ -146,4 +125,4 @@
     tool = mvim -d
     prompt = false
 [pager]
-	branch = false
+    branch = false
