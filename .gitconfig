@@ -101,6 +101,8 @@
     untrack = update-index --assume-unchanged
     track = update-index --no-assume-unchanged
 
+    unmerged = !git --no-pager diff --name-status --diff-filter=U
+
     # Show Git root
     root = rev-parse --show-toplevel
 
