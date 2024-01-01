@@ -2,6 +2,10 @@
 # Global fixes
 #
 
+# Needed to start up zsh
+export PATH=$PATH:/opt/homebrew/bin
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+
 # For sudo-ing aliases
 # https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
 alias sudo='sudo '
@@ -63,31 +67,31 @@ if [[ -d "/usr/local/share/zsh-completions" ]]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
-# Load Antibody
-source <(antibody init)
+# Load Antidote
+source <(antidote init)
 
 
-antibody bundle jdavis/zsh-files
-antibody bundle rupa/z
-
-#
-# Antibody Theme
-#
-
-antibody bundle jdavis/zsh-files themes/jdavis
+antidote bundle jdavis/zsh-files
+antidote bundle rupa/z
 
 #
-# Antibody Bundles
+# antidote Theme
 #
 
-antibody bundle zsh-users/zsh-completions
-antibody bundle zsh-users/zsh-autosuggestions
-antibody bundle zsh-users/zsh-syntax-highlighting
+#antidote bundle jdavis/zsh-files path:themes/jdavis
+
+#
+# antidote Bundles
+#
+
+antidote bundle zsh-users/zsh-completions
+antidote bundle zsh-users/zsh-autosuggestions
+antidote bundle zsh-users/zsh-syntax-highlighting
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
-    #antibody bundle brew
-    #antibody bundle brew-cask
+    #antidote bundle brew
+    #antidote bundle brew-cask
 elif [[ $CURRENT_OS == 'Linux' ]]; then
     # None so far...
 
@@ -97,5 +101,5 @@ elif [[ $CURRENT_OS == 'Cygwin' ]]; then
 fi
 
 # Secret info
-antibody bundle git@github.com:jdavis/secret.git
+antidote bundle git@github.com:jdavis/secret.git
 
